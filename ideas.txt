@@ -1,0 +1,5 @@
+CAFETERÍA UNI
+- pago via app
+- pedir para llevar
+- mostrar menú del día
+- mostrar lista de productos y precios
