@@ -3,3 +3,4 @@ CAFETERÍA UNI
 - pedir para llevar
 - mostrar menú del día
 - mostrar lista de productos y precios
+— notificación cuando la comida está preparado
