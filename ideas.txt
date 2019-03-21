@@ -1,5 +1,6 @@
-CAFETERÍA UNI
+CAFETERÍA UNI - NAME??
 - pago via app
 - pedir para llevar
 - mostrar menú del día
 - mostrar lista de productos y precios
+— notificación cuando la comida está preparado
