@@ -11,7 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import {FIREBASE_CONFIG} from '../app/firebase.credentials';
 import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database'
+import {AngularFireDatabaseModule} from 'angularfire2/database';
 
 @NgModule({
   declarations: [AppComponent],
