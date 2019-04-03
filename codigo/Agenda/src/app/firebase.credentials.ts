@@ -1,8 +1,8 @@
 export const FIREBASE_CONFIG = {
-    apiKey: "AIzaSyBRGiWtIPeAEPjcl9rziUfiNhoTsmlWtN4",
-    authDomain: "micro-practica-8.firebaseapp.com",
-    databaseURL: "https://micro-practica-8.firebaseio.com",
-    projectId: "micro-practica-8",
-    storageBucket: "micro-practica-8.appspot.com",
-    messagingSenderId: "761386424566"
+    apiKey: "AIzaSyCp1UkuWUmMxYWgL7-EDOxsP6Ph5LxhG2Y",
+    authDomain: "uneat-3b5eb.firebaseapp.com",
+    databaseURL: "https://uneat-3b5eb.firebaseio.com",
+    projectId: "uneat-3b5eb",
+    storageBucket: "uneat-3b5eb.appspot.com",
+    messagingSenderId: "671107757113"
   };
