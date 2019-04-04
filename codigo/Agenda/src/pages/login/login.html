@@ -33,7 +33,12 @@
         <ion-checkbox>
         </ion-checkbox>
       </ion-item>
-      <button ion-button block type="submit" >Iniciar Sesión</button>
+      <button ion-button block round type="submit" >Iniciar Sesión</button>
     </form>
+  </ion-row>
+  <ion-row justify-content-center align-items-center style>
+    <h6> ¿No tienes una cuenta?</h6> 
+    <button ion-button clear small (click)="onLoadRegistrarPage()"> Regístrate </button>
+
   </ion-row>
 </ion-content>

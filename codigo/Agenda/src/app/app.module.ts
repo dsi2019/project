@@ -14,12 +14,14 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 
 import { LoginPage } from '../pages/login/login';
+import { RegistrarPage } from '../pages/registrar/registrar';
 
 @NgModule({
     declarations: [
      MyApp,
      HomePage,
-     LoginPage
+     LoginPage,
+     RegistrarPage
      ],
     imports: [
      BrowserModule,
@@ -31,7 +33,8 @@ import { LoginPage } from '../pages/login/login';
     entryComponents: [
         MyApp,
         HomePage,
-        LoginPage
+        LoginPage,
+        RegistrarPage
     ],
     providers: [
     AngularFireAuth,
