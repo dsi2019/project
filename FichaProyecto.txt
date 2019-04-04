@@ -1,0 +1,14 @@
+NOMBRE PROYECTO: DSI-Enterprise
+
+OBJETO (BREVE): Aplicación para la gestión de la cafetería de la Universidad que permita entre otras cosas la reserva de comida por anticipado.
+
+MIEMBROS:
+=========
+NIA NOMBRE EMAIL
+100404357 - Raúl Alarcón López - 100404357@alumnos.uc3m.es
+100330506 - Celia Romero González - 100330506@alumnos.uc3m.es
+100402182 - Christopher Obando - 100402182@alumnos.uc3m.es
+100395242 - Mathias Maximiliano Amarillo Lemos - 100395242@alumnos.uc3m.es
+100413922 - Siddharth Srinivasan - 100413922@alumnos.uc3m.es
+
+URL GITHUB: https://github.com/dsi2019/project
