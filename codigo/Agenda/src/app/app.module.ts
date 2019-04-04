@@ -1,33 +1,43 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
-
-import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
-import { StatusBar } from '@ionic-native/status-bar/ngx';
-
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { ErrorHandler, NgModule } from '@angular/core';
+import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { MyApp } from './app.component';
+import { HomePage } from '../pages/home/home';
+import { StatusBar } from '@ionic-native/status-bar';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { Services } from '@angular/core/src/view';
 
 import {FIREBASE_CONFIG} from '../app/firebase.credentials';
 import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireDatabaseModule} from 'angularfire2/database'
+import { AngularFireAuth } from 'angularfire2/auth';
+
+
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(),
-    AppRoutingModule,
-    AngularFireModule.initializeApp(FIREBASE_CONFIG),
-    AngularFireDatabaseModule
-  ],
-  providers: [
+    declarations: [
+     MyApp,
+     HomePage,
+     LoginPage
+     ],
+    imports: [
+     BrowserModule,
+     IonicModule.forRoot(MyApp),
+     AngularFireModule.initializeApp(FIREBASE_CONFIG),
+     AngularFireDatabaseModule
+     ],
+    bootstrap: [IonicApp],
+    entryComponents: [
+        MyApp,
+        HomePage,
+        LoginPage
+    ],
+    providers: [
+    AngularFireAuth,
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
-  ],
-  bootstrap: [AppComponent]
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ]
 })
 export class AppModule {}
