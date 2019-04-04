@@ -18,21 +18,23 @@
     <ion-row justify-content-center align-items-center style ="height: 10%">
         <h1>UnEat</h1>
     </ion-row>
-    <ion-row justify-content-center align-tems-center>
-      <form>
+    <form ngSubmit="registrar()" [formGroup]="form">
+        <ion-list inset>
+            <ion-item>
+                <ion-label>Nombre</ion-label>
+                <ion-input type="nombre" placeholder="Chris Caliente"></ion-input>
+              </ion-item>
           <ion-item>
-              <ion-label>Nombre</ion-label>
-              <ion-input type="text" placeholder="Chris Caliente"></ion-input>
-            </ion-item>
-        <ion-item>
-          <ion-label>Correo</ion-label>
-          <ion-input type="text" placeholder="Johnny@aol.com"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label>Contraseña</ion-label>
-            <ion-input type="text" placeholder="......"></ion-input>
-        </ion-item>
-        <button ion-button block type="submit" >Regístrate</button>
+            <ion-label>Correo</ion-label>
+            <ion-input type="correo" placeholder="Johnny@aol.com"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input type="contraseña" placeholder="......"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div padding-horizontal>
+          <button ion-button full round type="submit">Regístrate</button>
+        </div>
       </form>
-    </ion-row>
   </ion-content>

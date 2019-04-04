@@ -16,6 +16,10 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { LoginPage } from '../pages/login/login';
 import { RegistrarPage } from '../pages/registrar/registrar';
 
+import { AuthService } from '../services/auth.service';
+
+import { FormsModule }   from '@angular/forms';
+
 @NgModule({
     declarations: [
      MyApp,
@@ -27,7 +31,8 @@ import { RegistrarPage } from '../pages/registrar/registrar';
      BrowserModule,
      IonicModule.forRoot(MyApp),
      AngularFireModule.initializeApp(FIREBASE_CONFIG),
-     AngularFireDatabaseModule
+     AngularFireDatabaseModule,
+     FormsModule
      ],
     bootstrap: [IonicApp],
     entryComponents: [
@@ -38,6 +43,7 @@ import { RegistrarPage } from '../pages/registrar/registrar';
     ],
     providers: [
     AngularFireAuth,
+    AuthService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
