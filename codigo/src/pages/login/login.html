@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Log in</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <ion-row justify-content-center align-items-center style="height: 40%">
+      <img src="../assets/icon/logo.png" height= "200">
+  </ion-row>
+  <ion-row justify-content-center align-items-center>
+      <h1>UnEat</h1>
+  </ion-row>
+  <ion-row justify-content-center align-tems-center>
+    <form (ngSubmit)="login()" [formGroup]="form">
+      <ion-item>
+        <ion-label>Correo</ion-label>
+        <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>Contraseña</ion-label>
+          <ion-input type="password" name = "correo" formControlName = "contraseña" placeholder="......"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Recuérdame</ion-label>
+        <ion-checkbox>
+        </ion-checkbox>
+      </ion-item>
+      <button ion-button block round type="submit" >Iniciar Sesión</button>
+    </form>
+  </ion-row>
+  <ion-row justify-content-center align-items-center style>
+    <h6> ¿No tienes una cuenta?</h6> 
+    <button ion-button clear small (click)="onLoadRegistrarPage()"> Regístrate </button>
+
+  </ion-row>
+</ion-content>

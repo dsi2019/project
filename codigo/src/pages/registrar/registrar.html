@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Registrar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <br>
+    <ion-row justify-content-center align-items-center style="height: 40%">
+        <img src="../assets/icon/logo.png" height= "200">
+    </ion-row>
+    <ion-row justify-content-center align-items-center style ="height: 10%">
+        <h1>UnEat</h1>
+    </ion-row>
+    <form (ngSubmit)="registrar()" [formGroup]="form">
+        <ion-list inset>
+            <ion-item>
+                <ion-label>Nombre</ion-label>
+                <ion-input type="text" name = "nombre" formControlName = "nombre" placeholder="Chris Caliente"></ion-input>
+              </ion-item>
+          <ion-item>
+            <ion-label>Correo</ion-label>
+            <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Contraseña</ion-label>
+              <ion-input type="password" name = "contraseña" formControlName = "contraseña"  placeholder="......"></ion-input>
+          </ion-item>
+        </ion-list>
+        <div padding-horizontal>
+          <button ion-button full round type="submit">Regístrate</button>
+        </div>
+      </form>
+</ion-content>
