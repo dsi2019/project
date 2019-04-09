@@ -8,34 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <br>
-  <ion-row justify-content-center align-items-center>
-    <ion-title>
-      Cafeterías
-    </ion-title>
-  </ion-row>
-  <ion-list>
-    
-    <ion-card ion-item *ngFor="let cafeteria of cafeterias" >
-      <ion-row row>
-          <ion-col col-4>
-              <ion-item>
-                  <img style ="object-fit: cover; padding-top:50%" class="full-image" src={{cafeteria.foto_url}}>
-              </ion-item>
-          </ion-col>
-          <ion-col col-8>
-              <ion-card-header>
-              <ion-card-subtitle>{{cafeteria.campus}}</ion-card-subtitle>
-              <ion-card-title>{{cafeteria.nombre}}</ion-card-title>
-              Abierto: 
-              <b>{{cafeteria.hora_de_abrir.hours}}:{{cafeteria.hora_de_abrir.minutes}} 
-              - {{cafeteria.hora_de_cerrar.hours}}:{{cafeteria.hora_de_cerrar.minutes}} 
-              </b>
-              </ion-card-header>
-          </ion-col>
-        <ion-card-content>
-        </ion-card-content>
-      </ion-row>
-    </ion-card>
-  </ion-list>
+  <ion-row justify-content-center align-items-center style="height: 40%">
+    <img src="../assets/icon/logo.png" height= "200">
+</ion-row>
 </ion-content>
