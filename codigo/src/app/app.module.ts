@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { IonicApp, IonicErrorHandler, IonicModule, Menu } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +16,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import {MenuPage} from '../pages/menu/menu';
 import { RegistrarPage } from '../pages/registrar/registrar';
 import {SettingsPage} from '../pages/settings/settings';
 
@@ -32,6 +33,7 @@ import { FormsModule }   from '@angular/forms';
      LoginPage,
      RegistrarPage,
      SettingsPage,
+     MenuPage,
      ],
     imports: [
      BrowserModule,
@@ -46,6 +48,7 @@ import { FormsModule }   from '@angular/forms';
         MyApp,
         HomePage,
         LoginPage,
+        MenuPage,
         RegistrarPage,
         SettingsPage,
     ],

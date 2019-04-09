@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import { CafeteriaService } from '../../services/cafeteria.service';
 import { Cafeteria } from '../../models/cafeteriamodel';
 
+import {MenuPage} from '../menu/menu';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -18,4 +20,8 @@ export class HomePage {
   ionViewWillEnter(){
     this.cafeterias = this.cafeteriaService.getCafeterias();
   };
+
+  empiezaPedido(){
+    this.navCtrl.push(MenuPage);
+  }
 }
