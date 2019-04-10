@@ -21,14 +21,21 @@
   </ion-row>
   <br>
   <ion-row>
-      <ion-searchbar>
-      </ion-searchbar>
-      <ion-checkbox></ion-checkbox>
-      <ion-label>Desayunos</ion-label>
-      <ion-checkbox></ion-checkbox>
-      <ion-label>Bebidas</ion-label>
-      <ion-checkbox></ion-checkbox>
-      <ion-label>Pulgas</ion-label>
+      <ion-col col-6>
+          <ion-searchbar>
+            </ion-searchbar>
+      </ion-col>
+      <ion-col col-6>
+          <ion-item>
+              <ion-label>Tipo de Comida</ion-label>
+              <ion-select placeholder="Seleciona Una">
+                <ion-select-option value="b">Bebidas</ion-select-option>
+                <ion-select-option value="d">Desayunos</ion-select-option>
+                <ion-select-option value="c">Combos</ion-select-option>
+                <ion-select-option value="ba">Baguettes</ion-select-option>
+              </ion-select>
+            </ion-item>
+      </ion-col>
   </ion-row>
   <hr>
 </ion-content>
