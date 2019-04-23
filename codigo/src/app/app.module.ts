@@ -27,6 +27,7 @@ import { AuthService } from '../services/auth.service';
 import {CafeteriaService} from '../services/cafeteria.service';
 
 import { FormsModule }   from '@angular/forms';
+import { MenuService } from '../services/menu.service';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,7 @@ import { FormsModule }   from '@angular/forms';
     AngularFireAuth,
     AuthService,
     CafeteriaService,
-
+    MenuService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

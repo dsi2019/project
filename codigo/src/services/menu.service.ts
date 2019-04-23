@@ -3,6 +3,9 @@ import { Cafeteria } from "../models/cafeteriamodel";
 import { Time} from "@angular/common";
 import { Articulo } from "../models/articulo";
 
+
+import​ { ​AngularFireDatabase​ } ​from​ ​"angularfire2/database"​;
+
 @​Injectable​()
 export class MenuService{
 
@@ -22,9 +25,23 @@ export class MenuService{
         tipo_de_comida: "raciones",
         comentos: "(unidad)"}
     ];
+
+    private mis_articulosRef = this.db.list<Articulo>('uneat-3b5eb');
+    constructor(private db:AngularFireDatabase){
+    }
     
     getMenu(){
         return this.menu;
+    }
+
+    // Sólo usando leche para probar Favoritos antes que tenemos la lista en el menu
+    addArticuloFavorito() {
+        return this.mis_articulosRef.push({nombre: "Leche",
+        precio: 0.75,
+        foto: "#",
+        tipo_de_comida: "bebidas"
+        });
+        console.log("adding favorito from menu_service!");
     }
 
 }

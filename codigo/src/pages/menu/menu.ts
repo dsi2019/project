@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import {MenuService} from '../../services/menu.service'
+import {Articulo} from '../../models/articulo';
+
 /**
  * Generated class for the MenuPage page.
  *
@@ -15,11 +18,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MenuPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private menuService: MenuService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
+  }
+
+  onAddFavorito(value: Articulo){
+    console.log("adding favorito from menu");
+    this.menuService.addArticuloFavorito();
   }
 
 }
