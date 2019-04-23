@@ -44,4 +44,8 @@ export class MenuService{
         console.log("adding favorito from menu_service!");
     }
 
+    getArticulosFavoritos() {
+        return this.mis_articulosRef;
+    }
+
 }
