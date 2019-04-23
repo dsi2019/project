@@ -14,11 +14,13 @@ import {AngularFireDatabaseModule} from 'angularfire2/database'
 import { AngularFireAuth } from 'angularfire2/auth';
 
 
+import {FavoritosPage} from '../pages/favoritos/favoritos';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import {MenuPage} from '../pages/menu/menu';
 import { RegistrarPage } from '../pages/registrar/registrar';
 import {SettingsPage} from '../pages/settings/settings';
+
 
 
 import { AuthService } from '../services/auth.service';
@@ -29,11 +31,13 @@ import { FormsModule }   from '@angular/forms';
 @NgModule({
     declarations: [
      MyApp,
+     FavoritosPage,
      HomePage,
      LoginPage,
      RegistrarPage,
      SettingsPage,
      MenuPage,
+
      ],
     imports: [
      BrowserModule,
@@ -46,6 +50,7 @@ import { FormsModule }   from '@angular/forms';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
+        FavoritosPage,
         HomePage,
         LoginPage,
         MenuPage,
