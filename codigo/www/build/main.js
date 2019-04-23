@@ -223,7 +223,7 @@ var SettingsPage = /** @class */ (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-content padding>\n      <ion-item>\n      <ion-label>Nombre</ion-label>\n      <ion-input></ion-input>\n      </ion-item>\n      <button ion-button block>Guardar</button>\n</ion-content>\n'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/,
+            selector: 'page-settings',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-content padding>\n      <ion-item>\n      <ion-label>Nombre</ion-label>\n      <ion-input></ion-input>\n      </ion-item>\n      <button ion-button block>Guardar</button>\n</ion-content>\n'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], SettingsPage);
