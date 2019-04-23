@@ -41,7 +41,7 @@ export class LoginPage {
     console.log(data);
 		this.auth.signInWithEmail({email:data.correo, password:data.contraseña})
 			.then(
-        () => 
+        () =>
         this.navCtrl.setRoot(HomePage),
 				error => this.loginError = error.message
 			);

@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>Log in</ion-title>
   </ion-navbar>
 </ion-header>
@@ -14,25 +14,29 @@
   </ion-row>
   <ion-row justify-content-center align-tems-center>
     <form (ngSubmit)="login()" [formGroup]="form">
-      <ion-item>
-        <ion-label>Correo</ion-label>
-        <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>
-      </ion-item>
-      <ion-item>
-          <ion-label>Contraseña</ion-label>
-          <ion-input type="password" name = "correo" formControlName = "contraseña" placeholder="......"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Recuérdame</ion-label>
-        <ion-checkbox>
-        </ion-checkbox>
-      </ion-item>
-      <button ion-button block round type="submit" >Iniciar Sesión</button>
+      <ion-list inset>
+        <ion-item>
+          <ion-label>Correo</ion-label>
+          <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label>Contraseña</ion-label>
+            <ion-input type="password" name = "correo" formControlName = "contraseña" placeholder="......"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Recuérdame</ion-label>
+          <ion-checkbox>
+          </ion-checkbox>
+        </ion-item>
+      </ion-list>
+      <div padding-horizontal>
+        <button ion-button full round type="submit">Iniciar Sesión</button>
+      </div>
     </form>
   </ion-row>
   <ion-row justify-content-center align-items-center style>
-    <h6> ¿No tienes una cuenta?</h6> 
+    <h6> ¿No tienes una cuenta?
     <button ion-button clear small (click)="onLoadRegistrarPage()"> Regístrate </button>
-
+    </h6>
   </ion-row>
 </ion-content>

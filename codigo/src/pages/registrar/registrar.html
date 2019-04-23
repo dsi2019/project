@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hideBackButton>
     <ion-title>Registrar</ion-title>
   </ion-navbar>
 </ion-header>
@@ -9,15 +9,17 @@
     <ion-row justify-content-center align-items-center style="height: 40%">
         <img src="../assets/icon/logo.png" height= "200">
     </ion-row>
-    <ion-row justify-content-center align-items-center style ="height: 10%">
+    <ion-row justify-content-center align-items-center>
         <h1>UnEat</h1>
     </ion-row>
-    <form (ngSubmit)="registrar()" [formGroup]="form">
+
+    <ion-row justify-content-center align-tems-center>
+      <form (ngSubmit)="registrar()" [formGroup]="form">
         <ion-list inset>
-            <ion-item>
-                <ion-label>Nombre</ion-label>
-                <ion-input type="text" name = "nombre" formControlName = "nombre" placeholder="Chris Caliente"></ion-input>
-              </ion-item>
+          <ion-item>
+            <ion-label>Nombre</ion-label>
+            <ion-input type="text" name = "nombre" formControlName = "nombre" placeholder="Chris Caliente"></ion-input>
+          </ion-item>
           <ion-item>
             <ion-label>Correo</ion-label>
             <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>
@@ -31,4 +33,10 @@
           <button ion-button full round type="submit">Regístrate</button>
         </div>
       </form>
+    </ion-row>
+    <ion-row justify-content-center align-items-center style>
+      <h6> ¿Tienes una cuenta?
+      <button ion-button clear small (click)="onLoadLoginPage()"> Log In </button>
+      </h6>
+    </ion-row>
 </ion-content>

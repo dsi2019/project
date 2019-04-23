@@ -1,12 +1,13 @@
 
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { ToastController } from 'ionic-angular';
 
 
 import { AuthService } from '../../services/auth.service';
-import {HomePage} from '../home/home'
+import {HomePage} from '../home/home';
+import {LoginPage} from '../login/login';
 
 @IonicPage()
 @Component({
@@ -18,9 +19,9 @@ export class RegistrarPage {
   form: FormGroup;
 
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams, 
-    private auth: AuthService, 
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private auth: AuthService,
     fb: FormBuilder,
     public toastCtrl: ToastController
     ){
@@ -36,14 +37,18 @@ export class RegistrarPage {
     console.log(this.form.value);
   }
 
-registrar_existoso(){
-  let toast = this.toastCtrl.create({
-    message: '¡Cuenta creada!',
-    duration: 2000,
-    position: 'bottom'
-  });
-  toast.present(toast);
-  this.navCtrl.setRoot(HomePage)
+  onLoadLoginPage(){
+    this.navCtrl.push(LoginPage);
+  }
+
+  registrar_existoso(){
+    let toast = this.toastCtrl.create({
+      message: '¡Cuenta creada!',
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present(toast);
+    this.navCtrl.setRoot(HomePage)
   }
 
 registrar(){
@@ -54,6 +59,7 @@ registrar(){
     () => this.registrar_existoso(),
     error => this.registrarError = error.message
   );
+  this.navCtrl.pop();
 }
 
 
