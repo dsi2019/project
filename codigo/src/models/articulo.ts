@@ -4,4 +4,5 @@ export interface Articulo {
     foto: string;
     tipo_de_comida: string;
     comentos?: string;
+    userID?: string;
  };

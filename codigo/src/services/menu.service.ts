@@ -5,6 +5,7 @@ import { Articulo } from "../models/articulo";
 
 
 import​ { ​AngularFireDatabase​ } ​from​ ​"angularfire2/database"​;
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @​Injectable​()
 export class MenuService{
@@ -27,7 +28,12 @@ export class MenuService{
     ];
 
     private mis_articulosRef = this.db.list<Articulo>('uneat-3b5eb');
-    constructor(private db:AngularFireDatabase){
+    userID: string;
+
+    constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
+        this.afAuth.authState.subscribe(user => {
+            if(user) this.userID = user.uid
+          })
     }
     
     getMenu(){
@@ -39,13 +45,16 @@ export class MenuService{
         return this.mis_articulosRef.push({nombre: "Leche",
         precio: 0.75,
         foto: "#",
-        tipo_de_comida: "bebidas"
+        tipo_de_comida: "bebidas",
+        userID: this.userID
         });
         console.log("adding favorito from menu_service!");
     }
 
     getArticulosFavoritos() {
-        return this.mis_articulosRef;
+        if (!this.userID) return;
+        this.mis_articulosRef = this.db.list(`mis_articulos/${this.userID}`);
+        return this.mis_articulosRef
     }
 
 }
