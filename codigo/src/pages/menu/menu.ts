@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import {MenuService} from '../../services/menu.service'
 import {Articulo} from '../../models/articulo';
+import { CarritaPage } from '../carrita/carrita';
 
 /**
  * Generated class for the MenuPage page.
@@ -28,6 +29,10 @@ export class MenuPage {
   onAddFavorito(value: Articulo){
     console.log("adding favorito from menu");
     this.menuService.addArticuloFavorito();
+  }
+
+  aCarrita(){
+    this.navCtrl.push(CarritaPage);
   }
 
 }

@@ -13,7 +13,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database'
 import { AngularFireAuth } from 'angularfire2/auth';
 
-
+import {CarritaPage} from '../pages/carrita/carrita';
 import {FavoritosPage} from '../pages/favoritos/favoritos';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
@@ -29,9 +29,11 @@ import {CafeteriaService} from '../services/cafeteria.service';
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
 
+
 @NgModule({
     declarations: [
      MyApp,
+     CarritaPage,
      FavoritosPage,
      HomePage,
      LoginPage,
@@ -51,6 +53,7 @@ import { MenuService } from '../services/menu.service';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
+        CarritaPage,
         FavoritosPage,
         HomePage,
         LoginPage,
