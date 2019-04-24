@@ -11,5 +11,12 @@
 </ion-header>
 
 <ion-content padding>
-
+    <ion-list>
+      <p> Hello</p>
+      <button ion-item *ngFor="let favorito of misFavoritos$ | async">
+        <p>{{favorito.nombre}}</p>
+       <p>{{favorito.precio}}</p>
+       <p> HELLO</p>
+      </button>
+    </ion-list>
 </ion-content>

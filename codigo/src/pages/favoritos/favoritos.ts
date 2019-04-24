@@ -40,7 +40,13 @@ export class FavoritosPage {
         }));
       }
     );
-    console.log(this.misFavoritos$);
+    console.log("dog");
+    // this.misFavoritos$.forEach(element => {
+    //   element.forEach(element1 => {
+    //     console.log("dog");
+    //   });
+    // });
+    // console.log(this.misFavoritos$.forEach((i)=> console.log(i[0].nombre)))
   };
 
 }
