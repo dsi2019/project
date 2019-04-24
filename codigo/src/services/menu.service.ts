@@ -52,8 +52,8 @@ export class MenuService{
     }
 
     getArticulosFavoritos() {
-        // if (!this.userID) return;
-        // this.mis_articulosRef = this.db.list(`mis_articulosRef/${this.userID}`);
+        console.log(this.userID);
+        // this.mis_articulosRef=  this.db.list('random', ref => ref.orderByChild("userID").equalTo(this.userID));
         return this.mis_articulosRef
     }
 
