@@ -4,6 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {MenuService} from '../../services/menu.service'
 import {Articulo} from '../../models/articulo';
 import { CarritaPage } from '../carrita/carrita';
+import { DetallesPage } from '../detallesproducto/detallesproducto';
 
 /**
  * Generated class for the MenuPage page.
@@ -38,6 +39,10 @@ export class MenuPage {
 
   aCarrita(){
     this.navCtrl.push(CarritaPage);
+  }
+
+  aDetalles(){
+    this.navCtrl.push(DetallesPage);
   }
 
 }
