@@ -42,7 +42,13 @@ export class MenuPage {
   }
 
   aDetalles(){
-    this.navCtrl.push(DetallesproductoPage);
-  }
+    this.navCtrl.push(DetallesproductoPage,{item:{nombre: "Leche",
+    precio: 0.75,
+    foto: "#",
+    tipo_de_comida: "bebidas",
+    userID: "Raul"
+  }});
+}
 
 }
+
