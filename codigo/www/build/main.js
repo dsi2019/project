@@ -121,63 +121,6 @@ var FavoritosPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carrita_carrita__ = __webpack_require__(113);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var MenuPage = /** @class */ (function () {
-    function MenuPage(navCtrl, navParams, menuService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.menuService = menuService;
-    }
-    MenuPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad MenuPage');
-    };
-    MenuPage.prototype.onAddFavorito = function (value) {
-        console.log("adding favorito from menu");
-        this.menuService.addArticuloFavorito();
-    };
-    MenuPage.prototype.aCarrita = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__carrita_carrita__["a" /* CarritaPage */]);
-    };
-    MenuPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/menu/menu.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n          <ion-searchbar>\n            </ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label>Tipo de Comida</ion-label>\n          <ion-select [(ngModel)]="category">\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <ion-option value="ag">Agua</ion-option>\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <ion-option value="cs">Croissant Salados</ion-option>\n            <ion-option value="sd">Sandwiches</ion-option>\n            <ion-option value="bg">Baguettes</ion-option>\n            <ion-option value="bd">Bocadillos</ion-option>\n            <ion-option value="pm">Pulgas y Montados</ion-option>\n            <ion-option value="fs">Fruta/Suplementos</ion-option>\n            <ion-option value="vl">Vinos y Licores</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card>\n          <h3>\n            Leche\n          </h3>\n          <h3>\n            0,75 €\n          </h3>\n          <ion-icon name="heart-outline"></ion-icon>\n        </ion-card>\n        <ion-card>\n          <h3>\n            Infusiones\n          </h3>\n          <h3>\n            0,80 €\n          </h3>\n          <button (click) = "onAddFavorito()"> \n            <ion-icon name="heart-outline" ></ion-icon>\n          </button>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/menu/menu.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
-    ], MenuPage);
-    return MenuPage;
-}());
-
-//# sourceMappingURL=menu.js.map
-
-/***/ }),
-
-/***/ 116:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
@@ -254,6 +197,63 @@ var RegistrarPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 116:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carrita_carrita__ = __webpack_require__(113);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the MenuPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var MenuPage = /** @class */ (function () {
+    function MenuPage(navCtrl, navParams, menuService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.menuService = menuService;
+    }
+    MenuPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad MenuPage');
+    };
+    MenuPage.prototype.onAddFavorito = function (value) {
+        console.log("adding favorito from menu");
+        this.menuService.addArticuloFavorito();
+    };
+    MenuPage.prototype.aCarrita = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__carrita_carrita__["a" /* CarritaPage */]);
+    };
+    MenuPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-menu',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/menu/menu.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n          <ion-searchbar>\n            </ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label>Tipo de Comida</ion-label>\n          <ion-select [(ngModel)]="category">\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <ion-option value="ag">Agua</ion-option>\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <ion-option value="cs">Croissant Salados</ion-option>\n            <ion-option value="sd">Sandwiches</ion-option>\n            <ion-option value="bg">Baguettes</ion-option>\n            <ion-option value="bd">Bocadillos</ion-option>\n            <ion-option value="pm">Pulgas y Montados</ion-option>\n            <ion-option value="fs">Fruta/Suplementos</ion-option>\n            <ion-option value="vl">Vinos y Licores</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-6>\n        <ion-card>\n          <h3>\n            Leche\n          </h3>\n          <h3>\n            0,75 €\n          </h3>\n          <ion-icon name="heart-outline"></ion-icon>\n        </ion-card>\n        <ion-card>\n          <h3>\n            Infusiones\n          </h3>\n          <h3>\n            0,80 €\n          </h3>\n          <button (click) = "onAddFavorito()"> \n            <ion-icon name="heart-outline" ></ion-icon>\n          </button>\n        </ion-card>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>\n'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/menu/menu.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
+    ], MenuPage);
+    return MenuPage;
+}());
+
+//# sourceMappingURL=menu.js.map
+
+/***/ }),
+
 /***/ 117:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -321,23 +321,23 @@ webpackEmptyAsyncContext.id = 128;
 
 var map = {
 	"../pages/cafeterias/cafeterias.module": [
-		349,
+		347,
 		0
 	],
 	"../pages/carrita/carrita.module": [
-		347,
+		348,
 		6
 	],
 	"../pages/favoritos/favoritos.module": [
-		348,
+		349,
 		5
 	],
 	"../pages/login/login.module": [
-		351,
+		350,
 		4
 	],
 	"../pages/menu/menu.module": [
-		350,
+		351,
 		3
 	],
 	"../pages/registrar/registrar.module": [
@@ -398,8 +398,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favoritos_favoritos__ = __webpack_require__(114);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_login_login__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__ = __webpack_require__(115);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__ = __webpack_require__(117);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(59);
@@ -451,11 +451,11 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
+                        { loadChildren: '../pages/cafeterias/cafeterias.module#CafeteriasPageModule', name: 'CafeteriasPage', segment: 'cafeterias', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/carrita/carrita.module#CarritaPageModule', name: 'CarritaPage', segment: 'carrita', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favoritos/favoritos.module#FavoritosPageModule', name: 'FavoritosPage', segment: 'favoritos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/cafeterias/cafeterias.module#CafeteriasPageModule', name: 'CafeteriasPage', segment: 'cafeterias', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/registrar/registrar.module#RegistrarPageModule', name: 'RegistrarPage', segment: 'registrar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] }
                     ]
@@ -642,7 +642,7 @@ var AuthService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_cafeteria_service__ = __webpack_require__(59);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(115);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(116);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -742,7 +742,7 @@ var CafeteriaService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrar_registrar__ = __webpack_require__(116);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrar_registrar__ = __webpack_require__(115);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(54);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__(53);
@@ -831,17 +831,448 @@ var MenuService = /** @class */ (function () {
             { nombre: "Leche",
                 precio: 0.75,
                 foto: "#",
-                tipo_de_comida: "bebidas"
+                tipo_de_comida: "bc"
             },
-            { nombre: "Colocao",
+            { nombre: "Infusiones",
+                precio: 0.80,
+                foto: "#",
+                tipo_de_comida: "bc"
+            },
+            { nombre: "Cafe Solo",
+                precio: 0.90,
+                foto: "#",
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Cafe de Comercio",
+                precio: 0.90,
+                foto: "#",
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Vaso de Leche con Colacao",
                 precio: 1.00,
                 foto: "#",
-                tipo_de_comida: "bebidas" },
-            { nombre: "Croquetas",
-                precio: .40,
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Cafe Capuccino",
+                precio: 1.20,
                 foto: "#",
-                tipo_de_comida: "raciones",
-                comentos: "(unidad)" }
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Desayuno y Zumo Natural",
+                precio: 2.90,
+                foto: "#",
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Bolleria Variada",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "bc",
+            },
+            { nombre: "Yoghurt",
+                precio: 0.80,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Batidos Variados",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Zumos Variados",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Zumos de Fruta Natural",
+                precio: 1.90,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Coca Cola Postmix",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Fanta Naranja, Limon Postmix",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Tonica Postmix",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Bote de Trinaranjus",
+                precio: 1.05,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Bote de Coca Cola, Fanta",
+                precio: 1.05,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Nestea",
+                precio: 1.40,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Aquarius (lata)",
+                precio: 1.40,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Cana de Cerzeva",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Cerveza 1/5",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Cerzeva 1/3",
+                precio: 1.30,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Bote de Cerveza sin Alcohol",
+                precio: 1.30,
+                foto: "#",
+                tipo_de_comida: "bf",
+            },
+            { nombre: "Botella de Agua 1/3 l.",
+                precio: 0.60,
+                foto: "#",
+                tipo_de_comida: "ag",
+            },
+            { nombre: "Botella de Agua 1/2 l.",
+                precio: 0.80,
+                foto: "#",
+                tipo_de_comida: "ag",
+            },
+            { nombre: "Botella de Agua 1 l.",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "ag",
+            },
+            { nombre: "Hamburguesa Normal",
+                precio: 2.40,
+                foto: "#",
+                tipo_de_comida: "hb",
+            },
+            { nombre: "Hamburguesa Con Queso",
+                precio: 2.70,
+                foto: "#",
+                tipo_de_comida: "hb",
+            },
+            { nombre: "Hamburguesa Doble",
+                precio: 3.90,
+                foto: "#",
+                tipo_de_comida: "hb",
+            },
+            { nombre: "Hamburguesa Completa con Patatas y Refresco",
+                precio: 4.90,
+                foto: "#",
+                tipo_de_comida: "hb",
+            },
+            { nombre: "Croqueta (unidad)",
+                precio: 0.40,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Bravas, Patatas ali-oli",
+                precio: 1.55,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Empanada",
+                precio: 1.90,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Pizza",
+                precio: 1.90,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Ensalada Mixta",
+                precio: 2.75,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Queso Manchego",
+                precio: 3.50,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Jamon Serrano",
+                precio: 3.50,
+                foto: "#",
+                tipo_de_comida: "rc",
+            },
+            { nombre: "Plato Combinado Reducido",
+                precio: 4.55,
+                foto: "#",
+                tipo_de_comida: "pc",
+            },
+            { nombre: "Plato Combinado Completo",
+                precio: 5.20,
+                foto: "#",
+                tipo_de_comida: "pc",
+            },
+            { nombre: "Plato Combinado Vegetariano",
+                precio: 5.20,
+                foto: "#",
+                tipo_de_comida: "pc",
+            },
+            { nombre: "Croissant Salado - Jamon York",
+                precio: 1.50,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Embutidos",
+                precio: 1.50,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Queso",
+                precio: 1.50,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Jamon Serrano",
+                precio: 1.60,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Jamon Serrano",
+                precio: 1.60,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Atun",
+                precio: 1.60,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Vegetal",
+                precio: 1.60,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Tortilla",
+                precio: 1.80,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Croissant Salado - Vegetal con Queso",
+                precio: 1.85,
+                foto: "#",
+                tipo_de_comida: "cs",
+            },
+            { nombre: "Sandwiches - Jamon York",
+                precio: 1.35,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Queso",
+                precio: 1.35,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Mixto",
+                precio: 1.65,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Vegetal",
+                precio: 1.65,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Empaquetados",
+                precio: 1.60,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Mixto con Huevo",
+                precio: 2.05,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Vegetal con Huevo",
+                precio: 2.05,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Sandwiches - Vegetal Caliente",
+                precio: 2.05,
+                foto: "#",
+                tipo_de_comida: "sd",
+            },
+            { nombre: "Baguette 1 Componente",
+                precio: 1.95,
+                foto: "#",
+                tipo_de_comida: "bg",
+            },
+            { nombre: "Baguette 2 Componentes",
+                precio: 2.30,
+                foto: "#",
+                tipo_de_comida: "bg",
+            },
+            { nombre: "Baguette Caliente",
+                precio: 2.35,
+                foto: "#",
+                tipo_de_comida: "bg",
+            },
+            { nombre: "Baguette Especial",
+                precio: 2.70,
+                foto: "#",
+                tipo_de_comida: "bg",
+            },
+            { nombre: "Bocadillo Chorizo/Salchicon/Queso",
+                precio: 1.35,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Tortilla Espanola",
+                precio: 1.35,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Tortilla Francesa 1 Huevo",
+                precio: 1.35,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Bonito",
+                precio: 1.70,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Bacon",
+                precio: 1.70,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Lomo",
+                precio: 1.85,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Queso Manchego",
+                precio: 1.85,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Jamon Serrano",
+                precio: 1.85,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Bocadillo Chorizo/Salchichon con Queso",
+                precio: 1.65,
+                foto: "#",
+                tipo_de_comida: "bd",
+            },
+            { nombre: "Pulga Chorizo",
+                precio: 1.00,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Tortilla Espanola",
+                precio: 1.00,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Pincho de Tortilla",
+                precio: 1.00,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Salchichon",
+                precio: 1.00,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Bonito",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Queso Manchego",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pulga Jamon Serrano",
+                precio: 1.20,
+                foto: "#",
+                tipo_de_comida: "pm",
+            },
+            { nombre: "Pieza de Fruta",
+                precio: 0.60,
+                foto: "#",
+                tipo_de_comida: "fs",
+            },
+            { nombre: "Vasito de Fruta Troceada",
+                precio: 1.00,
+                foto: "#",
+                tipo_de_comida: "fs",
+            },
+            { nombre: "Sobre de Mayonesa, Mostaza, Ketchup, Duo de Aceite y Vinagre",
+                precio: 0.25,
+                foto: "#",
+                tipo_de_comida: "fs",
+            },
+            { nombre: "Pan",
+                precio: 0.25,
+                foto: "#",
+                tipo_de_comida: "fs",
+            },
+            { nombre: "Bolsa de Cubiertos",
+                precio: 0.25,
+                foto: "#",
+                tipo_de_comida: "fs",
+            },
+            { nombre: "Mosto",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Valdepenas",
+                precio: 0.95,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Valdepenas Dos Anos o Similar/Rioja",
+                precio: 1.10,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Bitter sin Alcohol/Bitter Cinzano",
+                precio: 1.30,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Licores",
+                precio: 1.30,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Malaga Virgen/Martini/o Similar",
+                precio: 1.50,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
+            { nombre: "Rioja Reserva",
+                precio: 1.70,
+                foto: "#",
+                tipo_de_comida: "vl",
+            },
         ];
         this.mis_articulosRef = this.db.list('uneat-3b5eb');
         this.afAuth.authState.subscribe(function (user) {
@@ -863,7 +1294,6 @@ var MenuService = /** @class */ (function () {
     };
     MenuService.prototype.getArticulosFavoritos = function () {
         console.log(this.userID);
-        // this.mis_articulosRef=  this.db.list('random', ref => ref.orderByChild("userID").equalTo(this.userID));
         return this.mis_articulosRef;
     };
     MenuService = __decorate([
