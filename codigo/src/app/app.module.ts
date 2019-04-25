@@ -28,7 +28,7 @@ import {CafeteriaService} from '../services/cafeteria.service';
 
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
-
+import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
 
 @NgModule({
     declarations: [
@@ -40,6 +40,7 @@ import { MenuService } from '../services/menu.service';
      RegistrarPage,
      SettingsPage,
      MenuPage,
+     DetallesproductoPage
 
      ],
     imports: [
@@ -60,6 +61,7 @@ import { MenuService } from '../services/menu.service';
         MenuPage,
         RegistrarPage,
         SettingsPage,
+        DetallesproductoPage
     ],
     providers: [
     AngularFireAuth,

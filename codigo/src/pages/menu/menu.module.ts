@@ -4,7 +4,7 @@ import { MenuPage } from './menu';
 
 @NgModule({
   declarations: [
-    MenuPage,
+    MenuPage
   ],
   imports: [
     IonicPageModule.forChild(MenuPage),
