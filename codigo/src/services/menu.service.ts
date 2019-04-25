@@ -35,7 +35,7 @@ export class MenuService{
             if(user) this.userID = user.uid
           })
     }
-    
+
     getMenu(){
         return this.menu;
     }
@@ -43,12 +43,11 @@ export class MenuService{
     // Sólo usando leche para probar Favoritos antes que tenemos la lista en el menu
     addArticuloFavorito() {
         return this.mis_articulosRef.push({nombre: "Leche",
-        precio: 0.75,
-        foto: "#",
-        tipo_de_comida: "bebidas",
-        userID: this.userID
+            precio: 0.75,
+            foto: "#",
+            tipo_de_comida: "bebidas",
+            userID: this.userID
         });
-        console.log("adding favorito from menu_service!");
     }
 
     getArticulosFavoritos() {
