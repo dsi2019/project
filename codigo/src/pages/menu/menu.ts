@@ -19,7 +19,12 @@ import { CarritaPage } from '../carrita/carrita';
 })
 export class MenuPage {
 
+  menu: Articulo[] =[];
   constructor(public navCtrl: NavController, public navParams: NavParams, private menuService: MenuService) {
+  }
+
+  ionViewWillEnter(){
+    this.menu = this.menuService.getMenu();
   }
 
   ionViewDidLoad() {

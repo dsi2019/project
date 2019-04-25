@@ -41,30 +41,13 @@
       </ion-col>
   </ion-row>
   <hr>
-  <ion-grid>
-    <ion-row>
-      <ion-col col-6>
-        <ion-card>
-          <h3>
-            Leche
-          </h3>
-          <h3>
-            0,75 €
-          </h3>
-          <ion-icon name="heart-outline"></ion-icon>
-        </ion-card>
-        <ion-card>
-          <h3>
-            Infusiones
-          </h3>
-          <h3>
-            0,80 €
-          </h3>
-          <button (click) = "onAddFavorito()"> 
-            <ion-icon name="heart-outline" ></ion-icon>
-          </button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-list>
+      <button ion-item *ngFor="let articulo of menu">
+      <p>{{articulo.nombre}}</p>
+      <p>{{articulo.precio}}</p>
+      <button (click) = "onAddFavorito()"> 
+          <ion-icon name="heart-outline" ></ion-icon>
+      </button>
+      </button>
+  </ion-list>
 </ion-content>
