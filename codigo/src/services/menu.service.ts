@@ -487,7 +487,7 @@ export class MenuService{
             precio: value.precio,
             foto: value.foto,
             tipo_de_comida: value.tipo_de_comida,
-            userID: this.userID,
+            userID: this.userID
         });
         }
         

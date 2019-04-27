@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Articulo } from '../../models/articulo';
+import { ListaCarrito } from '../../services/carrita.service'
+import { preserveWhitespacesDefault } from '@angular/compiler';
 
-/**
- * Generated class for the CarritaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +12,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CarritaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  carrito: Articulo[]=[];
+  precioTotal: number= 0.0;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private listaCarrito: ListaCarrito) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CarritaPage');
+    
+  }
+
+  ionViewWillEnter(){
+    this.carrito = this.listaCarrito.getCarritoItems();
+    this.precioTotal = this.listaCarrito.getTotalPrice();
+    console.log(this.listaCarrito);
+    console.log(this.listaCarrito.getTotalPrice);
+
+  }
+
+  onAddCarrita(value: Articulo){
+    console.log("adding item to shopping cart");
+    this.listaCarrito.addCarritoItem(value);
+    this.precioTotal = this.precioTotal+value.precio;
   }
 
 }

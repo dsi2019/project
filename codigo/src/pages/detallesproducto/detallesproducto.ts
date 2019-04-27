@@ -25,4 +25,8 @@ export class DetallesproductoPage {
     console.log('ionViewDidLoad DetallesproductoPage');
   }
 
+  addToCarrito(){
+    
+  }
+
 }

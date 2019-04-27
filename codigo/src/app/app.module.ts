@@ -5,7 +5,7 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Services } from '@angular/core/src/view';
+
 
 
 import {FIREBASE_CONFIG} from '../app/firebase.credentials';
@@ -28,6 +28,7 @@ import {CafeteriaService} from '../services/cafeteria.service';
 
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
+import { ListaCarrito } from '../services/carrita.service'
 import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
 import { CuentaService } from '../services/cuenta.service';
 
@@ -72,6 +73,7 @@ import { CuentaService } from '../services/cuenta.service';
     CuentaService,
     StatusBar,
     SplashScreen,
+    ListaCarrito,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
