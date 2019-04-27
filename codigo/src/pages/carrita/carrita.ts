@@ -17,7 +17,7 @@ export class CarritaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private listaCarrito: ListaCarrito) {
     this.aux = navParams.get('item');
-    console.log("DENTRO DE CARRITA.TS constructor");
+    console.log("DENTRO DE CARRITA.TS constructor");// DEBUG ONLY
     console.log(this.carrito);
     
   }
@@ -26,8 +26,8 @@ export class CarritaPage {
     console.log('ionViewDidLoad CarritaPage');
     if(this.aux != null){
       this.carrito = this.listaCarrito.addCarritoItem(this.aux);
-      console.log("CARRITO ionViewDidLoad");
-      console.log(this.aux);
+      console.log("CARRITO ionViewDidLoad");// DEBUG ONLY
+      console.log(this.aux);// DEBUG ONLY
     }
     
   }
@@ -38,9 +38,10 @@ export class CarritaPage {
     console.log(this.precioTotal);
   }
 
-  onAddCarrita(value: Articulo){
-    console.log("adding item to shopping cart");
-    console.los(value);
+  removeCarritaItem(articulo: Articulo){
+    console.log("removing item to shopping cart");// DEBUG ONLY
+    this.listaCarrito.removeCarritoItem(articulo);
+    console.log(articulo);// DEBUG ONLY
   }
 
 }

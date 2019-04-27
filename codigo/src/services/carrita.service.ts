@@ -15,13 +15,13 @@ export class ListaCarrito{
         return this.carrito;
     }
     
-    addCarritoItem(value:Articulo) {
-        this.total= this.total+value.precio;
-        this.carrito.push(value);
+    addCarritoItem(articulo:Articulo) {
+        this.total= this.total+articulo.precio;
+        this.carrito.push(articulo);
     }
 
-    removeCarritoItem(value:Articulo){
-        // todo
+    removeCarritoItem(articulo:Articulo){
+        this.carrito.remove(articulo);
     }
 
     getTotalPrice(){
@@ -32,7 +32,7 @@ export class ListaCarrito{
                 this.total = this.total + this.carrito[i].precio;
                 i++;
             }
-            console.log(this.carrito.length);
+            console.log(this.carrito.length); // DEBUG ONLY
         return this.total;
     }
 }

@@ -8,11 +8,29 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-item *ngFor="let cart of carrito">
-      <p>{{cart.nombre}}</p>
-      <p>{{cart.precio}}</p>
-    </ion-item>
-    <p>{{precioTotal}}</p>
-  </ion-list>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Articulos en mi carrito</ion-card-title>
+        <ion-card-subtitle>detalle del pedido</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+       <ion-list>
+          <ion-item *ngFor="let articulo of carrito">
+            <ion-thumbnail item-right>
+              <img [src]= "articulo?.foto"/>
+            </ion-thumbnail>
+              {{articulo.nombre}}
+              <p>{{articulo.precio}}€</p>
+            </ion-item>
+       </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-button>PAGAR AHORA</ion-button>
+        </on-card-content>
+    </ion-card>
 </ion-content>

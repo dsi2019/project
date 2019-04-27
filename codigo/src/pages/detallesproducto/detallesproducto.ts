@@ -19,15 +19,15 @@ export class DetallesproductoPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.articulo = navParams.get('item');
     console.log(this.articulo);
-    console.log("DETALLE PRODUCTO CONSTRUCTO>r");
+    console.log("DETALLE PRODUCTO CONSTRUCTO>r");// DEBUG ONLY
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad DetallesproductoPage');
+    console.log('ionViewDidLoad DetallesproductoPage');// DEBUG ONLY
   }
 
   addToCarrito(articulo: Articulo){
-    console.log("ITEM TO CARRITO");
+    console.log("ITEM TO CARRITO");// DEBUG ONLY
     this.navCtrl.push(CarritaPage, {item:articulo});
   }
 
