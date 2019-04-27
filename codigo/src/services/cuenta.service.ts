@@ -25,12 +25,13 @@ export class CuentaService {
     )};
     
     addCuenta(value:Cuenta) {
-        this.cuentasRef.push({  nombre: value.nombre,
-                                email: value.email,
-                                iban: value.iban,
-                                telefono: value.telefono,
-                                userID: this.userID
-                            })
+        this.cuentasRef.push({  
+          nombre: value.nombre,
+          email: value.email,
+          iban: value.iban,
+          telefono: value.telefono,
+          userID: this.userID
+      })
         
     }
         

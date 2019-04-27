@@ -11,6 +11,7 @@ import { Cuenta } from "../../models/cuenta";
 import { Observable } from 'rxjs/Observable';
 import { CuentaService } from '../../services/cuenta.service';
 import { tap } from 'rxjs/operators';
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 /**
  * Generated class for the SettingsPage page.
@@ -31,6 +32,8 @@ export class SettingsPage {
 
   miCuenta$: Observable<Cuenta[]>;
   cuentas: any;
+
+  CopyTextAreaText:string = "Comienza a usar Uneat con mi código y obtendrás un descuento en tu primera compra! ;)";
  
   constructor(
     public navCtrl: NavController,
@@ -40,7 +43,8 @@ export class SettingsPage {
     private afAuth: AngularFireAuth,
     fb: FormBuilder,
     public toastCtrl: ToastController,
-    private cuentaService: CuentaService
+    private cuentaService: CuentaService,
+    private clipboard: Clipboard
     ){
 		this.form = fb.group({
       nombre: ['',Validators.required],
@@ -49,9 +53,9 @@ export class SettingsPage {
       iban: ['',Validators.required]
     });
     
-      this.cuentaService.getCuenta[0].subscribe( i => {
-        this.cuentas = i;
-      })
+      // this.cuentaService.getCuenta[0].subscribe( i => {
+      //   this.cuentas = i;
+      // })
   }
 
 
@@ -96,6 +100,8 @@ export class SettingsPage {
 //   this.auth.registrar({email:data.correo})
 // }
 
-  
+copyText(){
+  this.clipboard.copy(this.CopyTextAreaText);
+}
 
 }

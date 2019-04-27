@@ -5,8 +5,8 @@ import { MyApp } from './app.component';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 import { Services } from '@angular/core/src/view';
-
 
 import {FIREBASE_CONFIG} from '../app/firebase.credentials';
 import {AngularFireModule} from 'angularfire2';
@@ -65,14 +65,15 @@ import { CuentaService } from '../services/cuenta.service';
         DetallesproductoPage
     ],
     providers: [
-    AngularFireAuth,
-    AuthService,
-    CafeteriaService,
-    MenuService,
-    CuentaService,
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+        AngularFireAuth,
+        AuthService,
+        CafeteriaService,
+        MenuService,
+        CuentaService,
+        StatusBar,
+        Clipboard,
+        SplashScreen,
+        {provide: ErrorHandler, useClass: IonicErrorHandler},
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
