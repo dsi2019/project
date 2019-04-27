@@ -19,9 +19,9 @@
                 <p>{{favorito.nombre}}</p>
                 <p>{{favorito.precio}}</p>
             </button>
-            <!-- <button (click) = "onAddFavorito(articulo)"> 
-                <ion-icon name="heart-outline" ></ion-icon>
-            </button> -->
+            <button (click)="removeFavorito(favorito)"> 
+                <ion-icon name="heart" ></ion-icon>
+            </button>
         </ion-item>
     </ion-list>
 </ion-content>

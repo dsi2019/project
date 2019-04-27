@@ -116,13 +116,16 @@ var MenuService = /** @class */ (function () {
         return this.menu;
     };
     MenuService.prototype.addArticuloFavorito = function (value) {
-        this.mis_articulosRef.push({
+        var newRef = this.mis_articulosRef.push({
             nombre: value.nombre,
             precio: value.precio,
             foto: value.foto,
             tipo_de_comida: value.tipo_de_comida,
             userID: this.userID,
         });
+    };
+    MenuService.prototype.removeArticuloFavorito = function (value) {
+        this.mis_articulosRef.remove(value.$key);
     };
     MenuService.prototype.getArticulosFavoritos = function () {
         var _this = this;
@@ -225,10 +228,9 @@ var CuentaService = /** @class */ (function () {
     };
     CuentaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], CuentaService);
     return CuentaService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=cuenta.service.js.map
@@ -388,7 +390,7 @@ var FavoritosPage = /** @class */ (function () {
     ;
     FavoritosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-favoritos',template:/*ion-inline-start:"C:\Users\raul_\Desktop\project\codigo\src\pages\favoritos\favoritos.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Favoritos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-fab bottom right>\n\n      <button ion-fab color="primary">\n\n        <ion-icon name="cart"></ion-icon>\n\n      </button>\n\n    </ion-fab>\n\n    <ion-list>\n\n        <ion-item *ngFor="let favorito of misFavoritos$ | async">\n\n            <button>\n\n                <p>{{favorito.nombre}}</p>\n\n                <p>{{favorito.precio}}</p>\n\n            </button>\n\n            <!-- <button (click) = "onAddFavorito(articulo)"> \n\n                <ion-icon name="heart-outline" ></ion-icon>\n\n            </button> -->\n\n        </ion-item>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\raul_\Desktop\project\codigo\src\pages\favoritos\favoritos.html"*/,
+            selector: 'page-favoritos',template:/*ion-inline-start:"C:\Users\raul_\Desktop\project\codigo\src\pages\favoritos\favoritos.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n    <ion-title>Favoritos</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-fab bottom right>\n\n      <button ion-fab color="primary">\n\n        <ion-icon name="cart"></ion-icon>\n\n      </button>\n\n    </ion-fab>\n\n    <ion-list>\n\n        <ion-item *ngFor="let favorito of misFavoritos$ | async">\n\n            <button>\n\n                <p>{{favorito.nombre}}</p>\n\n                <p>{{favorito.precio}}</p>\n\n            </button>\n\n            <button (click)="removeFavorito(favorito)"> \n\n                <ion-icon name="heart" ></ion-icon>\n\n            </button>\n\n        </ion-item>\n\n    </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\raul_\Desktop\project\codigo\src\pages\favoritos\favoritos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
     ], FavoritosPage);

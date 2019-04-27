@@ -481,8 +481,8 @@ export class MenuService{
         return this.menu;
     }
 
-    addArticuloFavorito(value:Articulo) {
-        this.mis_articulosRef.push({
+    addArticuloFavorito(value) {
+        const newRef = this.mis_articulosRef.push({
             nombre: value.nombre,
             precio: value.precio,
             foto: value.foto,
@@ -490,6 +490,11 @@ export class MenuService{
             userID: this.userID,
         });
         }
+        
+
+    removeArticuloFavorito(value){
+        this.mis_articulosRef.remove(value.$key);
+    }
 
     getArticulosFavoritos(){
         if (!this.userID) return;
