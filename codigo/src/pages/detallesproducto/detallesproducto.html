@@ -14,13 +14,13 @@
   <form >
   <ion-list >
     <ion-row justify-content-center align-items-center style="height: 100%">
-        <img src={{value.foto}} height= "200">
+        <img src={{articulo.foto}} height= "200">
     </ion-row>
     <ion-item>
-      <ion-label> {{value.nombre}} </ion-label >
+      <ion-label> {{articulo.nombre}} </ion-label >
     </ion-item>
     <ion-item>
-      <ion-label> {{value.precio}}€</ion-label >
+      <ion-label> {{articulo.precio}}€</ion-label >
     </ion-item>
     <ion-item>
       <ion-label>Cantidad</ion-label>
@@ -34,6 +34,6 @@
       </ion-select>
     </ion-item>
   </ion-list >
-  <button ion-button block type = "submit"> Añadir a su carrito </button >
+  <button ion-button block type = "submit" (click)="addToCarrito(articulo)"> Añadir a su carrito </button >
   </form >
 </ion-content>
