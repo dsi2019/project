@@ -8,6 +8,7 @@ import { ToastController } from 'ionic-angular';
 import { AuthService } from '../../services/auth.service';
 import {HomePage} from '../home/home';
 import {LoginPage} from '../login/login';
+import { CuentaService } from '../../services/cuenta.service';
 
 @IonicPage()
 @Component({
@@ -23,13 +24,14 @@ export class RegistrarPage {
     public navParams: NavParams,
     private auth: AuthService,
     fb: FormBuilder,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    private cuentaService: CuentaService;
     ){
 		this.form = fb.group({
       nombre: ['',Validators.required],
 			correo: ['',Validators.required],
 			contraseña: ['',Validators.required]
-		});
+    });
   }
 
   ionViewDidLoad() {
@@ -42,6 +44,11 @@ export class RegistrarPage {
   }
 
   registrar_existoso(){
+    this.cuentaService.addCuenta({nombre: "Celia Romero",
+              email: "crg@gmail.com", 
+              telefono: "987654321",
+              iban: "12345678900987654321"
+    });
     let toast = this.toastCtrl.create({
       message: '¡Cuenta creada!',
       duration: 2000,
