@@ -44,8 +44,8 @@ export class MenuPage {
   aDetalles(){
     this.navCtrl.push(DetallesproductoPage,{item:{nombre: "Leche",
     precio: 0.75,
-    foto: "leche",
-    tipo_de_comida: "bebidas",
+    foto: "../assets/cafeterias/leche.jpg",
+    tipo_de_comida: "Bebidas",
     userID: "Raul"
   }});
 }

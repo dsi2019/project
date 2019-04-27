@@ -81,7 +81,7 @@ var DetallesproductoPage = /** @class */ (function () {
     };
     DetallesproductoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-detallesproducto',template:/*ion-inline-start:"C:\Users\raul_\Desktop\project\codigo\src\pages\detallesproducto\detallesproducto.html"*/'<!--\n  Generated template for the DetallesproductoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form >\n  <ion-list >\n      <ion-item *ngFor="let item of items">\n          <ion-thumbnail slot="start">\n            <ion-img [src]="leche"></ion-img>\n          </ion-thumbnail>\n        </ion-item>\n  <ion-item >\n  <ion-label > Nombre </ion-label >\n  <ion-input type = "text"></ion-input >\n  </ion-item >\n  <ion-item >\n  <ion-label > Tipo </ion-label >\n  <ion-input type = "text"  ></ion-input >\n  </ion-item >\n  <ion-item>\n      <ion-label>Cantidad</ion-label>\n      <ion-select>\n        <ion-option value="1">1</ion-option>\n        <ion-option value="dos">2</ion-option>\n        <ion-option value="tres">3</ion-option>\n        <ion-option value="cuatro">4</ion-option>\n        <ion-option value="cinco">5</ion-option>\n        <ion-option value="seis">6</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list >\n  <button ion-button block type = "submit" > Comprar Ahora </button >\n  </form >\n</ion-content>\n'/*ion-inline-end:"C:\Users\raul_\Desktop\project\codigo\src\pages\detallesproducto\detallesproducto.html"*/,
+            selector: 'page-detallesproducto',template:/*ion-inline-start:"C:\Users\raul_\Desktop\project\codigo\src\pages\detallesproducto\detallesproducto.html"*/'<!--\n  Generated template for the DetallesproductoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form >\n  <ion-list >\n          <ion-row justify-content-center align-items-center style="height: 100%">\n              <img src= "../assets/cafeterias/leche.jpg" height= "200">\n          </ion-row>\n  <ion-item>\n  <ion-label > {{value.nombre}} </ion-label >\n  </ion-item >\n  <ion-item >\n  <ion-label > {{value.tipo_de_comida}} </ion-label >\n  </ion-item >\n  <ion-item>\n      <ion-label>Cantidad</ion-label>\n      <ion-select>\n        <ion-option value="1">1</ion-option>\n        <ion-option value="dos">2</ion-option>\n        <ion-option value="tres">3</ion-option>\n        <ion-option value="cuatro">4</ion-option>\n        <ion-option value="cinco">5</ion-option>\n        <ion-option value="seis">6</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list >\n  <button ion-button block type = "submit" > Comprar Ahora </button >\n  </form >\n</ion-content>\n'/*ion-inline-end:"C:\Users\raul_\Desktop\project\codigo\src\pages\detallesproducto\detallesproducto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], DetallesproductoPage);
@@ -297,8 +297,8 @@ var MenuPage = /** @class */ (function () {
     MenuPage.prototype.aDetalles = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__["a" /* DetallesproductoPage */], { item: { nombre: "Leche",
                 precio: 0.75,
-                foto: "#",
-                tipo_de_comida: "bebidas",
+                foto: "../assets/cafeterias/leche.jpg",
+                tipo_de_comida: "Bebidas",
                 userID: "Raul"
             } });
     };
@@ -306,9 +306,10 @@ var MenuPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-menu',template:/*ion-inline-start:"C:\Users\raul_\Desktop\project\codigo\src\pages\menu\menu.html"*/'<ion-header>\n\n  <ion-navbar>\n\n    <ion-title>Menu</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding class="card-background-page">\n\n  <ion-fab bottom right>\n\n    <button ion-fab color="primary" (click) = "aCarrita()">\n\n      <ion-icon name="cart"></ion-icon>\n\n    </button>\n\n  </ion-fab>\n\n  <ion-row>\n\n    <ion-title>Pedir Comida</ion-title>\n\n  </ion-row>\n\n  <br>\n\n  <ion-row>\n\n      <ion-col col-6>\n\n          <ion-searchbar>\n\n            </ion-searchbar>\n\n      </ion-col>\n\n      <ion-col col-6>\n\n        <ion-item>\n\n          <ion-label>Tipo de Comida</ion-label>\n\n          <ion-select [(ngModel)]="category">\n\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n\n            <ion-option value="bf">Bebidas Frias</ion-option>\n\n            <ion-option value="ag">Agua</ion-option>\n\n            <ion-option value="hb">Hamburguesas</ion-option>\n\n            <ion-option value="rc">Raciones</ion-option>\n\n            <ion-option value="pc">Platos Combinados</ion-option>\n\n            <ion-option value="cs">Croissant Salados</ion-option>\n\n            <ion-option value="sd">Sandwiches</ion-option>\n\n            <ion-option value="bg">Baguettes</ion-option>\n\n            <ion-option value="bd">Bocadillos</ion-option>\n\n            <ion-option value="pm">Pulgas y Montados</ion-option>\n\n            <ion-option value="fs">Fruta/Suplementos</ion-option>\n\n            <ion-option value="vl">Vinos y Licores</ion-option>\n\n          </ion-select>\n\n        </ion-item>\n\n      </ion-col>\n\n  </ion-row>\n\n  <hr>\n\n  <ion-list>\n\n      <ion-item *ngFor="let articulo of menu">\n\n          <button (click)= "aDetalles()">\n\n              <p>{{articulo.nombre}}</p>\n\n              <p>{{articulo.precio}}</p>\n\n          </button>\n\n          <button (click) = "onAddFavorito(articulo)"> \n\n              <ion-icon name="heart-outline" ></ion-icon>\n\n          </button>\n\n      </ion-item>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\raul_\Desktop\project\codigo\src\pages\menu\menu.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]) === "function" && _c || Object])
     ], MenuPage);
     return MenuPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=menu.js.map
@@ -880,16 +881,6 @@ var LoginPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(90);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(373);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__);
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -899,7 +890,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
 
 
 
@@ -1355,36 +1345,33 @@ var MenuService = /** @class */ (function () {
                 tipo_de_comida: "vl",
             },
         ];
+        this.mis_articulosRef = this.db.list('uneat-3b5eb');
         this.afAuth.authState.subscribe(function (user) {
             if (user)
                 _this.userID = user.uid;
         });
-        this.mis_articulosRef = db.list('mis_articulos');
-        this.mis_articulos = this.mis_articulosRef.snapshotChanges().pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
-            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
-        }));
     }
     MenuService.prototype.getMenu = function () {
         return this.menu;
     };
+    // Sólo usando leche para probar Favoritos antes que tenemos la lista en el menu
     MenuService.prototype.addArticuloFavorito = function (value) {
-        this.mis_articulosRef.push(value);
+        return this.mis_articulosRef.push({ nombre: value.nombre,
+            precio: value.precio,
+            foto: value.foto,
+            tipo_de_comida: value.tipo_de_comida,
+            userID: this.userID
+        });
     };
     MenuService.prototype.getArticulosFavoritos = function () {
-        var _this = this;
-        if (!this.userID)
-            return;
-        return this.db.list("mis_articulos", function (ref) {
-            var q = ref.orderByChild("userID").equalTo(_this.userID);
-            return q;
-        });
+        console.log(this.userID);
+        return this.mis_articulosRef;
     };
     MenuService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], MenuService);
     return MenuService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=menu.service.js.map
