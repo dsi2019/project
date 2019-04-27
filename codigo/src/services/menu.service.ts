@@ -482,7 +482,13 @@ export class MenuService{
     }
 
     addArticuloFavorito(value:Articulo) {
-        this.mis_articulosRef.push(value);
+        this.mis_articulosRef.push({
+            nombre: value.nombre,
+            precio: value.precio,
+            foto: value.foto,
+            tipo_de_comida: value.tipo_de_comida,
+            userID: this.userID,
+        });
         }
 
     getArticulosFavoritos(){
