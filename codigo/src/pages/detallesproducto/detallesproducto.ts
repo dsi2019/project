@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {MenuService} from '../../services/menu.service'
 
 /**
  * Generated class for the DetallesproductoPage page.
