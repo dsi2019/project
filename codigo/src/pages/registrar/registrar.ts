@@ -25,7 +25,7 @@ export class RegistrarPage {
     private auth: AuthService,
     fb: FormBuilder,
     public toastCtrl: ToastController,
-    private cuentaService: CuentaService;
+    private cuentaService: CuentaService
     ){
 		this.form = fb.group({
       nombre: ['',Validators.required],
@@ -43,11 +43,11 @@ export class RegistrarPage {
     this.navCtrl.push(LoginPage);
   }
 
-  registrar_existoso(){
-    this.cuentaService.addCuenta({nombre: "Celia Romero",
-              email: "crg@gmail.com", 
-              telefono: "987654321",
-              iban: "12345678900987654321"
+  registrar_existoso(nombre, email){
+    this.cuentaService.addCuenta({nombre: nombre,
+              email: email, 
+              telefono: "",
+              iban: ""
     });
     let toast = this.toastCtrl.create({
       message: '¡Cuenta creada!',
@@ -63,7 +63,7 @@ registrar(){
   console.log("registering");
   console.log(data);
   this.auth.registrar({email:data.correo, password:data.contraseña}).then(
-    () => this.registrar_existoso(),
+    () => this.registrar_existoso(data.nombre, data.correo),
     error => this.registrarError = error.message
   );
   this.navCtrl.pop();

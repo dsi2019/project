@@ -28,12 +28,33 @@ export class CuentaService {
         this.cuentasRef.push({  nombre: value.nombre,
                                 email: value.email,
                                 iban: value.iban,
+                                telefono: value.telefono,
                                 userID: this.userID
                             })
         
     }
         
-
+    getCuenta() {
+        if(!this.userID) return;
+        return this.db.list('cuentas', ref => {
+            let q = ref.orderByChild("userID").equalTo(this.userID);
+            return q;
+            // var defer = $q.defer();
+            // let ref= x.orderByChild("userID").equalTo(this.userID);
+            // // return q;
+            // ref.once("value",function(copySnap){
+            //     if(!copySnap.exists()){
+            //       defer.reject(null);
+            //     }else{
+            //       var listObj = copySnap.val();
+            //       var list = Object.keys(listObj).map(function(copy){
+            //           return listObj[copy]});
+            //       defer.resolve(list[0]);
+            //     }
+            //   })
+            //   return defer.promise;
+        })
+    }
 
 		
   }

@@ -8,10 +8,27 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-content padding>
+    <ion-list *ngFor="let cuenta of cuentas">
       <ion-item>
-      <ion-label>Nombre</ion-label>
-      <ion-input></ion-input>
+        <ion-label>Nombre</ion-label>
+        <ion-input type="text" name="nombre">{{cuenta.nombre}}</ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-label>Email</ion-label>
+        <ion-input type="text" name="email">{{cuenta.email}}</ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teléfono</ion-label>
+        <ion-input type="text" name="telefono">{{cuenta.telefono}}</ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>IBAN</ion-label>
+          <ion-input type="text" name="iban">{{cuenta.iban}}</ion-input>
+        </ion-item>
+    </ion-list>
       <button ion-button block>Guardar</button>
+      <button ion-button>Compartir</button>
 </ion-content>
