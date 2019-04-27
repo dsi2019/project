@@ -5,6 +5,8 @@ import { CafeteriaService } from '../../services/cafeteria.service';
 import { Cafeteria } from '../../models/cafeteriamodel';
 
 import {MenuPage} from '../menu/menu';
+import { FavoritosPage } from '../favoritos/favoritos';
+import { SettingsPage } from '../settings/settings';
 
 @Component({
   selector: 'page-home',
@@ -23,5 +25,11 @@ export class HomePage {
 
   empiezaPedido(){
     this.navCtrl.push(MenuPage);
+  }
+  showFavoritos() {
+    this.navCtrl.push(FavoritosPage);
+  }
+  showSettings() {
+    this.navCtrl.push(SettingsPage);
   }
 }

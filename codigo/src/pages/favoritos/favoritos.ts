@@ -46,4 +46,6 @@ export class FavoritosPage {
     this.menuService.removeArticuloFavorito(value);
   }
 
+
+
 }

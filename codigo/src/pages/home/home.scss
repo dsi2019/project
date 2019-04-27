@@ -1,11 +1,50 @@
 page-home {
     h1 {
-        font-size: 64px;
+        font-size: 80px;
         text-align: center;
+        font-family: 'Open Sans Condensed', sans-serif;
+        // color: #3ea2e6;
+        text-shadow: 5px 5px 10px #8195a2;
     }
 
-    ion-card-subtitle{
-        color: grey;
-        text-align: center;
-    }
+ion-card-subtitle{
+    color: grey;
+    text-align: center;
+}
+
+.botones {
+    background-color: #4CAF50;
+    border: 5px;
+    color: white;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.add{
+    background-color: #3ea2e6;
+}
+.add:hover {
+    backgound-color: #1a84cb;
+}
+
+.love {
+    background-color: #de5146;
+}
+.love:hover {
+    background-color: #98231b;
+}
+
+.settings {
+    background-color: #f5b567; 
+}
+.settings:hover {
+    background-color: #c06f0c;
+}
+
+i {
+    font-size: 18px;
+}
+
 }
