@@ -434,7 +434,7 @@ export class MenuService{
         foto: "#",
         tipo_de_comida: "vl",
         },
-        {nombre: "Valdepenas Dos Anos o Similar/Rioja",
+        {nombre: "Valdepeñas Dos Años o Similar/Rioja",
         precio: 1.10,
         foto: "#",
         tipo_de_comida: "vl",
@@ -482,7 +482,13 @@ export class MenuService{
     }
 
     addArticuloFavorito(value:Articulo) {
-        this.mis_articulosRef.push(value);
+        this.mis_articulosRef.push({
+            nombre: value.nombre,
+            precio: value.precio,
+            foto: value.foto,
+            tipo_de_comida: value.tipo_de_comida,
+            userID: this.userID,
+        });
         }
 
     getArticulosFavoritos(){
