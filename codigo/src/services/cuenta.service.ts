@@ -1,0 +1,49 @@
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Cuenta } from "../models/cuenta";
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { AngularFireAuth } from 'angularfire2/auth';
+// import { _ParseAST } from "@angular/compiler";
+
+@Injectable()
+export class CuentaService {
+ 
+    cuentasRef: AngularFireList<Cuenta[]>;
+    cuentas: Observable<Cuenta[]>;
+    userID: string;
+
+  constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
+    this.afAuth.authState.subscribe(user => {
+        if(user) this.userID = user.uid
+      })
+    this.cuentasRef = db.list('cuentas');
+    this.cuentas = this.cuentasRef.snapshotChanges().pipe(
+        map(changes => 
+            changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+          )
+    )};
+    
+    addCuenta(value:Cuenta) {
+        this.cuentasRef.push({  nombre: value.nombre,
+                                email: value.email,
+                                iban: value.iban,
+                                userID: this.userID
+                            })
+        
+    }
+        
+
+
+		
+  }
+
+
+ 
+
+
+
+
+  
+
+

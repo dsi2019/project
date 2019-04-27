@@ -29,6 +29,7 @@ import {CafeteriaService} from '../services/cafeteria.service';
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
 import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
+import { CuentaService } from '../services/cuenta.service';
 
 @NgModule({
     declarations: [
@@ -68,6 +69,7 @@ import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto'
     AuthService,
     CafeteriaService,
     MenuService,
+    CuentaService,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
