@@ -21,11 +21,12 @@ export class CarritaPage {
 
   ionViewWillEnter(){
     this.carrito = this.listaCarrito.getCarritoItems();
+    console.log(this.listaCarrito);
   }
-/*
-  onAddFavorito(value: Articulo){
-    console.log("adding favorito from menu");
+
+  onAddCarrita(value: Articulo){
+    console.log("adding item to shopping cart");
     this.listaCarrito.addCarritoItem(value);
-  }*/
+  }
 
 }

@@ -28,6 +28,7 @@ import {CafeteriaService} from '../services/cafeteria.service';
 
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
+import { ListaCarrito } from '../services/carrita.service'
 import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
 
 @NgModule({
@@ -70,6 +71,7 @@ import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto'
     MenuService,
     StatusBar,
     SplashScreen,
+    ListaCarrito,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

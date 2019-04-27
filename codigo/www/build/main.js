@@ -526,6 +526,7 @@ var MenuService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CarritaPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__ = __webpack_require__(463);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -537,27 +538,33 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/**
- * Generated class for the CarritaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+
 var CarritaPage = /** @class */ (function () {
-    function CarritaPage(navCtrl, navParams) {
+    function CarritaPage(navCtrl, navParams, listaCarrito) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.listaCarrito = listaCarrito;
+        this.carrito = [];
     }
     CarritaPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CarritaPage');
+    };
+    CarritaPage.prototype.ionViewWillEnter = function () {
+        this.carrito = this.listaCarrito.getCarritoItems();
+        console.log(this.listaCarrito);
+    };
+    CarritaPage.prototype.onAddCarrita = function (value) {
+        console.log("adding item to shopping cart");
+        this.listaCarrito.addCarritoItem(value);
     };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-carrita',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/'<!--\n  Generated template for the CarritaPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let cart of carrito">\n      <p>{{cart.nombre}}</p>\n      <p>{{cart.precio}}</p>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */]) === "function" && _c || Object])
     ], CarritaPage);
     return CarritaPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=carrita.js.map
@@ -989,13 +996,15 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(74);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_menu_service__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__pages_detallesproducto_detallesproducto__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_carrita_service__ = __webpack_require__(463);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__ = __webpack_require__(140);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1032,7 +1041,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__["a" /* SettingsPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
+                __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1063,7 +1072,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__["a" /* MenuPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_21__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
+                __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["a" /* AngularFireAuth */],
@@ -1072,6 +1081,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_20__services_menu_service__["a" /* MenuService */],
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
+                __WEBPACK_IMPORTED_MODULE_21__services_carrita_service__["a" /* ListaCarrito */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]],
@@ -1180,6 +1190,52 @@ var FIREBASE_CONFIG = {
     messagingSenderId: "671107757113"
 };
 //# sourceMappingURL=firebase.credentials.js.map
+
+/***/ }),
+
+/***/ 463:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListaCarrito; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ListaCarrito = /** @class */ (function () {
+    function ListaCarrito() {
+        this.carrito = [
+            { nombre: "Leche",
+                precio: 0.75,
+                foto: "#",
+                tipo_de_comida: "bc"
+            },
+        ];
+    }
+    ListaCarrito.prototype.getCarritoItems = function () {
+        return this.carrito;
+    };
+    ListaCarrito.prototype.addCarritoItem = function (value) {
+        this.carrito.push(value);
+    };
+    ListaCarrito.prototype.removeCarritoItem = function (value) {
+        // todo
+    };
+    ListaCarrito = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], ListaCarrito);
+    return ListaCarrito;
+}());
+
+//# sourceMappingURL=carrita.service.js.map
 
 /***/ }),
 
