@@ -28,11 +28,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage, icon:"home" },
-      { title: 'Favoritos', component: FavoritosPage, icon: "heart-outline"},
-      { title: 'Cuenta', component: SettingsPage, icon:"settings"},
-      { title: 'Logout', component: LoginPage, icon: "log-out"},
-      { title: 'Shopping Cart', component: CarritaPage, icon: "Shopping-cart"}
+      { title: ' Home', component: HomePage, icon:"home" },
+      { title: ' Favoritos', component: FavoritosPage, icon: "heart-outline"},
+      { title: ' Cuenta', component: SettingsPage, icon:"settings"},
+      { title: ' Logout', component: LoginPage, icon: "log-out"},
+      { title: ' Shopping Cart', component: CarritaPage, icon: "cart"}
     ];
   }
 

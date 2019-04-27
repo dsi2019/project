@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Articulo } from '../../models/articulo';
 import { ListaCarrito } from '../../services/carrita.service'
 
-
 @IonicPage()
 @Component({
   selector: 'page-carrita',
@@ -14,23 +13,25 @@ export class CarritaPage {
   carrito: Articulo[]=[];
   precioTotal: number= 0.0;
   aux: any = null;
+  cantidad: number = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private listaCarrito: ListaCarrito) {
     this.aux = navParams.get('item');
-    console.log("DENTRO DE CARRITA.TS constructor");// DEBUG ONLY
+    this.cantidad = navParams.get('item2');
+    console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad);// DEBUG ONLY
     console.log(this.carrito);
-    
+
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CarritaPage');
     if(this.aux != null){
-      this.carrito = this.listaCarrito.addCarritoItem(this.aux);
+      this.carrito = this.listaCarrito.addCarritoItem(this.aux); // VOID TYPE
       console.log("CARRITO ionViewDidLoad");// DEBUG ONLY
       console.log(this.aux);// DEBUG ONLY
     }
-    
   }
+
   ionViewWillEnter(){
     this.precioTotal = this.listaCarrito.getTotalPrice();
     this.carrito = this.listaCarrito.getCarritoItems();
@@ -43,5 +44,4 @@ export class CarritaPage {
     this.listaCarrito.removeCarritoItem(articulo);
     console.log(articulo);// DEBUG ONLY
   }
-
 }

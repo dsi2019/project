@@ -21,7 +21,7 @@ export class ListaCarrito{
     }
 
     removeCarritoItem(articulo:Articulo){
-        this.carrito.remove(articulo);
+        //this.carrito.remove(articulo);
     }
 
     getTotalPrice(){

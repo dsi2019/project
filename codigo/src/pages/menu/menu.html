@@ -43,7 +43,7 @@
   <hr>
   <ion-list>
       <ion-item *ngFor="let articulo of menu">
-          <button (click)= "aDetalles(articulo)">
+          <button (click)="aDetalles(articulo)">
               <p>{{articulo.nombre}}</p>
               <p>{{articulo.precio}}€</p>
           </button>
