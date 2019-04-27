@@ -472,11 +472,11 @@ export class MenuService{
     }
 
     // Sólo usando leche para probar Favoritos antes que tenemos la lista en el menu
-    addArticuloFavorito() {
-        return this.mis_articulosRef.push({nombre: "Leche",
-            precio: 0.75,
-            foto: "#",
-            tipo_de_comida: "bebidas",
+    addArticuloFavorito(value:Articulo) {
+        return this.mis_articulosRef.push({nombre: value.nombre,
+            precio: value.precio,
+            foto: value.foto,
+            tipo_de_comida: value.tipo_de_comida,
             userID: this.userID
         });
     }

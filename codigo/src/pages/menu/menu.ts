@@ -34,7 +34,7 @@ export class MenuPage {
 
   onAddFavorito(value: Articulo){
     console.log("adding favorito from menu");
-    this.menuService.addArticuloFavorito();
+    this.menuService.addArticuloFavorito(value);
   }
 
   aCarrita(){
