@@ -34,7 +34,7 @@ export class MyApp {
       { title: 'Favoritos', component: FavoritosPage, icon: "heart-outline"},
       { title: 'Cuenta', component: SettingsPage, icon:"settings"},
       { title: 'Logout', component: LoginPage, icon: "log-out"},
-      { title: 'Shopping Cart', component: CarritaPage, icon: "Shopping-cart" }
+      { title: 'Shopping Cart', component: CarritaPage, icon: "Shopping-cart"}
     ];
   }
 

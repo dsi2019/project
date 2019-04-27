@@ -22,5 +22,10 @@ export class CarritaPage {
   ionViewWillEnter(){
     this.carrito = this.listaCarrito.getCarritoItems();
   }
+/*
+  onAddFavorito(value: Articulo){
+    console.log("adding favorito from menu");
+    this.listaCarrito.addCarritoItem(value);
+  }*/
 
 }
