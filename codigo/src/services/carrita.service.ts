@@ -41,11 +41,12 @@ export class ListaCarrito{
     getTotalPrice(){
             var aux = this.carrito.length;
             var i = 0;
-            while(aux < i){
+            while(i < aux){
                 this.total = this.total + this.carrito[i].precio;
-                console.log(this.total);
+                
                 i++;
             }
+            console.log(this.carrito.length);
         return this.total;
     }
 }
