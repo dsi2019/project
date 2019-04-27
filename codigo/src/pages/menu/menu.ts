@@ -42,7 +42,7 @@ export class MenuPage {
   }
 
   aDetalles(articulo: Articulo){
-  this.navCtrl.push(DetallesproductoPage, {item:articulo})
+    this.navCtrl.push(DetallesproductoPage, {item:articulo})
 }
 
 }

@@ -1,15 +1,36 @@
-<!--
-  Generated template for the CarritaPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
-    <ion-title>carrita</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Carrito</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+      <ion-card-header>
+        <ion-card-title>Articulos en mi carrito</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+       <ion-list>
+          <ion-item *ngFor="let articulo of carrito">
+            <ion-thumbnail item-right>
+              <img [src]= "articulo?.foto"/>
+            </ion-thumbnail>
+              {{articulo.nombre}}
+              <p>{{articulo.precio}}€</p>
+            </ion-item>
+       </ion-list>
+      </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <button>PAGAR AHORA</button>
+        </ion-card-content>
 
+    </ion-card>
 </ion-content>
