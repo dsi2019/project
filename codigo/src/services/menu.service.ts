@@ -487,9 +487,8 @@ export class MenuService{
 
     // no sirve ahora
     getArticulosFavoritos(){
-        console.log(this.userID);
         if (!this.userID) return;
-        this.mis_articulosRef = this.db.list(`mis_articulos/${this.userID}`);
+        // return this.db.list(`mis_articulos/${this.userID}`);
         return this.mis_articulosRef
     }
 

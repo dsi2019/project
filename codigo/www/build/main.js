@@ -1372,10 +1372,9 @@ var MenuService = /** @class */ (function () {
     };
     // no sirve ahora
     MenuService.prototype.getArticulosFavoritos = function () {
-        console.log(this.userID);
         if (!this.userID)
             return;
-        this.mis_articulosRef = this.db.list("mis_articulos/" + this.userID);
+        // return this.db.list(`mis_articulos/${this.userID}`);
         return this.mis_articulosRef;
     };
     MenuService = __decorate([
