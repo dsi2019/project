@@ -431,7 +431,7 @@ export class MenuService{
         foto: "#",
         tipo_de_comida: "vl",
         },
-        {nombre: "Valdepenas Dos Anos o Similar/Rioja",
+        {nombre: "Valdepeñas Dos Años o Similar/Rioja",
         precio: 1.10,
         foto: "#",
         tipo_de_comida: "vl",
