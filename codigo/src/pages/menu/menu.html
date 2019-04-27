@@ -42,17 +42,23 @@
   </ion-row>
   <hr>
   <ion-list>
-      <ion-item *ngFor="let articulo of menu">
-          <button (click)="aDetalles(articulo)">
-              <p>{{articulo.nombre}}</p>
-              <p>{{articulo.precio}}€</p>
-          </button>
-          <button (click) = "onAddFavorito(articulo)"> 
-              <ion-icon name="heart-outline" ></ion-icon>
-          </button>
-          <button (click) = "onAddFavorito(articulo)"> 
-            <ion-icon name="heart-outline" ></ion-icon>
-        </button>
-      </ion-item>
+      <ion-grid>
+          <ion-item *ngFor="let articulo of menu">
+              <ion-row>
+                  <ion-col col-8>
+                      <button (click)= "aDetalles(articulo)" style="background: transparent">
+                            <h5>{{articulo.nombre}}</h5>
+                            <p>{{articulo.precio}}€</p>
+                      </button>
+                  </ion-col>
+                  <ion-col col-4>
+                      <button (click) = "onAddFavorito(articulo)" style="background: transparent"> 
+                          <ion-icon name="heart-outline" ></ion-icon>
+                      </button>
+                  </ion-col>
+            </ion-row>
+          </ion-item>
+      </ion-grid>
+     
   </ion-list>
 </ion-content>
