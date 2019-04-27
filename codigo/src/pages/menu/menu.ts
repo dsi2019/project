@@ -41,13 +41,8 @@ export class MenuPage {
     this.navCtrl.push(CarritaPage);
   }
 
-  aDetalles(){
-    this.navCtrl.push(DetallesproductoPage,{item:{nombre: "Leche",
-    precio: 0.75,
-    foto: "../assets/cafeterias/leche.jpg",
-    tipo_de_comida: "Bebidas",
-    userID: "Raul"
-  }});
+  aDetalles(articulo: Articulo){
+  this.navCtrl.push(DetallesproductoPage, {item:articulo})
 }
 
 }
