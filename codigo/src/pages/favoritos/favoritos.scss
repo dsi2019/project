@@ -1,3 +1,18 @@
 page-favoritos {
-
+    button {
+        background: transparent;
+        text-align: left;
+    }
+    .heart {
+        color: #de5146;
+        font-size: 24px;
+        padding: 10px;
+    }
+    .heart-fav {
+        text-align: right;
+    }
+    
+    p{
+        text-align: left;
+    }
 }

@@ -25706,6 +25706,25 @@ page-cafeterias ion-card-subtitle {
   text-align: center;
 }
 
+page-favoritos button {
+  background: transparent;
+  text-align: left;
+}
+
+page-favoritos .heart {
+  color: #de5146;
+  font-size: 24px;
+  padding: 10px;
+}
+
+page-favoritos .heart-fav {
+  text-align: right;
+}
+
+page-favoritos p {
+  text-align: left;
+}
+
 page-home h1 {
   font-size: 80px;
   text-align: center;
@@ -25758,4 +25777,16 @@ page-home i {
 
 page-menu ion-card {
   padding: 20px;
+}
+
+page-menu button {
+  background: transparent;
+  text-align: left;
+}
+
+page-menu .heart {
+  text-align: right;
+  font-size: 20px;
+  color: #de5146;
+  font-weight: bold;
 }
