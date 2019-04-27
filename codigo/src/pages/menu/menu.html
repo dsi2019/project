@@ -45,7 +45,7 @@
       <ion-item *ngFor="let articulo of menu">
           <button (click)= "aDetalles(articulo)">
               <p>{{articulo.nombre}}</p>
-              <p>{{articulo.precio}}</p>
+              <p>{{articulo.precio}}€</p>
           </button>
           <button (click) = "onAddFavorito(articulo)"> 
               <ion-icon name="heart-outline" ></ion-icon>
