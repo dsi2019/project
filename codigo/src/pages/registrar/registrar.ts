@@ -25,7 +25,7 @@ export class RegistrarPage {
     private auth: AuthService,
     fb: FormBuilder,
     public toastCtrl: ToastController,
-    private cuentaService: CuentaService;
+    private cuentaService: CuentaService
     ){
 		this.form = fb.group({
       nombre: ['',Validators.required],
