@@ -4,8 +4,10 @@ import { Time} from "@angular/common";
 import { Articulo } from "../models/articulo";
 
 
-import​ { ​AngularFireDatabase​ } ​from​ ​"angularfire2/database"​;
+import​ { ​AngularFireDatabase,​ AngularFireList } ​from​ ​"angularfire2/database"​;
 import { AngularFireAuth } from 'angularfire2/auth';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @​Injectable​()
 export class MenuService{
@@ -458,31 +460,36 @@ export class MenuService{
         },
     ];
 
-    private mis_articulosRef = this.db.list<Articulo>('uneat-3b5eb');
+    mis_articulosRef: AngularFireList<Articulo[]>;
+    mis_articulos: Observable<Articulo[]>;
     userID: string;
 
     constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
         this.afAuth.authState.subscribe(user => {
             if(user) this.userID = user.uid
           })
+        this.mis_articulosRef = db.list('mis_articulos');
+        this.mis_articulos = this.mis_articulosRef.snapshotChanges().pipe(
+            map(changes => 
+              changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
+            )
+          );
     }
 
     getMenu(){
         return this.menu;
     }
 
-    // Sólo usando leche para probar Favoritos antes que tenemos la lista en el menu
     addArticuloFavorito(value:Articulo) {
-        return this.mis_articulosRef.push({nombre: value.nombre,
-            precio: value.precio,
-            foto: value.foto,
-            tipo_de_comida: value.tipo_de_comida,
-            userID: this.userID
-        });
-    }
+        this.mis_articulosRef.push(value);
+        }
 
-    getArticulosFavoritos() {
+
+    // no sirve ahora
+    getArticulosFavoritos(){
         console.log(this.userID);
+        if (!this.userID) return;
+        this.mis_articulosRef = this.db.list(`mis_articulos/${this.userID}`);
         return this.mis_articulosRef
     }
 
