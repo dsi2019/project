@@ -1370,12 +1370,14 @@ var MenuService = /** @class */ (function () {
     MenuService.prototype.addArticuloFavorito = function (value) {
         this.mis_articulosRef.push(value);
     };
-    // no sirve ahora
     MenuService.prototype.getArticulosFavoritos = function () {
+        var _this = this;
         if (!this.userID)
             return;
-        // return this.db.list(`mis_articulos/${this.userID}`);
-        return this.mis_articulosRef;
+        return this.db.list("mis_articulos", function (ref) {
+            var q = ref.orderByChild("userID").equalTo(_this.userID);
+            return q;
+        });
     };
     MenuService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),

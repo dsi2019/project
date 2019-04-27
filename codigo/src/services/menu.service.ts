@@ -8,6 +8,7 @@ import​ { ​AngularFireDatabase,​ AngularFireList } ​from​ ​"angularf
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { _ParseAST } from "@angular/compiler";
 
 @​Injectable​()
 export class MenuService{
@@ -484,12 +485,12 @@ export class MenuService{
         this.mis_articulosRef.push(value);
         }
 
-
-    // no sirve ahora
     getArticulosFavoritos(){
         if (!this.userID) return;
-        // return this.db.list(`mis_articulos/${this.userID}`);
-        return this.mis_articulosRef
+        return this.db.list(`mis_articulos`, ref => {
+            let q = ref.orderByChild("userID").equalTo(this.userID);
+            return q;
+        })
     }
 
 }
