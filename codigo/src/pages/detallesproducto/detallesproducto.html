@@ -11,5 +11,29 @@
 </ion-header>
 
 <ion-content padding>
-
+  <form >
+  <ion-list >
+      <ion-row justify-content-center align-items-center style="height: 100%">
+          <img src={{value.foto}} height= "200">
+      </ion-row>
+  <ion-item>
+  <ion-label > Nombre: {{value.nombre}} </ion-label >
+  </ion-item >
+  <ion-item >
+      <ion-label > Precio: {{value.precio}} </ion-label >
+      </ion-item >
+  <ion-item>
+      <ion-label>Cantidad</ion-label>
+      <ion-select>
+        <ion-option value="1">1</ion-option>
+        <ion-option value="dos">2</ion-option>
+        <ion-option value="tres">3</ion-option>
+        <ion-option value="cuatro">4</ion-option>
+        <ion-option value="cinco">5</ion-option>
+        <ion-option value="seis">6</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list >
+  <button ion-button block type = "submit" > Añadir a su carrita </button >
+  </form >
 </ion-content>

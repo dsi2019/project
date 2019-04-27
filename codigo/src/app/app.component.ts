@@ -4,15 +4,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import {FavoritosPage} from '../pages/favoritos/favoritos';
+import { FavoritosPage } from '../pages/favoritos/favoritos';
 import { LoginPage } from '../pages/login/login';
-import {MenuPage} from '../pages/menu/menu';
-import {SettingsPage} from '../pages/settings/settings';
+import { SettingsPage } from '../pages/settings/settings';
 
-
-
+// services
 import { AuthService } from '../services/auth.service';
 import { CafeteriaService } from '../services/cafeteria.service';
+import { CarritaPage } from '../pages/carrita/carrita';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,9 +31,9 @@ export class MyApp {
       { title: 'Home', component: HomePage, icon:"home" },
       { title: 'Favoritos', component: FavoritosPage, icon: "heart-outline"},
       { title: 'Cuenta', component: SettingsPage, icon:"settings"},
-      { title: 'Logout', component: LoginPage, icon: "log-out"}
+      { title: 'Logout', component: LoginPage, icon: "log-out"},
+      { title: 'Shopping Cart', component: CarritaPage, icon: "Shopping-cart"}
     ];
-
   }
 
   initializeApp() {

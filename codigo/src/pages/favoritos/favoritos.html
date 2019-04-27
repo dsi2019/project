@@ -8,12 +8,20 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-      <p>Hello</p>
-      <button ion-item *ngFor="let favorito of misFavoritos$ | async">
-        <p>{{favorito.nombre}}</p>
-       <p>{{favorito.precio}}</p>
-       <p>HELLO</p>
+  <ion-fab bottom right>
+      <button ion-fab color="primary">
+        <ion-icon name="cart"></ion-icon>
       </button>
+    </ion-fab>
+    <ion-list>
+        <ion-item *ngFor="let favorito of misFavoritos$ | async">
+            <button>
+                <p>{{favorito.nombre}}</p>
+                <p>{{favorito.precio}}</p>
+            </button>
+            <button (click)="removeFavorito(favorito)"> 
+                <ion-icon name="heart" ></ion-icon>
+            </button>
+        </ion-item>
     </ion-list>
 </ion-content>

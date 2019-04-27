@@ -40,13 +40,10 @@ export class FavoritosPage {
         }));
       }
     );
-    console.log("dog");
-    // this.misFavoritos$.forEach(element => {
-    //   element.forEach(element1 => {
-    //     console.log("dog");
-    //   });
-    // });
-    // console.log(this.misFavoritos$.forEach((i)=> console.log(i[0].nombre)))
   };
+
+  removeFavorito(value: Articulo){
+    this.menuService.removeArticuloFavorito(value);
+  }
 
 }
