@@ -8,33 +8,33 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class CuentaService {
- 
+
     cuentasRef: AngularFireList<Cuenta[]>;
     cuentas: Observable<Cuenta[]>;
     userID: string;
 
-  constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
+  constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe(user => {
         if(user) this.userID = user.uid
       })
     this.cuentasRef = db.list('cuentas');
     this.cuentas = this.cuentasRef.snapshotChanges().pipe(
-        map(changes => 
-            changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-          )
+        map(changes =>
+            changes.map(c => ({ key: c.payload.key, ...c.payload.val()
+          })))
     )};
-    
+
     addCuenta(value:Cuenta) {
-        this.cuentasRef.push({  
+        this.cuentasRef.push({
           nombre: value.nombre,
           email: value.email,
           iban: value.iban,
           telefono: value.telefono,
           userID: this.userID
       })
-        
+
     }
-        
+
     getCuenta() {
         if(!this.userID) return;
         return this.db.list('cuentas', ref => {
@@ -56,16 +56,4 @@ export class CuentaService {
             //   return defer.promise;
         })
     }
-
-		
   }
-
-
- 
-
-
-
-
-  
-
-

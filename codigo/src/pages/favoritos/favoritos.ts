@@ -1,17 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-
 import {MenuService} from '../../services/menu.service'
 import {Articulo} from '../../models/articulo';
 import { Observable } from 'rxjs/Observable';
-
-/**
- * Generated class for the FavoritosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { map } from 'rxjs/operators';
 
 @IonicPage()
 @Component({
@@ -31,15 +24,16 @@ export class FavoritosPage {
 
   ionViewWillEnter(){
     this.misFavoritos$ = this.menuService
-    .getArticulosFavoritos() 
+    .getArticulosFavoritos()
     .snapshotChanges()
-    .map(
+    .pipe(
+    map(
       changes => {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
-        }));
+        }))
       }
-    );
+    ));
   };
 
   removeFavorito(value: Articulo){

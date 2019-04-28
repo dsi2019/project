@@ -9,16 +9,10 @@ import { AuthService } from '../../services/auth.service';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Cuenta } from "../../models/cuenta";
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 import { CuentaService } from '../../services/cuenta.service';
 import { tap } from 'rxjs/operators';
 import { Clipboard } from '@ionic-native/clipboard/ngx';
-
-/**
- * Generated class for the SettingsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -34,7 +28,7 @@ export class SettingsPage {
   cuentas: any;
 
   CopyTextAreaText:string = "Comienza a usar Uneat con mi código y obtendrás un descuento en tu primera compra! ;)";
- 
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -52,7 +46,7 @@ export class SettingsPage {
       telefono: ['',Validators.required],
       iban: ['',Validators.required]
     });
-    
+
       // this.cuentaService.getCuenta[0].subscribe( i => {
       //   this.cuentas = i;
       // })
@@ -66,14 +60,15 @@ export class SettingsPage {
 
   ionViewWillEnter(){
     this.miCuenta$ = this.cuentaService
-    .getCuenta() 
+    .getCuenta()
     .snapshotChanges()
-    .map(
+    .pipe(
+    map(
       changes => {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
         }));
-      }
+      })
     );
 
     const myObserver = {
