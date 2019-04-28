@@ -25790,3 +25790,7 @@ page-menu .heart {
   color: #de5146;
   font-weight: bold;
 }
+
+page-menu .filtro {
+  font-size: 14px;
+}

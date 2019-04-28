@@ -149,7 +149,7 @@ var MenuService = /** @class */ (function () {
             { nombre: "Botella de Agua",
                 precio: 0.60,
                 foto: "#",
-                tipo_de_comida: "ag",
+                tipo_de_comida: "bf",
             },
             /*  {nombre: "Botella de Agua 1/2 l.",
              precio: 0.80,
@@ -231,41 +231,41 @@ var MenuService = /** @class */ (function () {
                 foto: "#",
                 tipo_de_comida: "pc",
             },
-            { nombre: "Croissant Salado - Jamon York",
+            /* {nombre: "Croissant Salado - Jamon York",
+            precio: 1.50,
+            foto: "#",
+            tipo_de_comida: "bd",
+            }, */
+            { nombre: "Croissant Salado",
                 precio: 1.50,
                 foto: "#",
-                tipo_de_comida: "cs",
+                tipo_de_comida: "sd",
             },
-            { nombre: "Croissant Salado - Embutidos",
-                precio: 1.50,
-                foto: "#",
-                tipo_de_comida: "cs",
+            /* {nombre: "Croissant Salado - Queso",
+            precio: 1.50,
+            foto: "#",
+            tipo_de_comida: "cs",
             },
-            { nombre: "Croissant Salado - Queso",
-                precio: 1.50,
-                foto: "#",
-                tipo_de_comida: "cs",
+            {nombre: "Croissant Salado - Jamon Serrano",
+            precio: 1.60,
+            foto: "#",
+            tipo_de_comida: "cs",
             },
-            { nombre: "Croissant Salado - Jamon Serrano",
-                precio: 1.60,
-                foto: "#",
-                tipo_de_comida: "cs",
+            {nombre: "Croissant Salado - Atun",
+            precio: 1.60,
+            foto: "#",
+            tipo_de_comida: "cs",
             },
-            { nombre: "Croissant Salado - Atun",
-                precio: 1.60,
-                foto: "#",
-                tipo_de_comida: "cs",
+            {nombre: "Croissant Salado - Vegetal",
+            precio: 1.60,
+            foto: "#",
+            tipo_de_comida: "cs",
             },
-            { nombre: "Croissant Salado - Vegetal",
-                precio: 1.60,
-                foto: "#",
-                tipo_de_comida: "cs",
-            },
-            { nombre: "Croissant Salado - Vegetal con Queso",
-                precio: 1.85,
-                foto: "#",
-                tipo_de_comida: "cs",
-            },
+            {nombre: "Croissant Salado - Vegetal con Queso",
+            precio: 1.85,
+            foto: "#",
+            tipo_de_comida: "cs",
+            }, */
             { nombre: "Sandwiches - Jamon York",
                 precio: 1.35,
                 foto: "#",
@@ -467,10 +467,9 @@ var MenuService = /** @class */ (function () {
     };
     MenuService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], MenuService);
     return MenuService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=menu.service.js.map
@@ -557,9 +556,10 @@ var CuentaService = /** @class */ (function () {
     };
     CuentaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
     ], CuentaService);
     return CuentaService;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=cuenta.service.js.map
@@ -574,6 +574,7 @@ var CuentaService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carrita_carrita__ = __webpack_require__(69);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -586,6 +587,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the DetallesproductoPage page.
  *
@@ -593,22 +595,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var DetallesproductoPage = /** @class */ (function () {
-    function DetallesproductoPage(navCtrl, navParams) {
+    function DetallesproductoPage(navCtrl, navParams, fb) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.articulo = navParams.get('item');
         console.log(this.articulo);
         console.log("DETALLE PRODUCTO CONSTRUCTO>r"); // DEBUG ONLY
+        this.form = fb.group({
+            selector: 1
+        });
     }
     DetallesproductoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad DetallesproductoPage'); // DEBUG ONLY
     };
-    DetallesproductoPage.prototype.addToCarrito = function (articulo, cantidad) {
+    DetallesproductoPage.prototype.addToCarrito = function (articulo) {
         console.log("ITEM TO CARRITO"); // DEBUG ONLY
-        var i = document.getElementById("cantidadSelector");
-        console.log("CANTIDAD SELECCIONADA", cantidad);
-        console.log(i);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__carrita_carrita__["a" /* CarritaPage */], { item: articulo, item2: cantidad });
+        //var i = document.getElementById("cantidadSelector")
+        console.log("CANTIDAD SELECCIONADA");
+        //console.log(i);
+        var data = this.form.value;
+        console.log(data.selector);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__carrita_carrita__["a" /* CarritaPage */], { item: articulo, item2: data.selector });
     };
     DetallesproductoPage.prototype.selectChangeHanlder = function (event) {
         this.selectedAmount = event.target.value;
@@ -621,7 +628,7 @@ var DetallesproductoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-detallesproducto',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/detallesproducto/detallesproducto.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">\n  <ion-list >\n    <ion-row justify-content-center align-items-center style="height: 100%">\n        <img src={{articulo.foto}} height= "200">\n    </ion-row>\n    <ion-item>\n      <ion-label> {{articulo.nombre}} </ion-label >\n    </ion-item>\n    <ion-item>\n      <ion-label> {{articulo.precio}}€</ion-label >\n    </ion-item>\n    <ion-item >\n      <ion-label>Cantidad</ion-label>\n      <ion-select formControlName = "selector">\n        <ion-option value="1">1</ion-option>\n        <ion-option value="2">2</ion-option>\n        <ion-option value="3">3</ion-option>\n        <ion-option value="4">4</ion-option>\n        <ion-option value="5">5</ion-option>\n        <ion-option value="6">6</ion-option>\n      </ion-select>\n    </ion-item>\n  </ion-list >\n  <button ion-button block type = "submit" > Añadir a su carrito </button >\n  </form >\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/detallesproducto/detallesproducto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
     ], DetallesproductoPage);
     return DetallesproductoPage;
 }());
@@ -637,7 +644,7 @@ var DetallesproductoPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RegistrarPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_auth_service__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(86);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__login_login__ = __webpack_require__(93);
@@ -774,7 +781,7 @@ var MenuPage = /** @class */ (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/menu/menu.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n          <ion-searchbar>\n            </ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item>\n          <ion-label>Tipo de Comida</ion-label>\n          <ion-select [(ngModel)]="category">\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <!-- <ion-option value="ag">Agua</ion-option> -->\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <!-- <ion-option value="cs">Croissant Salados</ion-option> -->\n            <ion-option value="sd">Sandwiches</ion-option>\n            <!-- <ion-option value="bg">Baguettes</ion-option> -->\n            <ion-option value="bd">Bocadillos</ion-option>\n            <!-- <ion-option value="pm">Pulgas y Montados</ion-option> -->\n            <ion-option value="fs">Fruta y Dulces</ion-option>\n            <ion-option value="sup">Suplementos</ion-option>\n            <!-- <ion-option value="vl">Vinos y Licores</ion-option> -->\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-list>\n      <ion-grid>\n          <ion-item *ngFor="let articulo of menu">\n              <ion-row>\n                  <ion-col col-8>\n                      <button (click)= "aDetalles(articulo)">\n                            <h5>{{articulo.nombre}}</h5>\n                            <p>{{articulo.precio}}€</p>\n                      </button>\n                  </ion-col>\n                  <ion-col col-4>\n                      <button (click) = "onAddFavorito(articulo)" style="background: transparent"> \n                          <ion-icon name="heart-outline" class="heart"></ion-icon>\n                      </button>\n                  </ion-col>\n            </ion-row>\n          </ion-item>\n      </ion-grid>\n     \n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/menu/menu.html"*/,
+            selector: 'page-menu',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/menu/menu.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n          <ion-searchbar placeholder=" ">\n            </ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item class="filtro">\n          <ion-label>Filtrar</ion-label>\n          <ion-select [(ngModel)]="category">\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <!-- <ion-option value="ag">Agua</ion-option> -->\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <!-- <ion-option value="cs">Croissant Salados</ion-option> -->\n            <ion-option value="sd">Sandwiches</ion-option>\n            <!-- <ion-option value="bg">Baguettes</ion-option> -->\n            <ion-option value="bd">Bocadillos</ion-option>\n            <!-- <ion-option value="pm">Pulgas y Montados</ion-option> -->\n            <ion-option value="fs">Fruta y Dulces</ion-option>\n            <ion-option value="sup">Suplementos</ion-option>\n            <!-- <ion-option value="vl">Vinos y Licores</ion-option> -->\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-list>\n      <ion-grid>\n          <ion-item *ngFor="let articulo of menu">\n              <ion-row>\n                  <ion-col col-8>\n                      <button (click)= "aDetalles(articulo)">\n                            <h5>{{articulo.nombre}}</h5>\n                            <p>{{articulo.precio}}€</p>\n                      </button>\n                  </ion-col>\n                  <ion-col col-4>\n                      <button (click) = "onAddFavorito(articulo)" style="background: transparent"> \n                          <ion-icon name="heart-outline" class="heart"></ion-icon>\n                      </button>\n                  </ion-col>\n            </ion-row>\n          </ion-item>\n      </ion-grid>\n     \n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/menu/menu.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
     ], MenuPage);
@@ -875,13 +882,15 @@ var ListaCarrito = /** @class */ (function () {
     function ListaCarrito() {
         this.total = 0.0;
         this.carrito = [];
+        this.cantidad = [];
     }
     ListaCarrito.prototype.getCarritoItems = function () {
         return this.carrito;
     };
-    ListaCarrito.prototype.addCarritoItem = function (articulo) {
+    ListaCarrito.prototype.addCarritoItem = function (articulo, cantidad) {
         this.total = this.total + articulo.precio;
         this.carrito.push(articulo);
+        this.cantidad.push(cantidad);
     };
     ListaCarrito.prototype.removeCarritoItem = function (articulo) {
         //this.carrito.remove(articulo);
@@ -891,11 +900,11 @@ var ListaCarrito = /** @class */ (function () {
         var aux = this.carrito.length;
         var i = 0;
         while (i < aux) {
-            this.total = this.total + this.carrito[i].precio;
+            this.total = this.total + this.carrito[i].precio * this.cantidad[i];
             i++;
         }
         console.log(this.carrito.length); // DEBUG ONLY
-        return this.total;
+        return this.total.toFixed(2);
     };
     ListaCarrito = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
@@ -946,7 +955,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(91);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_menu_service__ = __webpack_require__(138);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_carrita_service__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__ = __webpack_require__(166);
@@ -1229,7 +1238,7 @@ var CarritaPage = /** @class */ (function () {
     CarritaPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CarritaPage');
         if (this.aux != null) {
-            this.carrito = this.listaCarrito.addCarritoItem(this.aux); // VOID TYPE
+            this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad); // VOID TYPE
             console.log("CARRITO ionViewDidLoad"); // DEBUG ONLY
             console.log(this.aux); // DEBUG ONLY
         }
@@ -1446,7 +1455,7 @@ var FavoritosPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registrar_registrar__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__home_home__ = __webpack_require__(86);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_auth_service__ = __webpack_require__(68);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1511,7 +1520,7 @@ var LoginPage = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SettingsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_auth_service__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__ = __webpack_require__(85);
