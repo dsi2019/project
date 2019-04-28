@@ -40,7 +40,7 @@ export class PedidoService{
         return this.pedidosRef.update(value.key,
             {nombre_cliente: value.nombre_cliente,
             comida: value.comida,
-            userId: value.userID,
+            userID: value.userID,
             status: 1});
     }
 
