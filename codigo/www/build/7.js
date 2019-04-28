@@ -27,7 +27,7 @@ var CarritaPageModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2__carrita__["a" /* CarritaPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__carrita__["a" /* CarritaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__carrita__["a" /* CarritaPage */]),
             ],
         })
     ], CarritaPageModule);
