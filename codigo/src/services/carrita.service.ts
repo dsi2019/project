@@ -15,6 +15,10 @@ export class ListaCarrito{
     getCarritoItems(){
         return this.carrito;
     }
+
+    getCarritoCantidades(){
+        return this.cantidad;
+    }
     
     addCarritoItem(articulo:Articulo, cantidad: number) {
         this.total= this.total+articulo.precio;

@@ -14,12 +14,12 @@
       </ion-card-header>
       <ion-card-content>
        <ion-list>
-          <ion-item *ngFor="let articulo of carrito ">
+          <ion-item *ngFor="let articulo of carrito; let i = index ">
             <ion-thumbnail item-right>
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
               {{articulo.nombre}}
-              <p>x {{cantidad}}</p>
+              <p>x {{cantidad[i]}}</p>
               <p>{{articulo.precio}}€</p>
             </ion-item>
        </ion-list>

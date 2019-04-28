@@ -556,9 +556,10 @@ var CuentaService = /** @class */ (function () {
     };
     CuentaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
     ], CuentaService);
     return CuentaService;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=cuenta.service.js.map
@@ -886,6 +887,9 @@ var ListaCarrito = /** @class */ (function () {
     ListaCarrito.prototype.getCarritoItems = function () {
         return this.carrito;
     };
+    ListaCarrito.prototype.getCarritoCantidades = function () {
+        return this.cantidad;
+    };
     ListaCarrito.prototype.addCarritoItem = function (articulo, cantidad) {
         this.total = this.total + articulo.precio;
         this.carrito.push(articulo);
@@ -1156,6 +1160,68 @@ var FIREBASE_CONFIG = {
 
 /***/ }),
 
+/***/ 527:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PedidoService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__ = __webpack_require__(66);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(22);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PedidoService = /** @class */ (function () {
+    function PedidoService(db, afAuth) {
+        var _this = this;
+        this.db = db;
+        this.afAuth = afAuth;
+        this.afAuth.authState.subscribe(function (user) {
+            if (user)
+                _this.userID = user.uid;
+        });
+        this.pedidosRef = db.list('pedidos');
+        this.pedidos = this.pedidosRef.snapshotChanges().pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
+            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
+        }));
+    }
+    PedidoService.prototype.addPedido = function (pedido) {
+        this.pedidosRef.push({
+            nombre_cliente: "Chris Caliente",
+            comida: {},
+            userID: this.userID,
+        });
+    };
+    PedidoService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
+    ], PedidoService);
+    return PedidoService;
+}());
+
+//# sourceMappingURL=pedido.service.js.map
+
+/***/ }),
+
 /***/ 65:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1191,10 +1257,9 @@ var AuthService = /** @class */ (function () {
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], AuthService);
     return AuthService;
-    var _a;
 }());
 
 //# sourceMappingURL=auth.service.js.map
@@ -1209,6 +1274,7 @@ var AuthService = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__ = __webpack_require__(527);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1221,24 +1287,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var CarritaPage = /** @class */ (function () {
-    function CarritaPage(navCtrl, navParams, listaCarrito) {
+    function CarritaPage(navCtrl, navParams, listaCarrito, pedidoService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.listaCarrito = listaCarrito;
+        this.pedidoService = pedidoService;
         this.carrito = [];
         this.precioTotal = 0.0;
         this.aux = null;
-        this.cantidad = 0;
+        this.cantidad_nuevo = 0;
+        this.cantidad = [];
         this.aux = navParams.get('item');
-        this.cantidad = navParams.get('item2');
+        this.cantidad_nuevo = navParams.get('item2');
         console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad); // DEBUG ONLY
         console.log(this.carrito);
     }
     CarritaPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad CarritaPage');
         if (this.aux != null) {
-            this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad); // VOID TYPE
+            this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad_nuevo); // VOID TYPE
             console.log("CARRITO ionViewDidLoad"); // DEBUG ONLY
             console.log(this.aux); // DEBUG ONLY
         }
@@ -1246,7 +1315,9 @@ var CarritaPage = /** @class */ (function () {
     CarritaPage.prototype.ionViewWillEnter = function () {
         this.precioTotal = this.listaCarrito.getTotalPrice();
         this.carrito = this.listaCarrito.getCarritoItems();
+        this.cantidad = this.listaCarrito.getCarritoCantidades();
         console.log(this.listaCarrito);
+        console.log(this.cantidad);
         console.log(this.precioTotal);
     };
     CarritaPage.prototype.removeCarritaItem = function (articulo) {
@@ -1256,11 +1327,12 @@ var CarritaPage = /** @class */ (function () {
     };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-carrita',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito ">\n            <ion-thumbnail item-right>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n              {{articulo.nombre}}\n              <p>x {{cantidad}}</p>\n              <p>{{articulo.precio}}€</p>\n            </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n                \n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button  block type = "submit" > Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/,
+            selector: 'page-carrita',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito; let i = index ">\n            <ion-thumbnail item-right>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n              {{articulo.nombre}}\n              <p>x {{cantidad[i]}}</p>\n              <p>{{articulo.precio}}€</p>\n            </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n                \n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button  block type = "submit" > Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]) === "function" && _d || Object])
     ], CarritaPage);
     return CarritaPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=carrita.js.map
