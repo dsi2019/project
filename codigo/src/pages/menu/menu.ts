@@ -28,6 +28,7 @@ export class MenuPage {
   }
 
   onAddFavorito(value: Articulo){
+    // Articulo.classList.toggle("heart");
     this.menuService.addArticuloFavorito(value);
   }
 
