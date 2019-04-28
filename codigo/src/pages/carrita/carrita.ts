@@ -26,7 +26,7 @@ export class CarritaPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CarritaPage');
     if(this.aux != null){
-      this.carrito = this.listaCarrito.addCarritoItem(this.aux); // VOID TYPE
+      this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad); // VOID TYPE
       console.log("CARRITO ionViewDidLoad");// DEBUG ONLY
       console.log(this.aux);// DEBUG ONLY
     }
@@ -38,7 +38,7 @@ export class CarritaPage {
     console.log(this.listaCarrito);
     console.log(this.precioTotal);
   }
-
+  
   removeCarritaItem(articulo: Articulo){
     console.log("removing item to shopping cart");// DEBUG ONLY
     this.listaCarrito.removeCarritoItem(articulo);
