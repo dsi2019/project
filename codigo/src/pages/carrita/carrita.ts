@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Articulo } from '../../models/articulo';
 import { ListaCarrito } from '../../services/carrita.service'
-import {CarritaService} from '../../services/carrita.service'
 import { PedidoService } from '../../services/pedido.service';
+import {AlertController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,41 +18,41 @@ export class CarritaPage {
   cantidad_nuevo: number = 0;
   cantidad: number[]=[]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private listaCarrito: ListaCarrito, private pedidoService: PedidoService) {
-    this.aux = navParams.get('item');
-    this.cantidad_nuevo = navParams.get('item2');
-    console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad);// DEBUG ONLY
-    console.log(this.carrito);
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private listaCarrito: ListaCarrito, 
+    private pedidoService: PedidoService,
+    private alertController: AlertController) {
 
+      this.aux = navParams.get('item');
+      this.cantidad_nuevo = navParams.get('item2');
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CarritaPage');
-    if(this.aux != null){
+    if(this.aux != null)
       this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad_nuevo); // VOID TYPE
-      console.log("CARRITO ionViewDidLoad");// DEBUG ONLY
-      console.log(this.aux);// DEBUG ONLY
-    }
   }
 
   ionViewWillEnter(){
     this.precioTotal = this.listaCarrito.getTotalPrice();
     this.carrito = this.listaCarrito.getCarritoItems();
     this.cantidad = this.listaCarrito.getCarritoCantidades();
-
-    console.log(this.listaCarrito);
-    console.log(this.cantidad);
-    console.log(this.precioTotal);
   }
   
-  removeCarritaItem(articulo: Articulo){
-    console.log("removing item to shopping cart");// DEBUG ONLY
-    this.listaCarrito.removeCarritoItem(articulo);
-    console.log(articulo);// DEBUG ONLY
+  removeCarritaItem(articuloIndex: number){
+    this.listaCarrito.removeCarritoItem(articuloIndex);
   }
 
   realizarPedido(){
-   let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
+   let pedido = {nombre_cliente: "Introduce Usuario", comida: {articulos: this.carrito, cantidad: this.cantidad}};
    this.pedidoService.addPedido(pedido);
+   let alert = this.alertController.create({
+    title: 'Pedido Realizado',
+    subTitle: 'En breve recibirás una notificación cuando tu pedido esté listo',
+    buttons: ['OK']
+    });
+    alert.present();
+    this.navCtrl.popToRoot();
   }
 }

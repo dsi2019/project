@@ -1,0 +1,32 @@
+<!--
+  Generated template for the HomeStaffPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>home-staff</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-card>
+        <ion-card-header>
+          <ion-card-title>Pedidos Pendientes</ion-card-title>
+        </ion-card-header>
+    </ion-card>
+      <ion-list>
+          <ion-item *ngFor="let pedido of pedidos$| async">
+            <ion-card>
+                <p>{{pedido?.nombre_cliente}}</p>
+                <ion-item *ngFor="let articulo of pedido.comida.articulos ">
+                    <ion-card>
+                        <p>{{articulo.nombre}}</p>
+                    </ion-card>
+                </ion-item>
+            </ion-card>
+          </ion-item>
+        </ion-list>
+  </ion-content>
+  

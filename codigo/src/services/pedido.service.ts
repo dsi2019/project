@@ -21,7 +21,7 @@ export class PedidoService{
           })
         this.pedidosRef = db.list('pedidos');
         this.pedidos = this.pedidosRef.snapshotChanges().pipe(
-            map(changes => 
+            map(changes =>
               changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
             )
           );
@@ -33,6 +33,10 @@ export class PedidoService{
             comida: pedido.comida,
             userID: this.userID,
         });
+    }
+
+    getPedidos(){
+        return this.db.list('pedidos');
     }
 
 }
