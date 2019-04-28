@@ -5,6 +5,8 @@ import { Pedido } from '../../models/pedido';
 import { map } from 'rxjs/operators';
 import { PedidoService } from '../../services/pedido.service';
 import { snapshotChanges } from 'angularfire2/database';
+import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 
 /**
  * Generated class for the HomeStaffPage page.
@@ -47,4 +49,8 @@ export class HomeStaffPage {
     });
   };
 
+  onLogOut(){
+    console.log("SALIENDO DE ADMINISTRADOR---->");
+    this.navCtrl.push(LoginPage);
+  }
 }
