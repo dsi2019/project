@@ -19,14 +19,14 @@
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
             {{articulo.nombre}}
-            <p>{{articulo.precio}}€</p>
+            <p>{{articulo.precio | number:'1.2-2'}}€</p>
           </ion-item>
        </ion-list>
       </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-header>
-          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>
+          <ion-card-title>Total: {{precioTotal | number:'1.2-2'}}€</ion-card-title>
         </ion-card-header>
         <ion-card-content>
             <button>PAGAR AHORA</button>

@@ -14,20 +14,21 @@
       </button>
     </ion-fab>
     <ion-list>
-        <ion-item *ngFor="let favorito of misFavoritos$ | async">
-          <ion-row>
-            <ion-col>
-            <button>
-                <p>{{favorito.nombre}}</p>
-                <p>{{favorito.precio}}€</p>
-            </button>
-          </ion-col>
+      <ion-item *ngFor="let favorito of misFavoritos$ | async">
+        <ion-thumbnail item-right>
+            <img [src]= "favorito?.foto"/>
+        </ion-thumbnail>
+        <ion-row>
+          <button (click)="removeFavorito(favorito)">
+            <ion-icon name="heart" class="heart"></ion-icon>
+          </button>
           <ion-col>
-            <button (click)="removeFavorito(favorito)">
-                <ion-icon name="heart" class="heart"></ion-icon>
+            <button>
+              <p>{{favorito.nombre}}</p>
+              <p>{{favorito.precio | number:'1.2-2'}}€</p>
             </button>
-          </ion-col>
-          </ion-row>
-        </ion-item>
-    </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-list>
 </ion-content>

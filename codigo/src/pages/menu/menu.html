@@ -53,7 +53,7 @@
                   <ion-col col-8>
                     <button (click)= "aDetalles(articulo)">
                       <h5>{{articulo.nombre}}</h5>
-                      <p>{{articulo.precio}}€</p>
+                      <p>{{articulo.precio | number:'1.2-2'}}€</p>
                     </button>
                   </ion-col>
             </ion-row>
