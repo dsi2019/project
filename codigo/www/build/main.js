@@ -725,9 +725,10 @@ var DetallesproductoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-detallesproducto',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/detallesproducto/detallesproducto.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>{{articulo.nombre}}</ion-card-title>\n        </ion-card-header>\n        <ion-card-content>\n            <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">\n                <ion-list >\n                  <ion-row justify-content-center align-items-center style="height: 100%">\n                      <img src={{articulo.foto}} height= "200">\n                  </ion-row>\n                  <ion-item>\n                    <ion-label>  </ion-label >\n                  </ion-item>\n                  <ion-item>\n                    <ion-label> {{articulo.precio}}€</ion-label >\n                  </ion-item>\n                  <ion-item >\n                    <ion-label>Cantidad</ion-label>\n                    <ion-select formControlName = "selector">\n                      <ion-option value="1">1</ion-option>\n                      <ion-option value="2">2</ion-option>\n                      <ion-option value="3">3</ion-option>\n                      <ion-option value="4">4</ion-option>\n                      <ion-option value="5">5</ion-option>\n                      <ion-option value="6">6</ion-option>\n                    </ion-select>\n                  </ion-item>\n                </ion-list >\n                <button ion-button full round block type = "submit" > Añadir a su carrito </button >\n                </form >\n        </ion-card-content>\n      </ion-card>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/detallesproducto/detallesproducto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _c || Object])
     ], DetallesproductoPage);
     return DetallesproductoPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=detallesproducto.js.map
@@ -743,6 +744,7 @@ var DetallesproductoPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_operators__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__ = __webpack_require__(137);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__login_login__ = __webpack_require__(92);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -760,6 +762,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -791,13 +794,18 @@ var HomeStaffPage = /** @class */ (function () {
         });
     };
     ;
+    HomeStaffPage.prototype.onLogOut = function () {
+        console.log("SALIENDO DE ADMINISTRADOR---->");
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
+    };
     HomeStaffPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n  \n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full round  type = "submit" >Aceptar</button>\n                <button color="danger" ion-button full round  type = "" >Rechazar</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/,
+            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab (click)="onLogOut()"><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n  \n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full round  type = "submit" >Aceptar</button>\n                <button color="danger" ion-button full round  type = "" >Rechazar</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]) === "function" && _c || Object])
     ], HomeStaffPage);
     return HomeStaffPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home-staff.js.map

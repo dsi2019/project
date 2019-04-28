@@ -3,8 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Articulo } from '../../models/articulo';
 import { ListaCarrito } from '../../services/carrita.service'
 import { PedidoService } from '../../services/pedido.service';
-import {AlertController} from 'ionic-angular';
-import { CarritaPageModule } from './carrita.module';
+import { AlertController } from 'ionic-angular';
+
 
 @IonicPage()
 @Component({
@@ -52,8 +52,8 @@ export class CarritaPage {
   realizarPedido(){
     if (this.isDisabled()){
       let alert = this.alertController.create({
-        title: 'Carrita Basia',
-        subTitle: 'Para comprar algo tienes que añadir algo a su carrita',
+        title: 'Carrito Vacía',
+        subTitle: 'Para comprar algo tienes que añadir algo a su carrito',
         buttons: ['OK']
         });
         alert.present();
