@@ -7,14 +7,14 @@ export class ListaCarrito{
 
     total: number = 0.0;
     private carrito: Articulo[]=[];
-    
+
     constructor(){
-       
+
     }
     getCarritoItems(){
         return this.carrito;
     }
-    
+
     addCarritoItem(articulo:Articulo) {
         this.total= this.total+articulo.precio;
         this.carrito.push(articulo);
