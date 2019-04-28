@@ -36,14 +36,13 @@ export class RegistrarPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad RegistrarPage');
-    console.log(this.form.value);
   }
 
   onLoadLoginPage(){
     this.navCtrl.push(LoginPage);
   }
 
-  registrar_existoso(nombre, email){
+  registrar_existoso(nombre: string, email: string){
     console.log("registration success");
     this.cuentaService.addCuenta({nombre: nombre,
               email: email, 
@@ -62,8 +61,6 @@ export class RegistrarPage {
 
 registrar(){
   let data = this.form.value;
-  console.log("trying to register");
-  console.log(data);
   this.auth.registrar({email:data.correo, password:data.contraseña}).then(
     () => this.registrar_existoso(data.nombre, data.correo),
     error => {

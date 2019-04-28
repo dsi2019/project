@@ -30,7 +30,6 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    console.log(this.form.value);
   }
 
   onLoadRegistrarPage(){
@@ -40,8 +39,6 @@ export class LoginPage {
   tipoUsuario(correo: string, password: string){
     if (correo == ("admin@admin.com") && (password == "admin@admin.com")){
       this.navCtrl.setRoot(HomeStaffPage);
-      console.log(correo);
-      console.log(password);
     }
     else {
       this.navCtrl.setRoot(HomePage)
@@ -50,7 +47,6 @@ export class LoginPage {
 
 
   login() {
-    console.log("logging-in");
     let data = this.form.value;
     console.log(data);
 		this.auth.signInWithEmail({email:data.correo, password:data.contraseña})
