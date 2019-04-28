@@ -39,7 +39,9 @@ export class CarritaPage {
     this.precioTotal = this.listaCarrito.getTotalPrice();
     this.carrito = this.listaCarrito.getCarritoItems();
     this.cantidad = this.listaCarrito.getCarritoCantidades();
+
     console.log(this.listaCarrito);
+    console.log(this.cantidad);
     console.log(this.precioTotal);
   }
   
