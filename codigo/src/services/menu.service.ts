@@ -477,7 +477,7 @@ export class MenuService{
         }
 
     removeArticuloFavorito(value){
-        this.mis_articulosRef.remove(value.$key);
+        this.mis_articulosRef.remove(value);
     }
 
     getArticulosFavoritos(){
