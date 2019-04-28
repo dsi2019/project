@@ -49,8 +49,8 @@ export class CarritaPage {
     console.log(articulo);// DEBUG ONLY
   }
 
-  // realizarPedido(){
-  //  let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
-  //  this.pedidoService.addPedido(pedido);
-  // }
+  realizarPedido(){
+   let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
+   this.pedidoService.addPedido(pedido);
+  }
 }

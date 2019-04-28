@@ -1328,6 +1328,10 @@ var CarritaPage = /** @class */ (function () {
         this.listaCarrito.removeCarritoItem(articulo);
         console.log(articulo); // DEBUG ONLY
     };
+    CarritaPage.prototype.realizarPedido = function () {
+        var pedido = { nombre_cliente: "Chris Caliente", comida: { articulos: this.carrito, cantidad: this.cantidad } };
+        this.pedidoService.addPedido(pedido);
+    };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-carrita',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito">\n            <ion-thumbnail item-right>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n              {{articulo.nombre}}\n              <p>x {{cantidad}}</p>\n              <p>{{articulo.precio}}€</p>\n            </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-title>\n        método de pago seleccionado\n      </ion-card-title>\n      <ion-row align-items: center>\n        <ion-col col-4>\n            <ion-icon name = "card" style="zoom:2.0;">\n              </ion-icon>\n        </ion-col>\n        <ion-col col-8>\n          <h3> ******** 4424</h3>\n        </ion-col>\n      </ion-row>\n    </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/,
