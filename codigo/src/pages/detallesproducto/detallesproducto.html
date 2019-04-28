@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form >
+  <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">
   <ion-list >
     <ion-row justify-content-center align-items-center style="height: 100%">
         <img src={{articulo.foto}} height= "200">
@@ -16,9 +16,9 @@
     <ion-item>
       <ion-label> {{articulo.precio}}€</ion-label >
     </ion-item>
-    <ion-item>
+    <ion-item >
       <ion-label>Cantidad</ion-label>
-      <ion-select >
+      <ion-select formControlName = "selector">
         <ion-option value="1">1</ion-option>
         <ion-option value="2">2</ion-option>
         <ion-option value="3">3</ion-option>
@@ -28,6 +28,6 @@
       </ion-select>
     </ion-item>
   </ion-list >
-  <button ion-button block type = "submit" (click)="addToCarrito(articulo, 2)"> Añadir a su carrito </button >
+  <button ion-button block type = "submit" > Añadir a su carrito </button >
   </form >
 </ion-content>
