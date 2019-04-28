@@ -16,8 +16,7 @@
   <br>
   <ion-row>
       <ion-col col-6>
-          <ion-searchbar>
-            </ion-searchbar>
+        <ion-searchbar (ionInput)="onSearch($event)"></ion-searchbar>
       </ion-col>
       <ion-col col-6>
         <ion-item>
@@ -43,7 +42,7 @@
   <hr>
   <ion-list>
       <ion-grid>
-          <ion-item *ngFor="let articulo of menu">
+          <ion-item *ngFor="let articulo of displayMenu">
               <ion-thumbnail item-right>
                   <img [src]= "articulo?.foto"/>
               </ion-thumbnail>
