@@ -13,6 +13,7 @@
         <ion-card-title>Articulos en mi carrito</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+<<<<<<< HEAD
        <ion-list>
           <ion-item *ngFor="let articulo of carrito; let i = index ">
             <ion-thumbnail item-left>
@@ -22,6 +23,21 @@
             <p>{{articulo.precio | number:'1.2-2'}}€</p>
           </ion-item>
        </ion-list>
+=======
+          <ion-list>
+              <ion-item *ngFor="let articulo of carrito; let i = index ">
+                <ion-thumbnail item-right>
+                  <img [src]= "articulo?.foto"/>
+                </ion-thumbnail>
+                  {{articulo.nombre}}
+                  <p>x {{cantidad[i]}}</p>
+                  <p>{{articulo.precio}}€</p>
+                  <button item-right (click)="removeCarritaItem(i)" style="background: transparent; zoom: 1.5;">
+                      <ion-icon name="trash" ></ion-icon>
+                  </button>
+              </ion-item>
+           </ion-list>
+>>>>>>> 7bd909e6112ad3b50be7fd7cdffe165d3497ddfa
       </ion-card-content>
     </ion-card>
     <ion-card>
@@ -40,7 +56,7 @@
                   </ion-icon><h3>   ******** 4424</h3>
             </ion-col>
             <ion-col col-8>
-
+                
             </ion-col>
           </ion-row>
       </ion-card-content>

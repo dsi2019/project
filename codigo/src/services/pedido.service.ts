@@ -35,4 +35,8 @@ export class PedidoService{
         });
     }
 
+    getPedidos(){
+        return this.db.list('pedidos');
+    }
+
 }

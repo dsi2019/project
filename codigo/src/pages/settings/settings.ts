@@ -12,7 +12,6 @@ import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { CuentaService } from '../../services/cuenta.service';
 import { tap } from 'rxjs/operators';
-import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 @IonicPage()
 @Component({
@@ -27,8 +26,6 @@ export class SettingsPage {
   miCuenta$: Observable<Cuenta[]>;
   cuentas: any;
 
-  CopyTextAreaText:string = "Comienza a usar Uneat con mi código y obtendrás un descuento en tu primera compra! ;)";
-
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -37,8 +34,7 @@ export class SettingsPage {
     private afAuth: AngularFireAuth,
     fb: FormBuilder,
     public toastCtrl: ToastController,
-    private cuentaService: CuentaService,
-    private clipboard: Clipboard
+    private cuentaService: CuentaService
     ){
 		this.form = fb.group({
       nombre: ['',Validators.required],
@@ -94,9 +90,5 @@ export class SettingsPage {
 //   console.log(data);
 //   this.auth.registrar({email:data.correo})
 // }
-
-copyText(){
-  this.clipboard.copy(this.CopyTextAreaText);
-}
 
 }

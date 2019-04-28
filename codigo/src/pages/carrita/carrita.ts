@@ -27,41 +27,29 @@ export class CarritaPage {
 
       this.aux = navParams.get('item');
       this.cantidad_nuevo = navParams.get('item2');
-      console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad);// DEBUG ONLY
-      console.log(this.carrito);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CarritaPage');
-    if(this.aux != null){
+    if(this.aux != null)
       this.carrito = this.listaCarrito.addCarritoItem(this.aux, this.cantidad_nuevo); // VOID TYPE
-      console.log("CARRITO ionViewDidLoad");// DEBUG ONLY
-      console.log(this.aux);// DEBUG ONLY
-    }
   }
 
   ionViewWillEnter(){
     this.precioTotal = this.listaCarrito.getTotalPrice();
     this.carrito = this.listaCarrito.getCarritoItems();
     this.cantidad = this.listaCarrito.getCarritoCantidades();
-
-    console.log(this.listaCarrito);
-    console.log(this.cantidad);
-    console.log(this.precioTotal);
   }
   
   removeCarritaItem(articuloIndex: number){
-    console.log("removing item to shopping cart---->", articuloIndex);// DEBUG ONLY
     this.listaCarrito.removeCarritoItem(articuloIndex);
-    
   }
 
   realizarPedido(){
-   let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
+   let pedido = {nombre_cliente: "Introduce Usuario", comida: {articulos: this.carrito, cantidad: this.cantidad}};
    this.pedidoService.addPedido(pedido);
    let alert = this.alertController.create({
     title: 'Pedido Realizado',
-    subTitle: 'Espera para un notification cuando puedes recoger su pedido',
+    subTitle: 'En breve recibirás una notificación cuando tu pedido esté listo',
     buttons: ['OK']
     });
     alert.present();

@@ -28,7 +28,6 @@ export class MenuPage {
   }
 
   onAddFavorito(value: Articulo){
-    console.log("adding favorito from menu");
     this.menuService.addArticuloFavorito(value);
   }
 
@@ -40,8 +39,7 @@ export class MenuPage {
     this.navCtrl.push(DetallesproductoPage, {item:articulo})
   }
 
-  onSearch(event) {
-    console.log(event.target.value);
+  onSearch(event: any) {
     this.displayMenu = [];
     for (let i = 0; i < this.menu.length; i++) {
       if (this.menu[i].nombre.toLowerCase().includes(event.target.value)) {
