@@ -4,6 +4,7 @@ import { Articulo } from '../../models/articulo';
 import { ListaCarrito } from '../../services/carrita.service'
 import { PedidoService } from '../../services/pedido.service';
 import {AlertController} from 'ionic-angular';
+import { CarritaPageModule } from './carrita.module';
 
 @IonicPage()
 @Component({
@@ -44,15 +45,29 @@ export class CarritaPage {
     this.listaCarrito.removeCarritoItem(articuloIndex);
   }
 
+  isDisabled(){
+    return (this.carrito.length == 0);
+  }
+
   realizarPedido(){
-   let pedido = {nombre_cliente: "Introduce Usuario", comida: {articulos: this.carrito, cantidad: this.cantidad}};
-   this.pedidoService.addPedido(pedido);
-   let alert = this.alertController.create({
-    title: 'Pedido Realizado',
-    subTitle: 'En breve recibirás una notificación cuando tu pedido esté listo',
-    buttons: ['OK']
-    });
-    alert.present();
-    this.navCtrl.popToRoot();
+    if (this.isDisabled()){
+      let alert = this.alertController.create({
+        title: 'Carrita Basia',
+        subTitle: 'Para comprar algo tienes que añadir algo a su carrita',
+        buttons: ['OK']
+        });
+        alert.present();
+    }
+    else{
+      let pedido = {nombre_cliente: "Introduce Usuario", comida: {articulos: this.carrito, cantidad: this.cantidad}};
+      this.pedidoService.addPedido(pedido);
+      let alert = this.alertController.create({
+        title: 'Pedido Realizado',
+        subTitle: 'En breve recibirás una notificación cuando tu pedido esté listo',
+        buttons: ['OK']
+        });
+        alert.present();
+        this.navCtrl.popToRoot();
+    }   
   }
 }
