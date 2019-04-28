@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Pedido } from '../../models/pedido';
 import { map } from 'rxjs/operators';
 import { PedidoService } from '../../services/pedido.service';
+import { snapshotChanges } from 'angularfire2/database';
 
 /**
  * Generated class for the HomeStaffPage page.
@@ -41,7 +42,9 @@ export class HomeStaffPage {
         }))
       }
     ));
-    console.log("have pedidos");
+    this.pedidos$.subscribe(snapshotChanges => {
+      snapshotChanges.forEach(snapshot => console.log(snapshot.nombre_cliente)); 
+    });
   };
 
 }
