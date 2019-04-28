@@ -30,6 +30,7 @@ import { MenuService } from '../services/menu.service';
 import { ListaCarrito } from '../services/carrita.service'
 import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
 import { CuentaService } from '../services/cuenta.service';
+import { PedidoService } from '../services/pedido.service';
 
 @NgModule({
     declarations: [
@@ -70,6 +71,7 @@ import { CuentaService } from '../services/cuenta.service';
     CafeteriaService,
     MenuService,
     CuentaService,
+    PedidoService,
     StatusBar,
     SplashScreen,
     ListaCarrito,

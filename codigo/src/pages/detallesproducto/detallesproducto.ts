@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MenuService } from '../../services/menu.service';
 import { CarritaPage } from '../carrita/carrita';
 import { Articulo } from '../../models/articulo';
+import { FormGroup, FormBuilder } from '@angular/forms';
 /**
  * Generated class for the DetallesproductoPage page.
  *
@@ -16,26 +17,34 @@ import { Articulo } from '../../models/articulo';
   templateUrl: 'detallesproducto.html',
 })
 export class DetallesproductoPage {
+  
   articulo:any;
   selectedAmount: number; 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  form: FormGroup;
+  
+  constructor(public navCtrl: NavController, public navParams: NavParams,fb: FormBuilder) {
     this.articulo = navParams.get('item');
     console.log(this.articulo);
     console.log("DETALLE PRODUCTO CONSTRUCTO>r");// DEBUG ONLY
+     
+      this.form = fb.group({
+       selector: 1
+      });
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetallesproductoPage');// DEBUG ONLY
   }
 
-  addToCarrito(articulo: Articulo, cantidad: number){
+  addToCarrito(articulo: Articulo){
     
     console.log("ITEM TO CARRITO");// DEBUG ONLY
-    var i = document.getElementById("cantidadSelector")
-    console.log("CANTIDAD SELECCIONADA", cantidad);
-    console.log(i);
-    
-    this.navCtrl.push(CarritaPage, {item:articulo, item2:cantidad});
+    //var i = document.getElementById("cantidadSelector")
+    console.log("CANTIDAD SELECCIONADA",);
+    //console.log(i);
+    let data = this.form.value;
+    console.log(data.selector);
+    this.navCtrl.push(CarritaPage, {item:articulo, item2:data.selector});
   }
 
   selectChangeHanlder(event: any){
@@ -45,9 +54,8 @@ export class DetallesproductoPage {
 
   onChange() {
     console.log("On change");
-}
-  
-  
+  }
+
 }
 
 
