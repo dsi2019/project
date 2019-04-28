@@ -39,4 +39,12 @@ export class PedidoService{
         return this.db.list('pedidos');
     }
 
+    getPedidosPendientes(){
+        if (!this.userID) return;
+        return this.db.list('pedidos', ref => {
+            let q = ref.orderByChild("userID").equalTo(this.userID);
+            return q;
+        })
+    }
+
 }

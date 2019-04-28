@@ -13,6 +13,7 @@ import { MenuPage } from '../pages/menu/menu';
 import { AuthService } from '../services/auth.service';
 import { CafeteriaService } from '../services/cafeteria.service';
 import { CarritaPage } from '../pages/carrita/carrita';
+import { PedidosPage } from '../pages/pedidos/pedidos';
 
 @Component({
   templateUrl: 'app.html'
@@ -33,8 +34,9 @@ export class MyApp {
       { title: ' Menú', component: MenuPage, icon: "pizza"},
       { title: ' Carrito', component: CarritaPage, icon: "cart"},
       { title: ' Favoritos', component: FavoritosPage, icon: "heart-outline"},
+      { title: ' Pedidos', component: PedidosPage, icon: "bicycle"},
       { title: ' Cuenta', component: SettingsPage, icon:"settings"},
-      { title: ' Logout', component: LoginPage, icon: "log-out"}
+      { title: ' Logout', component: LoginPage, icon: "log-out"},
     ];
   }
 
