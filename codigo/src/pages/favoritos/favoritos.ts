@@ -6,6 +6,7 @@ import {Articulo} from '../../models/articulo';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 import { DetallesproductoPage } from '../detallesproducto/detallesproducto';
+import { CarritaPage } from '../carrita/carrita';
 
 @IonicPage()
 @Component({
@@ -36,6 +37,10 @@ export class FavoritosPage {
       }
     ));
   };
+
+  aCarrita(){
+    this.navCtrl.push(CarritaPage);
+  }
 
   aDetalles(articulo: Articulo){
     this.navCtrl.push(DetallesproductoPage, {item:articulo})
