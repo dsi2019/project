@@ -35,6 +35,6 @@ export class ListaCarrito{
                 i++;
             }
             console.log(this.carrito.length); // DEBUG ONLY
-        return this.total;
+        return this.total.toFixed(2);
     }
 }

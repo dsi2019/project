@@ -137,9 +137,10 @@ var MenuService = /** @class */ (function () {
     };
     MenuService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
     ], MenuService);
     return MenuService;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=menu.service.js.map
@@ -574,7 +575,7 @@ var ListaCarrito = /** @class */ (function () {
             i++;
         }
         console.log(this.carrito.length); // DEBUG ONLY
-        return this.total;
+        return this.total.toFixed(2);
     };
     ListaCarrito = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
@@ -926,7 +927,7 @@ var CarritaPage = /** @class */ (function () {
     };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-carrita',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito">\n            <ion-thumbnail item-right>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n              {{articulo.nombre}}\n              <p>{{articulo.precio}}€</p>\n            </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-title>\n        método de pago seleccionado\n      </ion-card-title>\n      <ion-row align-items: center>\n        <ion-col col-4>\n            <ion-icon name = "card" style="zoom:2.0;">\n              </ion-icon>\n        </ion-col>\n        <ion-col col-8>\n          <h3> ******** 4424</h3>\n        </ion-col>\n      </ion-row>\n    </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/,
+            selector: 'page-carrita',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito">\n            <ion-thumbnail item-right>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n              {{articulo.nombre}}\n              <p>x {{cantidad}}</p>\n              <p>{{articulo.precio}}€</p>\n            </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-title>\n        método de pago seleccionado\n      </ion-card-title>\n      <ion-row align-items: center>\n        <ion-col col-4>\n            <ion-icon name = "card" style="zoom:2.0;">\n              </ion-icon>\n        </ion-col>\n        <ion-col col-8>\n          <h3> ******** 4424</h3>\n        </ion-col>\n      </ion-row>\n    </ion-card>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_carrita_service__["a" /* ListaCarrito */]])
     ], CarritaPage);
