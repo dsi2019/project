@@ -20,6 +20,11 @@
           <ion-item *ngFor="let pedido of pedidos$| async">
             <ion-card>
                 <p>{{pedido?.nombre_cliente}}</p>
+                <ion-item *ngFor="let articulo of pedido.comida.articulos ">
+                    <ion-card>
+                        <p>{{articulo.nombre}}</p>
+                    </ion-card>
+                </ion-item>
             </ion-card>
           </ion-item>
         </ion-list>
