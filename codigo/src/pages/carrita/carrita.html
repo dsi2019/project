@@ -15,14 +15,17 @@
       <ion-card-content>
        <ion-list>
           <ion-item *ngFor="let articulo of carrito; let i = index ">
-            <ion-thumbnail item-right>
+            <ion-thumbnail item-left>
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
               {{articulo.nombre}}
               <p>x {{cantidad[i]}}</p>
               <p>{{articulo.precio}}€</p>
-              <button (click)="removeCarritaItem(i)"></button>
+              <button item-right (click)="removeCarritaItem(i)" style="background: transparent; zoom: 1.5;">
+                  <ion-icon name="trash" ></ion-icon>
+              </button>
           </ion-item>
+          
        </ion-list>
       </ion-card-content>
     </ion-card>
