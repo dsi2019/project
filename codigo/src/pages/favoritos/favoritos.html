@@ -23,7 +23,7 @@
             <ion-icon name="heart" class="heart"></ion-icon>
           </button>
           <ion-col>
-            <button>
+            <button (click) = "aDetalles(favorito)">
               <p>{{favorito.nombre}}</p>
               <p>{{favorito.precio | number:'1.2-2'}}€</p>
             </button>

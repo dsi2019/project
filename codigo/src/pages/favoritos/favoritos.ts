@@ -5,6 +5,7 @@ import {MenuService} from '../../services/menu.service'
 import {Articulo} from '../../models/articulo';
 import { Observable } from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import { DetallesproductoPage } from '../detallesproducto/detallesproducto';
 
 @IonicPage()
 @Component({
@@ -35,6 +36,10 @@ export class FavoritosPage {
       }
     ));
   };
+
+  aDetalles(articulo: Articulo){
+    this.navCtrl.push(DetallesproductoPage, {item:articulo})
+  }
 
   removeFavorito(value: Articulo){
     this.menuService.removeArticuloFavorito(value);

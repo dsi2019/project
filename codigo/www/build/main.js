@@ -1473,7 +1473,7 @@ var CarritaPage = /** @class */ (function () {
     };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-carrita',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n       <ion-list>\n          <ion-item *ngFor="let articulo of carrito; let i = index ">\n            <ion-thumbnail item-left>\n              <img [src]= "articulo?.foto"/>\n            </ion-thumbnail>\n            {{articulo.nombre}}\n            <p>{{articulo.precio | number:\'1.2-2\'}}€</p>\n          </ion-item>\n       </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal | number:\'1.2-2\'}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            Método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n\n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button id = "pagar"  block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/carrita/carrita.html"*/,
+            selector: 'page-carrita',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n          <ion-list>\n              <ion-item *ngFor="let articulo of carrito; let i = index ">\n                <ion-thumbnail item-right>\n                  <img [src]= "articulo?.foto"/>\n                </ion-thumbnail>\n                  {{articulo.nombre}}\n                  <p>x {{cantidad[i]}}</p>\n                  <p>{{articulo.precio}}€</p>\n                  <button item-right (click)="removeCarritaItem(i)" style="background: transparent; zoom: 1.5;">\n                      <ion-icon name="trash" ></ion-icon>\n                  </button>\n              </ion-item>\n           </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal | number:\'1.2-2\'}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            Método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n                \n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button id = "pagar" block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/carrita/carrita.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -1556,6 +1556,7 @@ var HomePage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(141);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__ = __webpack_require__(167);
 var __assign = (this && this.__assign) || Object.assign || function(t) {
     for (var s, i = 1, n = arguments.length; i < n; i++) {
         s = arguments[i];
@@ -1573,6 +1574,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1595,16 +1597,20 @@ var FavoritosPage = /** @class */ (function () {
         }));
     };
     ;
+    FavoritosPage.prototype.aDetalles = function (articulo) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__["a" /* DetallesproductoPage */], { item: articulo });
+    };
     FavoritosPage.prototype.removeFavorito = function (value) {
         this.menuService.removeArticuloFavorito(value);
     };
     FavoritosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-favoritos',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/favoritos/favoritos.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoritos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n      <button ion-fab color="primary">\n        <ion-icon name="cart"></ion-icon>\n      </button>\n    </ion-fab>\n    <ion-list>\n      <ion-item *ngFor="let favorito of misFavoritos$ | async">\n        <ion-thumbnail item-right>\n            <img [src]= "favorito?.foto"/>\n        </ion-thumbnail>\n        <ion-row>\n          <button (click)="removeFavorito(favorito)">\n            <ion-icon name="heart" class="heart"></ion-icon>\n          </button>\n          <ion-col>\n            <button>\n              <p>{{favorito.nombre}}</p>\n              <p>{{favorito.precio | number:\'1.2-2\'}}€</p>\n            </button>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/favoritos/favoritos.html"*/,
+            selector: 'page-favoritos',template:/*ion-inline-start:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/favoritos/favoritos.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoritos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n      <button ion-fab color="primary">\n        <ion-icon name="cart"></ion-icon>\n      </button>\n    </ion-fab>\n    <ion-list>\n      <ion-item *ngFor="let favorito of misFavoritos$ | async">\n        <ion-thumbnail item-right>\n            <img [src]= "favorito?.foto"/>\n        </ion-thumbnail>\n        <ion-row>\n          <button (click)="removeFavorito(favorito)">\n            <ion-icon name="heart" class="heart"></ion-icon>\n          </button>\n          <ion-col>\n            <button (click) = "aDetalles(favorito)">\n              <p>{{favorito.nombre}}</p>\n              <p>{{favorito.precio | number:\'1.2-2\'}}€</p>\n            </button>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/celiaromerogonzalez/Documents/GitHub/project/codigo/src/pages/favoritos/favoritos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]) === "function" && _c || Object])
     ], FavoritosPage);
     return FavoritosPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=favoritos.js.map
