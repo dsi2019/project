@@ -1,32 +1,34 @@
 
 <ion-header>
   <ion-navbar>
-    <ion-title>home-staff</ion-title>
+    <ion-title item-left>Pedidos Pendientes</ion-title>
+    <button ion-fab><ion-icon item-right name="log-out"></ion-icon></button>
   </ion-navbar>
+  
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
-        <ion-card-header>
-          <ion-card-title>Pedidos Pendientes</ion-card-title>
-        </ion-card-header>
-    </ion-card>
-    
       <ion-list>
           <ion-item *ngFor="let pedido of pedidos$| async">
             <ion-card>
                 <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>
                 <ion-card>    
-                      <ion-item *ngFor="let articulo of pedido.comida.articulos">           
-                        <ion-card-content>
-                            <ion-card-subtitle>{{articulo.nombre}}</ion-card-subtitle>
-                        </ion-card-content>
+                  <ion-card-content>
+                      <ion-list>
+                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    
+                              <ion-thumbnail item-right>
+                                <img [src]= "articulo?.foto"/>
+                              </ion-thumbnail>
+                              {{articulo.nombre}}
                       </ion-item>
+                      </ion-list>
+                    </ion-card-content>
                     </ion-card>
-                <button ion-button  round block type = "submit" > Aceptar pedido</button>
-                <button color="danger" ion-button full round block type = "submit" > Rechazar pedido</button>
+                <button color="success" ion-button full round  type = "submit" >Aceptar</button>
+                <button color="danger" ion-button full round  type = "" >Rechazar</button>
             </ion-card>
           </ion-item>
         </ion-list>
+
   </ion-content>
   
