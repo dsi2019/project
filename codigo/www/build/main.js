@@ -58,11 +58,13 @@ var PedidoService = /** @class */ (function () {
             userId: value.userID,
             status: 1 });
     };
-    // removeArticuloFavorito(value) {
-    //     this.mis_articulosRef.remove(value.key);
-    // }
     PedidoService.prototype.getPedidos = function () {
-        return this.db.list('pedidos');
+        if (!this.userID)
+            return;
+        return this.db.list("pedidos", function (ref) {
+            var q = ref.orderByChild("status").equalTo(0);
+            return q;
+        });
     };
     PedidoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),

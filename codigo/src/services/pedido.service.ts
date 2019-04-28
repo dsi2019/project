@@ -44,13 +44,11 @@ export class PedidoService{
             status: 1});
     }
 
-    // removeArticuloFavorito(value) {
-    //     this.mis_articulosRef.remove(value.key);
-    // }
-
     getPedidos(){
-        return this.db.list('pedidos');
+        if (!this.userID) return;
+        return this.db.list(`pedidos`, ref => {
+            let q = ref.orderByChild("status").equalTo(0);
+            return q;
+        })
     }
-    
-
 }
