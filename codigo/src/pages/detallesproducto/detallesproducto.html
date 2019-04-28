@@ -7,7 +7,7 @@
 <ion-content padding>
     <ion-card>
         <ion-card-header>
-          <ion-card-title>{{articulo.nombre}}</ion-card-title>
+          <ion-card-title class="titulo" text-wrap>{{articulo.nombre}}</ion-card-title>
         </ion-card-header>
         <ion-card-content>
             <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">
