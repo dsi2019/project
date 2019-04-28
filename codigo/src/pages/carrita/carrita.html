@@ -18,6 +18,7 @@
             <ion-thumbnail item-left>
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
+<<<<<<< HEAD
               {{articulo.nombre}}
               <p>x {{cantidad[i]}}</p>
               <p>{{articulo.precio}}€</p>
@@ -26,18 +27,23 @@
               </button>
           </ion-item>
           
+=======
+            {{articulo.nombre}}
+            <p>{{articulo.precio | number:'1.2-2'}}€</p>
+          </ion-item>
+>>>>>>> 6713f2b08357daf2754fa3c97669cafeb071bded
        </ion-list>
       </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-header>
-          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>
+          <ion-card-title>Total: {{precioTotal | number:'1.2-2'}}€</ion-card-title>
         </ion-card-header>
     </ion-card>
     <ion-card>
       <ion-card-content>
         <ion-card-title>
-            método de pago seleccionado
+            Método de pago seleccionado
           </ion-card-title>
           <ion-row align-items: center>
             <ion-col col-4>
@@ -45,7 +51,7 @@
                   </ion-icon><h3>   ******** 4424</h3>
             </ion-col>
             <ion-col col-8>
-                
+
             </ion-col>
           </ion-row>
       </ion-card-content>

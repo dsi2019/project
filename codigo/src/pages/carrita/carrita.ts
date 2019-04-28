@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Articulo } from '../../models/articulo';
 import { ListaCarrito } from '../../services/carrita.service'
-import {CarritaService} from '../../services/carrita.service'
 import { PedidoService } from '../../services/pedido.service';
+import {AlertController} from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -18,12 +18,17 @@ export class CarritaPage {
   cantidad_nuevo: number = 0;
   cantidad: number[]=[]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private listaCarrito: ListaCarrito, private pedidoService: PedidoService) {
-    this.aux = navParams.get('item');
-    this.cantidad_nuevo = navParams.get('item2');
-    console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad);// DEBUG ONLY
-    console.log(this.carrito);
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    private listaCarrito: ListaCarrito, 
+    private pedidoService: PedidoService,
+    private alertController: AlertController) {
 
+      this.aux = navParams.get('item');
+      this.cantidad_nuevo = navParams.get('item2');
+      console.log("DENTRO DE CARRITA.TS constructor--->", this.cantidad);// DEBUG ONLY
+      console.log(this.carrito);
   }
 
   ionViewDidLoad() {
@@ -54,5 +59,12 @@ export class CarritaPage {
   realizarPedido(){
    let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
    this.pedidoService.addPedido(pedido);
+   let alert = this.alertController.create({
+    title: 'Pedido Realizado',
+    subTitle: 'Espera para un notification cuando puedes recoger su pedido',
+    buttons: ['OK']
+    });
+    alert.present();
+    this.navCtrl.popToRoot();
   }
 }

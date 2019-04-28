@@ -127,7 +127,7 @@ export class MenuService{
         {nombre: "Botella de Agua",
         precio: 0.60,
         foto: "#",
-        tipo_de_comida: "ag",
+        tipo_de_comida: "bf",
         },
        /*  {nombre: "Botella de Agua 1/2 l.",
         precio: 0.80,
@@ -209,17 +209,17 @@ export class MenuService{
         foto: "#",
         tipo_de_comida: "pc",
         },
-        {nombre: "Croissant Salado - Jamon York",
+        /* {nombre: "Croissant Salado - Jamon York",
         precio: 1.50,
         foto: "#",
-        tipo_de_comida: "cs",
-        },
-        {nombre: "Croissant Salado - Embutidos",
+        tipo_de_comida: "bd",
+        }, */
+        {nombre: "Croissant Salado",
         precio: 1.50,
         foto: "#",
-        tipo_de_comida: "cs",
+        tipo_de_comida: "sd",
         },
-        {nombre: "Croissant Salado - Queso",
+        /* {nombre: "Croissant Salado - Queso",
         precio: 1.50,
         foto: "#",
         tipo_de_comida: "cs",
@@ -243,7 +243,7 @@ export class MenuService{
         precio: 1.85,
         foto: "#",
         tipo_de_comida: "cs",
-        },
+        }, */
         {nombre: "Sandwiches - Jamon York",
         precio: 1.35,
         foto: "#",
@@ -450,15 +450,15 @@ export class MenuService{
     mis_articulos: Observable<Articulo[]>;
     userID: string;
 
-    constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
+    constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth) {
         this.afAuth.authState.subscribe(user => {
             if(user) this.userID = user.uid
           })
         this.mis_articulosRef = db.list('mis_articulos');
         this.mis_articulos = this.mis_articulosRef.snapshotChanges().pipe(
-            map(changes => 
-              changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-            )
+            map(changes =>
+              changes.map(c => ({ key: c.payload.key, ...c.payload.val()
+            })))
           );
     }
 
@@ -475,7 +475,6 @@ export class MenuService{
             userID: this.userID
         });
         }
-        
 
     removeArticuloFavorito(value){
         this.mis_articulosRef.remove(value.$key);
