@@ -91,4 +91,13 @@ export class SettingsPage {
 //   this.auth.registrar({email:data.correo})
 // }
 
+compartir() {
+  let toast = this.toastCtrl.create({
+    message: 'Código copiado en el portapapeles',
+    duration: 2000,
+    position: 'bottom'
+  });
+  toast.present(toast);
+}
+
 }
