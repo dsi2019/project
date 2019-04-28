@@ -17,26 +17,26 @@
   <ion-row>
       <ion-col col-6>
         <ion-searchbar (ionInput)="onSearch($event)" placeholder=" "></ion-searchbar>
-        <!-- <ion-searchbar placeholder=" "></ion-searchbar> -->
       </ion-col>
       <ion-col col-6>
         <ion-item class="filtro">
           <ion-label>Filtrar</ion-label>
-          <ion-select [(ngModel)]="category">
+          <ion-select (ionChange)="onChange($event)">
+            <ion-option value="" selected>Todos</ion-option>
             <ion-option value="bc">Bebidas Calientes</ion-option>
             <ion-option value="bf">Bebidas Frias</ion-option>
-            <!-- <ion-option value="ag">Agua</ion-option> -->
+            <ion-option value="ag">Agua</ion-option>
             <ion-option value="hb">Hamburguesas</ion-option>
             <ion-option value="rc">Raciones</ion-option>
             <ion-option value="pc">Platos Combinados</ion-option>
-            <!-- <ion-option value="cs">Croissant Salados</ion-option> -->
+            <ion-option value="cs">Croissant Salados</ion-option>
             <ion-option value="sd">Sandwiches</ion-option>
-            <!-- <ion-option value="bg">Baguettes</ion-option> -->
+            <ion-option value="bg">Baguettes</ion-option>
             <ion-option value="bd">Bocadillos</ion-option>
-            <!-- <ion-option value="pm">Pulgas y Montados</ion-option> -->
+            <ion-option value="pm">Pulgas y Montados</ion-option>
             <ion-option value="fs">Fruta y Dulces</ion-option>
             <ion-option value="sup">Suplementos</ion-option>
-            <!-- <ion-option value="vl">Vinos y Licores</ion-option> -->
+            <ion-option value="vl">Vinos y Licores</ion-option>
           </ion-select>
         </ion-item>
       </ion-col>

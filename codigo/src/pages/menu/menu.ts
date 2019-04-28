@@ -49,5 +49,15 @@ export class MenuPage {
     if (event.target.value === "") this.displayMenu = this.menu;
   }
 
+  onChange(event: any) {
+    this.displayMenu = [];
+    for (let i = 0; i < this.menu.length; i++) {
+      if (this.menu[i].tipo_de_comida === event) {
+        this.displayMenu.push(this.menu[i])
+      };
+    }
+    if (event === "") this.displayMenu = this.menu;
+  }
+
 }
 
