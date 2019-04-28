@@ -346,17 +346,10 @@ var SettingsPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-settings',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-list *ngFor="let cuenta of cuentas">\n      <ion-item>\n        <ion-label>Nombre</ion-label>\n        <ion-input type="text" name="nombre">\n          <!-- {{cuenta.nombre}} -->\n       </ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Email</ion-label>\n        <ion-input type="text" name="email">\n          <!-- {{cuenta.email} -->\n        }</ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Teléfono</ion-label>\n        <ion-input type="text" name="telefono">\n          <!-- {{cuenta.telefono}} -->\n        </ion-input>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>IBAN</ion-label>\n          <ion-input type="text" name="iban">\n            <!-- {{cuenta.iban}} -->\n          </ion-input>\n        </ion-item>\n    </ion-list>\n      <button ion-button block>Guardar</button>\n</ion-content>\n<ion-content>\n    <p>Obtén promociones y regalos al compartir la aplicación con tus amigos<br>\n      <ion-textarea [(ngModel)]="Comparte"></ion-textarea>\n      <button ion-button (click)="copyText()">Comparte</button>\n      </p>\n</ion-content>\n'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */],
-            __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["AngularFireDatabase"],
-            __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"],
-            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_7__services_cuenta_service__["a" /* CuentaService */],
-            __WEBPACK_IMPORTED_MODULE_8__ionic_native_clipboard_ngx__["a" /* Clipboard */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_auth_service__["a" /* AuthService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["AngularFireDatabase"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_angularfire2_database__["AngularFireDatabase"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* ToastController */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_7__services_cuenta_service__["a" /* CuentaService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_7__services_cuenta_service__["a" /* CuentaService */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_8__ionic_native_clipboard_ngx__["a" /* Clipboard */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_8__ionic_native_clipboard_ngx__["a" /* Clipboard */]) === "function" && _j || Object])
     ], SettingsPage);
     return SettingsPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 }());
 
 //# sourceMappingURL=settings.js.map
@@ -994,17 +987,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__ = __webpack_require__(123);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(84);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(120);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__angular_forms__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_menu_service__ = __webpack_require__(167);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_carrita_service__ = __webpack_require__(281);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__services_cuenta_service__ = __webpack_require__(183);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_clipboard_ngx__ = __webpack_require__(588);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_menu_service__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_carrita_service__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_detallesproducto_detallesproducto__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_cuenta_service__ = __webpack_require__(183);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1043,7 +1038,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__["a" /* SettingsPage */],
                 __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__["a" /* MenuPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
+                __WEBPACK_IMPORTED_MODULE_23__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -1062,7 +1057,7 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */],
                 __WEBPACK_IMPORTED_MODULE_7_angularfire2__["AngularFireModule"].initializeApp(__WEBPACK_IMPORTED_MODULE_6__app_firebase_credentials__["a" /* FIREBASE_CONFIG */]),
                 __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__["AngularFireDatabaseModule"],
-                __WEBPACK_IMPORTED_MODULE_19__angular_forms__["b" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_20__angular_forms__["b" /* FormsModule */],
             ],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* IonicApp */]],
             entryComponents: [
@@ -1074,17 +1069,18 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__["a" /* MenuPage */],
                 __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__["a" /* RegistrarPage */],
                 __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__["a" /* SettingsPage */],
-                __WEBPACK_IMPORTED_MODULE_22__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
+                __WEBPACK_IMPORTED_MODULE_23__pages_detallesproducto_detallesproducto__["a" /* DetallesproductoPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__["AngularFireAuth"],
                 __WEBPACK_IMPORTED_MODULE_17__services_auth_service__["a" /* AuthService */],
                 __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__["a" /* CafeteriaService */],
-                __WEBPACK_IMPORTED_MODULE_20__services_menu_service__["a" /* MenuService */],
-                __WEBPACK_IMPORTED_MODULE_23__services_cuenta_service__["a" /* CuentaService */],
+                __WEBPACK_IMPORTED_MODULE_21__services_menu_service__["a" /* MenuService */],
+                __WEBPACK_IMPORTED_MODULE_24__services_cuenta_service__["a" /* CuentaService */],
                 __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_5__ionic_native_splash_screen__["a" /* SplashScreen */],
-                __WEBPACK_IMPORTED_MODULE_21__services_carrita_service__["a" /* ListaCarrito */],
+                __WEBPACK_IMPORTED_MODULE_22__services_carrita_service__["a" /* ListaCarrito */],
+                __WEBPACK_IMPORTED_MODULE_19__ionic_native_clipboard_ngx__["a" /* Clipboard */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicErrorHandler */] },
             ],
             schemas: [__WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* CUSTOM_ELEMENTS_SCHEMA */]],
