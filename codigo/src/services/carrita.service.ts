@@ -8,14 +8,18 @@ export class ListaCarrito{
     total: number = 0.0;
     private carrito: Articulo[]=[];
     private cantidad: number[] = [];
-    
+
     constructor(){
-       
+
     }
     getCarritoItems(){
         return this.carrito;
     }
-    
+
+    getCarritoCantidades(){
+        return this.cantidad;
+    }
+
     addCarritoItem(articulo:Articulo, cantidad: number) {
         this.total= this.total+articulo.precio;
         this.carrito.push(articulo);

@@ -14,34 +14,38 @@
       </ion-card-header>
       <ion-card-content>
        <ion-list>
-          <ion-item *ngFor="let articulo of carrito">
+          <ion-item *ngFor="let articulo of carrito; let i = index ">
             <ion-thumbnail item-right>
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
-              {{articulo.nombre}}
-              <p>x {{cantidad}}</p>
-              <p>{{articulo.precio}}€</p>
-            </ion-item>
+            {{articulo.nombre}}
+            <p>{{articulo.precio | number:'1.2-2'}}€</p>
+          </ion-item>
        </ion-list>
       </ion-card-content>
     </ion-card>
     <ion-card>
         <ion-card-header>
-          <ion-card-title>Total: {{precioTotal}}€</ion-card-title>
+          <ion-card-title>Total: {{precioTotal | number:'1.2-2'}}€</ion-card-title>
         </ion-card-header>
     </ion-card>
     <ion-card>
-      <ion-card-title>
-        método de pago seleccionado
-      </ion-card-title>
-      <ion-row align-items: center>
-        <ion-col col-4>
-            <ion-icon name = "card" style="zoom:2.0;">
-              </ion-icon>
-        </ion-col>
-        <ion-col col-8>
-          <h3> ******** 4424</h3>
-        </ion-col>
-      </ion-row>
+      <ion-card-content>
+        <ion-card-title>
+            Método de pago seleccionado
+          </ion-card-title>
+          <ion-row align-items: center>
+            <ion-col col-4>
+                <ion-icon name = "card" style="zoom:2.0;">
+                  </ion-icon><h3>   ******** 4424</h3>
+            </ion-col>
+            <ion-col col-8>
+
+            </ion-col>
+          </ion-row>
+      </ion-card-content>
     </ion-card>
+    <ion-list>
+      <button ion-button  block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >
+      </ion-list>
 </ion-content>
