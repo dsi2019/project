@@ -31,6 +31,7 @@ import { ListaCarrito } from '../services/carrita.service'
 import { DetallesproductoPage} from '../pages/detallesproducto/detallesproducto';
 import { CuentaService } from '../services/cuenta.service';
 import { PedidoService } from '../services/pedido.service';
+import { HomeStaffPage } from '../pages/home-staff/home-staff';
 
 @NgModule({
     declarations: [
@@ -42,7 +43,8 @@ import { PedidoService } from '../services/pedido.service';
      RegistrarPage,
      SettingsPage,
      MenuPage,
-     DetallesproductoPage
+     DetallesproductoPage,
+     HomeStaffPage,
 
      ],
     imports: [
@@ -63,7 +65,8 @@ import { PedidoService } from '../services/pedido.service';
         MenuPage,
         RegistrarPage,
         SettingsPage,
-        DetallesproductoPage
+        DetallesproductoPage,
+        HomeStaffPage,
     ],
     providers: [
     AngularFireAuth,

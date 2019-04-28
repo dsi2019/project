@@ -5,10 +5,15 @@ webpackJsonp([7],{
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CarritaPageModule", function() { return CarritaPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetallesproductoPageModule", function() { return DetallesproductoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+<<<<<<< HEAD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__carrita__ = __webpack_require__(70);
+=======
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detallesproducto__ = __webpack_require__(166);
+>>>>>>> 5cc80294489bad6827ad4b301cba85d04f7ae817
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +23,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CarritaPageModule = /** @class */ (function () {
-    function CarritaPageModule() {
+var DetallesproductoPageModule = /** @class */ (function () {
+    function DetallesproductoPageModule() {
     }
-    CarritaPageModule = __decorate([
+    DetallesproductoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__carrita__["a" /* CarritaPage */],
+                __WEBPACK_IMPORTED_MODULE_2__detallesproducto__["a" /* DetallesproductoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__carrita__["a" /* CarritaPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detallesproducto__["a" /* DetallesproductoPage */]),
             ],
         })
-    ], CarritaPageModule);
-    return CarritaPageModule;
+    ], DetallesproductoPageModule);
+    return DetallesproductoPageModule;
 }());
 
-//# sourceMappingURL=carrita.module.js.map
+//# sourceMappingURL=detallesproducto.module.js.map
 
 /***/ })
 

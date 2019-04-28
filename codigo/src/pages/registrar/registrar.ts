@@ -44,6 +44,7 @@ export class RegistrarPage {
   }
 
   registrar_existoso(nombre, email){
+    console.log("registration success");
     this.cuentaService.addCuenta({nombre: nombre,
               email: email, 
               telefono: "",
@@ -55,16 +56,25 @@ export class RegistrarPage {
       position: 'bottom'
     });
     toast.present(toast);
-    this.navCtrl.setRoot(HomePage)
+    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.push(LoginPage);
   }
 
 registrar(){
   let data = this.form.value;
-  console.log("registering");
+  console.log("trying to register");
   console.log(data);
   this.auth.registrar({email:data.correo, password:data.contraseña}).then(
     () => this.registrar_existoso(data.nombre, data.correo),
-    error => this.registrarError = error.message
+    error => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode == 'auth/weak-password') {
+        alert('The password is too weak.');
+      } else {
+        alert(errorMessage);
+      }
+    }
   );
   this.navCtrl.pop();
 }
