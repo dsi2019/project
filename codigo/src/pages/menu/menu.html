@@ -44,17 +44,18 @@
   <ion-list>
       <ion-grid>
           <ion-item *ngFor="let articulo of menu">
+              <ion-thumbnail item-right>
+                  <img [src]= "articulo?.foto"/>
+              </ion-thumbnail>
               <ion-row>
+                  <button (click) = "onAddFavorito(articulo)" style="background: transparent"> 
+                    <ion-icon name="heart-outline" class="heart"></ion-icon>
+                  </button>
                   <ion-col col-8>
-                      <button (click)= "aDetalles(articulo)">
-                            <h5>{{articulo.nombre}}</h5>
-                            <p>€{{articulo.precio}}</p>
-                      </button>
-                  </ion-col>
-                  <ion-col col-4>
-                      <button (click) = "onAddFavorito(articulo)" style="background: transparent"> 
-                          <ion-icon name="heart-outline" class="heart"></ion-icon>
-                      </button>
+                    <button (click)= "aDetalles(articulo)">
+                      <h5>{{articulo.nombre}}</h5>
+                      <p>{{articulo.precio}}€</p>
+                    </button>
                   </ion-col>
             </ion-row>
           </ion-item>
