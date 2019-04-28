@@ -45,14 +45,14 @@ export class CarritaPage {
     console.log(this.precioTotal);
   }
   
-  removeCarritaItem(articulo: Articulo){
-    console.log("removing item to shopping cart");// DEBUG ONLY
-    this.listaCarrito.removeCarritoItem(articulo);
-    console.log(articulo);// DEBUG ONLY
+  removeCarritaItem(articuloIndex: number){
+    console.log("removing item to shopping cart---->", articuloIndex);// DEBUG ONLY
+    this.listaCarrito.removeCarritoItem(articuloIndex);
+    
   }
 
-  // realizarPedido(){
-  //  let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
-  //  this.pedidoService.addPedido(pedido);
-  // }
+  realizarPedido(){
+   let pedido = {nombre_cliente: "Chris Caliente", comida: {articulos: this.carrito, cantidad: this.cantidad}};
+   this.pedidoService.addPedido(pedido);
+  }
 }

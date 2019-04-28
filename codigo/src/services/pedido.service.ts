@@ -29,8 +29,8 @@ export class PedidoService{
 
     addPedido(pedido: Pedido){
         this.pedidosRef.push({
-            nombre_cliente: "Chris Caliente",
-            comida: {},
+            nombre_cliente: pedido.nombre_cliente,
+            comida: pedido.comida,
             userID: this.userID,
         });
     }

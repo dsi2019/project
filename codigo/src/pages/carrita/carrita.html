@@ -19,9 +19,10 @@
               <img [src]= "articulo?.foto"/>
             </ion-thumbnail>
               {{articulo.nombre}}
-              <p>x {{cantidad}}</p>
+              <p>x {{cantidad[i]}}</p>
               <p>{{articulo.precio}}€</p>
-            </ion-item>
+              <button (click)="removeCarritaItem(i)"></button>
+          </ion-item>
        </ion-list>
       </ion-card-content>
     </ion-card>
@@ -47,6 +48,6 @@
       </ion-card-content>
     </ion-card>
     <ion-list>
-      <button ion-button  block type = "submit" > Confirmar Compra</button >
+      <button ion-button  block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >
       </ion-list>
 </ion-content>

@@ -26,10 +26,12 @@ export class ListaCarrito{
         this.cantidad.push(cantidad);
     }
 
-    removeCarritoItem(articulo:Articulo){
-        //this.carrito.remove(articulo);
+    removeCarritoItem(articuloIndex:number){
+        this.carrito.splice(articuloIndex, 1); // borramos el articulo
+        this.cantidad.splice(articuloIndex, 1); // borramos la cantidad correspondiente de ese articulo
     }
 
+    // calcular el precio total de todos los productos
     getTotalPrice(){
             this.total = 0;
             var aux = this.carrito.length;
