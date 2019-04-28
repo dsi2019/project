@@ -37,7 +37,7 @@ export class LoginPage {
   }
 
   tipoUsuario(correo: string, password: string){
-    if (correo == ("admin@admin.com") && (password == "admin@admin.com")){
+    if ((correo == ("admin@admin.com") || correo == ("Admin@admin.com"))  && ((password == "admin@admin.com"))|| (password == "admin@admin.com")){
       this.navCtrl.setRoot(HomeStaffPage);
     }
     else {
