@@ -5,29 +5,39 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">
-  <ion-list >
-    <ion-row justify-content-center align-items-center style="height: 100%">
-        <img src={{articulo.foto}} height= "200">
-    </ion-row>
-    <ion-item>
-      <ion-label> {{articulo.nombre}} </ion-label >
-    </ion-item>
-    <ion-item>
-      <ion-label> {{articulo.precio}}€</ion-label >
-    </ion-item>
-    <ion-item >
-      <ion-label>Cantidad</ion-label>
-      <ion-select formControlName = "selector">
-        <ion-option value="1">1</ion-option>
-        <ion-option value="2">2</ion-option>
-        <ion-option value="3">3</ion-option>
-        <ion-option value="4">4</ion-option>
-        <ion-option value="5">5</ion-option>
-        <ion-option value="6">6</ion-option>
-      </ion-select>
-    </ion-item>
-  </ion-list >
-  <button ion-button block type = "submit" > Añadir a su carrito </button >
-  </form >
+    <ion-card>
+        <ion-card-header>
+          
+          <ion-card-title>{{articulo.nombre}}</ion-card-title>
+        </ion-card-header>
+      
+        <ion-card-content>
+            <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">
+                <ion-list >
+                  <ion-row justify-content-center align-items-center style="height: 100%">
+                      <img src={{articulo.foto}} height= "200">
+                  </ion-row>
+                  <ion-item>
+                    <ion-label>  </ion-label >
+                  </ion-item>
+                  <ion-item>
+                    <ion-label> {{articulo.precio}}€</ion-label >
+                  </ion-item>
+                  <ion-item >
+                    <ion-label>Cantidad</ion-label>
+                    <ion-select formControlName = "selector">
+                      <ion-option value="1">1</ion-option>
+                      <ion-option value="2">2</ion-option>
+                      <ion-option value="3">3</ion-option>
+                      <ion-option value="4">4</ion-option>
+                      <ion-option value="5">5</ion-option>
+                      <ion-option value="6">6</ion-option>
+                    </ion-select>
+                  </ion-item>
+                </ion-list >
+                <button ion-button block type = "submit" > Añadir a su carrito </button >
+                </form >
+        </ion-card-content>
+      </ion-card>
+  
 </ion-content>
