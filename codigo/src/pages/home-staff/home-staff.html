@@ -1,9 +1,4 @@
-<!--
-  Generated template for the HomeStaffPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
   <ion-navbar>
     <ion-title>home-staff</ion-title>
@@ -16,15 +11,20 @@
           <ion-card-title>Pedidos Pendientes</ion-card-title>
         </ion-card-header>
     </ion-card>
+    
       <ion-list>
           <ion-item *ngFor="let pedido of pedidos$| async">
             <ion-card>
-                <p>{{pedido?.nombre_cliente}}</p>
-                <ion-item *ngFor="let articulo of pedido.comida.articulos ">
-                    <ion-card>
-                        <p>{{articulo.nombre}}</p>
+                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>
+                <ion-card>    
+                      <ion-item *ngFor="let articulo of pedido.comida.articulos">           
+                        <ion-card-content>
+                            <ion-card-subtitle>{{articulo.nombre}}</ion-card-subtitle>
+                        </ion-card-content>
+                      </ion-item>
                     </ion-card>
-                </ion-item>
+                <button ion-button  round block type = "submit" > Aceptar pedido</button>
+                <button color="danger" ion-button full round block type = "submit" > Rechazar pedido</button>
             </ion-card>
           </ion-item>
         </ion-list>
