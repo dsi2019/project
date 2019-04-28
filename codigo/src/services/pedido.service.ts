@@ -32,6 +32,7 @@ export class PedidoService{
             nombre_cliente: pedido.nombre_cliente,
             comida: pedido.comida,
             userID: this.userID,
+            status: 0,
         });
     }
 
