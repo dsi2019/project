@@ -459,7 +459,7 @@ export class MenuService{
             map(changes =>
               changes.map(c => ({ key: c.payload.key, ...c.payload.val()
             })))
-          );
+        );
     }
 
     getMenu(){
@@ -467,17 +467,18 @@ export class MenuService{
     }
 
     addArticuloFavorito(value) {
-        const newRef = this.mis_articulosRef.push({
+        this.mis_articulosRef.push({
             nombre: value.nombre,
             precio: value.precio,
             foto: value.foto,
             tipo_de_comida: value.tipo_de_comida,
             userID: this.userID
         });
-        }
+    }
 
-    removeArticuloFavorito(value){
-        this.mis_articulosRef.remove(value);
+
+    removeArticuloFavorito(value) {
+        this.mis_articulosRef.remove(value.key);
     }
 
     getArticulosFavoritos(){
