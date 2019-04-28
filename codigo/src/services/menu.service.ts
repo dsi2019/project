@@ -465,15 +465,15 @@ export class MenuService{
     mis_articulos: Observable<Articulo[]>;
     userID: string;
 
-    constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth){
+    constructor(private db:AngularFireDatabase, private afAuth: AngularFireAuth) {
         this.afAuth.authState.subscribe(user => {
             if(user) this.userID = user.uid
           })
         this.mis_articulosRef = db.list('mis_articulos');
         this.mis_articulos = this.mis_articulosRef.snapshotChanges().pipe(
-            map(changes => 
-              changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-            )
+            map(changes =>
+              changes.map(c => ({ key: c.payload.key, ...c.payload.val()
+            })))
           );
     }
 
@@ -490,7 +490,6 @@ export class MenuService{
             userID: this.userID
         });
         }
-        
 
     removeArticuloFavorito(value){
         this.mis_articulosRef.remove(value.$key);
