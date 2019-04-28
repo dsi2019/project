@@ -52,6 +52,15 @@ var PedidoService = /** @class */ (function () {
             status: 0,
         });
     };
+    PedidoService.prototype.cambiarStatus = function (value) {
+        return this.pedidosRef.update(value.key, { nombre_cliente: value.nombre_cliente,
+            comida: value.comida,
+            userId: value.userID,
+            status: 1 });
+    };
+    // removeArticuloFavorito(value) {
+    //     this.mis_articulosRef.remove(value.key);
+    // }
     PedidoService.prototype.getPedidos = function () {
         return this.db.list('pedidos');
     };
@@ -743,17 +752,22 @@ var HomeStaffPage = /** @class */ (function () {
         });
     };
     ;
+    HomeStaffPage.prototype.entregarPedido = function (pedido) {
+        console.log("entregando pedido");
+        this.pedidoService.cambiarStatus(pedido);
+    };
     HomeStaffPage.prototype.onLogOut = function () {
         console.log("SALIENDO DE ADMINISTRADOR---->");
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__login_login__["a" /* LoginPage */]);
     };
     HomeStaffPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab (click)="onLogOut()" style="zoom: 0.8"><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full type = "submit" > Entregar Pedido</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/,
+            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab (click)="onLogOut()" style="zoom: 0.8"><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full type = "submit" (click)= "entregarPedido(pedido)"> Entregar Pedido</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]) === "function" && _c || Object])
     ], HomeStaffPage);
     return HomeStaffPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=home-staff.js.map

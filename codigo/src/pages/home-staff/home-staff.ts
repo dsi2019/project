@@ -49,6 +49,13 @@ export class HomeStaffPage {
     });
   };
 
+  entregarPedido(pedido: Pedido){
+    console.log("entregando pedido");
+    this.pedidoService.cambiarStatus(pedido);
+  }
+
+  
+
   onLogOut(){
     console.log("SALIENDO DE ADMINISTRADOR---->");
     this.navCtrl.push(LoginPage);

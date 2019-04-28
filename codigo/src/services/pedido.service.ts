@@ -36,8 +36,21 @@ export class PedidoService{
         });
     }
 
+    cambiarStatus(value){
+        return this.pedidosRef.update(value.key,
+            {nombre_cliente: value.nombre_cliente,
+            comida: value.comida,
+            userId: value.userID,
+            status: 1});
+    }
+
+    // removeArticuloFavorito(value) {
+    //     this.mis_articulosRef.remove(value.key);
+    // }
+
     getPedidos(){
         return this.db.list('pedidos');
     }
+    
 
 }
