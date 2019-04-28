@@ -23,6 +23,7 @@ import {SettingsPage} from '../pages/settings/settings';
 
 import { AuthService } from '../services/auth.service';
 import {CafeteriaService} from '../services/cafeteria.service';
+import { Clipboard } from '@ionic-native/clipboard/ngx';
 
 import { FormsModule }   from '@angular/forms';
 import { MenuService } from '../services/menu.service';
@@ -74,6 +75,7 @@ import { PedidoService } from '../services/pedido.service';
     StatusBar,
     SplashScreen,
     ListaCarrito,
+    Clipboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],

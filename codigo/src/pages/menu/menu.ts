@@ -6,13 +6,6 @@ import {Articulo} from '../../models/articulo';
 import { CarritaPage } from '../carrita/carrita';
 import { DetallesproductoPage } from '../detallesproducto/detallesproducto';
 
-/**
- * Generated class for the MenuPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
   selector: 'page-menu',
@@ -21,11 +14,13 @@ import { DetallesproductoPage } from '../detallesproducto/detallesproducto';
 export class MenuPage {
 
   menu: Articulo[] =[];
+  displayMenu: Articulo[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams, private menuService: MenuService) {
   }
 
   ionViewWillEnter(){
     this.menu = this.menuService.getMenu();
+    this.displayMenu = this.menu;
   }
 
   ionViewDidLoad() {
@@ -43,7 +38,18 @@ export class MenuPage {
 
   aDetalles(articulo: Articulo){
     this.navCtrl.push(DetallesproductoPage, {item:articulo})
-}
+  }
+
+  onSearch(event) {
+    console.log(event.target.value);
+    this.displayMenu = [];
+    for (let i = 0; i < this.menu.length; i++) {
+      if (this.menu[i].nombre.toLowerCase().includes(event.target.value)) {
+        this.displayMenu.push(this.menu[i])
+      };
+    }
+    if (event.target.value === "") this.displayMenu = this.menu;
+  }
 
 }
 
