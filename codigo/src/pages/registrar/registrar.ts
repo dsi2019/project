@@ -30,6 +30,7 @@ export class RegistrarPage {
 		this.form = fb.group({
       nombre: ['',Validators.required],
 			correo: ['',Validators.required],
+			telefono: ['',Validators.required],
 			contraseña: ['',Validators.required]
     });
   }
@@ -42,11 +43,11 @@ export class RegistrarPage {
     this.navCtrl.push(LoginPage);
   }
 
-  registrar_existoso(nombre: string, email: string){
+  registrar_existoso(nombre: string, email: string, telefono: string){
     console.log("registration success");
     this.cuentaService.addCuenta({nombre: nombre,
-              email: email, 
-              telefono: "",
+              email: email,
+              telefono: telefono,
               iban: ""
     });
     let toast = this.toastCtrl.create({
@@ -62,7 +63,7 @@ export class RegistrarPage {
 registrar(){
   let data = this.form.value;
   this.auth.registrar({email:data.correo, password:data.contraseña}).then(
-    () => this.registrar_existoso(data.nombre, data.correo),
+    () => this.registrar_existoso(data.nombre, data.correo, data.telefono),
     error => {
       var errorCode = error.code;
       var errorMessage = error.message;
