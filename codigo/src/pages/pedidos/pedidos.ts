@@ -14,7 +14,7 @@ import { map } from 'rxjs/operators';
 })
 export class PedidosPage {
 
-  pedidos$: Observable<Pedido[]>;
+  pedidosPending$: Observable<Pedido[]>;
   constructor(public navCtrl: NavController, public navParams: NavParams, public pedidoService: PedidoService) {
   }
 
@@ -23,7 +23,7 @@ export class PedidosPage {
   }
 
   ionViewWillEnter(){
-    this.pedidos$ = this.pedidoService
+    this.pedidosPending$ = this.pedidoService
     .getPedidosPendientes()
     .snapshotChanges()
     .pipe(
@@ -36,4 +36,5 @@ export class PedidosPage {
       )
     )
   }
+  
 }

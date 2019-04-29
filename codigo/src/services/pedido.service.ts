@@ -32,11 +32,16 @@ export class PedidoService{
             nombre_cliente: pedido.nombre_cliente,
             comida: pedido.comida,
             userID: this.userID,
+            status: 0,
         });
     }
 
-    getPedidos(){
-        return this.db.list('pedidos');
+    cambiarStatus(value){
+        return this.pedidosRef.update(value.key,
+            {nombre_cliente: value.nombre_cliente,
+            comida: value.comida,
+            userID: value.userID,
+            status: 1});
     }
 
     getPedidosPendientes(){
@@ -47,4 +52,11 @@ export class PedidoService{
         })
     }
 
+    getPedidos(){
+        if (!this.userID) return;
+        return this.db.list(`pedidos`, ref => {
+            let q = ref.orderByChild("status").equalTo(0);
+            return q;
+        })
+    }
 }

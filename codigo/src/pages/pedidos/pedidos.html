@@ -9,23 +9,22 @@
   
   <ion-content padding>
       <ion-list>
-          <ion-item *ngFor="let pedido of pedidos$| async">
+          <ion-item *ngFor="let pedido of pedidosPending$| async">
             <ion-card>
-                <ion-card-header>Articulo: {{pedido.comida.articulos}}</ion-card-header>
                 <ion-card>    
-                  <ion-card-content>
+                  <ion-card-content *ngIf= "pedido.status == 0">
                       <ion-list>
-                          <ion-item >    
-                              <ion-thumbnail item-right>
-                                <img [src]=/>
-                              </ion-thumbnail>
-                              
-                      </ion-item>
+                          <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item> 
                       </ion-list>
-                    </ion-card-content>
-                    </ion-card>
-                <button color="success" ion-button full round  type = "submit" >Aceptar</button>
-                <button color="danger" ion-button full round  type = "" >Rechazar</button>
+                      <ion-footer>Pedido en progreso</ion-footer>
+                  </ion-card-content>
+                  <ion-card-content *ngIf= "pedido.status == 1">
+                      <ion-list>
+                          <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item> 
+                      </ion-list>
+                      <ion-footer>Pedido listo para recoger</ion-footer>
+                  </ion-card-content>  
+                  </ion-card>
             </ion-card>
           </ion-item>
         </ion-list>
