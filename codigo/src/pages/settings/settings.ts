@@ -42,10 +42,6 @@ export class SettingsPage {
       telefono: ['',Validators.required],
       iban: ['',Validators.required]
     });
-
-      // this.cuentaService.getCuenta[0].subscribe( i => {
-      //   this.cuentas = i;
-      // })
   }
 
 
@@ -67,21 +63,13 @@ export class SettingsPage {
       }
     ));
   };
-
-guardar() {
-  let data = this.form.value;
-  console.log("saving");
-  console.log(data);
-  this.auth.registrar({email:data.correo});
-}
-
-compartir() {
-  let toast = this.toastCtrl.create({
-    message: 'Código copiado en el portapapeles',
-    duration: 2000,
-    position: 'bottom'
-  });
-  toast.present(toast);
-}
+  compartir() {
+    let toast = this.toastCtrl.create({
+      message: 'Código copiado en el portapapeles',
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present(toast);
+  }
 
 }
