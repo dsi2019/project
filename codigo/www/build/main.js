@@ -459,7 +459,7 @@ var SettingsPage = /** @class */ (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2 textalign="center">Tu Cuenta</h2>\n    <ion-list *ngFor="let cuenta of miCuenta$ | async">\n      <ion-item>\n        <ion-label>Nombre</ion-label>\n        <ion-input type="text" name="nombre">\n          <p>{{cuenta.nombre}}</p>\n       </ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Email</ion-label>\n        <ion-input type="text" name="email">\n          <p>{{cuenta.email})</p>\n        </ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Teléfono</ion-label>\n        <ion-input type="text" name="telefono">\n          <p>{{cuenta.telefono}}</p>\n        </ion-input>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>IBAN</ion-label>\n          <ion-input type="text" name="iban">\n            <p>{{cuenta.iban}}</p>\n          </ion-input>\n        </ion-item>\n    </ion-list>\n      <button ion-button block>Guardar</button>\n      <div id="footer">\n      <br><br><br><br>\n      <p>¡Invita a tus amigos!</p>\n      <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>\n    </div>\n    </ion-content>'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/,
+            selector: 'page-settings',template:/*ion-inline-start:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <h2>Tu Cuenta</h2>\n  <ion-list>\n    <ion-item *ngFor="let cuenta of miCuenta$ | async">\n      <h3>Nombre</h3>\n      <ion-input type="text" name="nombre">\n        <p>{{cuenta.nombre}}</p>\n      </ion-input>\n\n      <h3>Email</h3>\n      <ion-input type="text" name="email">\n        <p>{{cuenta.email})</p>\n      </ion-input>\n\n      <h3>Teléfono</h3>\n      <ion-input type="text" name="telefono">\n        <p>{{cuenta.telefono}}</p>\n      </ion-input>\n\n      <h3>IBAN</h3>\n      <ion-input type="text" name="iban">\n        <p>{{cuenta.iban}}</p>\n      </ion-input>\n    </ion-item>\n  </ion-list>\n\n  <button ion-button block>Guardar</button>\n  <div id="footer">\n    <br><br><br><br>\n    <p>¡Invita a tus amigos!</p>\n    <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>\n  </div>\n</ion-content>'/*ion-inline-end:"/home/chrisjobando/Desktop/Diseno de Sistemas Interactivos/project/codigo/src/pages/settings/settings.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -1055,6 +1055,7 @@ var CuentaService = /** @class */ (function () {
             return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
         }));
     }
+    ;
     CuentaService.prototype.addCuenta = function (value) {
         this.cuentasRef.push({
             nombre: value.nombre,
@@ -1068,17 +1069,30 @@ var CuentaService = /** @class */ (function () {
         var _this = this;
         if (!this.userID)
             return;
-        return this.db.list("cuentas", function (ref) {
+        return this.db.list('cuentas', function (ref) {
             var q = ref.orderByChild("userID").equalTo(_this.userID);
             return q;
+            // var defer = $q.defer();
+            // let ref= x.orderByChild("userID").equalTo(this.userID);
+            // // return q;
+            // ref.once("value",function(copySnap){
+            //     if(!copySnap.exists()){
+            //       defer.reject(null);
+            //     }else{
+            //       var listObj = copySnap.val();
+            //       var list = Object.keys(listObj).map(function(copy){
+            //           return listObj[copy]});
+            //       defer.resolve(list[0]);
+            //     }
+            //   })
+            //   return defer.promise;
         });
     };
     CuentaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["AngularFireDatabase"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["AngularFireDatabase"]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["AngularFireDatabase"], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["AngularFireAuth"]])
     ], CuentaService);
     return CuentaService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=cuenta.service.js.map
