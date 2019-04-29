@@ -8,6 +8,7 @@
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
     <ion-list *ngFor="let cuenta of cuentas$| async">
       <ion-item>
         <ion-label>Nombre</ion-label>
@@ -15,32 +16,37 @@
           {{cuenta.nombre}}
        </ion-input>
       </ion-item>
+=======
+  <h2>Tu Cuenta</h2>
+  <ion-list>
+    <ion-item *ngFor="let cuenta of miCuenta$ | async">
+      <h3>Nombre</h3>
+      <ion-input type="text" name="nombre">
+        <p>{{cuenta.nombre}}</p>
+      </ion-input>
+>>>>>>> f04088e07dff99ceef1ebf144552cca8b9519191
 
-      <ion-item>
-        <ion-label>Email</ion-label>
-        <ion-input type="text" name="email">
-          {{cuenta.email}
-        }</ion-input>
-      </ion-item>
+      <h3>Email</h3>
+      <ion-input type="text" name="email">
+        <p>{{cuenta.email})</p>
+      </ion-input>
 
-      <ion-item>
-        <ion-label>Teléfono</ion-label>
-        <ion-input type="text" name="telefono">
-          {{cuenta.telefono}}
-        </ion-input>
-      </ion-item>
+      <h3>Teléfono</h3>
+      <ion-input type="text" name="telefono">
+        <p>{{cuenta.telefono}}</p>
+      </ion-input>
 
-      <ion-item>
-          <ion-label>IBAN</ion-label>
-          <ion-input type="text" name="iban">
-            {{cuenta.iban}}
-          </ion-input>
-        </ion-item>
-    </ion-list>
-      <button ion-button block>Guardar</button>
-      <div id="footer">
-      <br><br><br><br>
-      <p>¡Invita a tus amigos!</p>
-      <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>
-    </div>
-    </ion-content>
+      <h3>IBAN</h3>
+      <ion-input type="text" name="iban">
+        <p>{{cuenta.iban}}</p>
+      </ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block>Guardar</button>
+  <div id="footer">
+    <br><br><br><br>
+    <p>¡Invita a tus amigos!</p>
+    <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>
+  </div>
+</ion-content>

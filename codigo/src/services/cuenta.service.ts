@@ -19,11 +19,13 @@ export class CuentaService {
       })
     this.cuentasRef = db.list('cuentas');
     this.cuentas = this.cuentasRef.snapshotChanges().pipe(
-        map(changes =>
-            changes.map(c => ({ key: c.payload.key, ...c.payload.val()
-          })))
-    )};
+      map(changes =>
+          changes.map(c => ({ key: c.payload.key, ...c.payload.val()
+        })))
+      );
+  }
 
+<<<<<<< HEAD
     addCuenta(value:Cuenta) {
         this.cuentasRef.push({
           nombre: value.nombre,
@@ -58,3 +60,23 @@ export class CuentaService {
         })
     }
   }
+=======
+  addCuenta(value:Cuenta) {
+    this.cuentasRef.push({
+      nombre: value.nombre,
+      email: value.email,
+      iban: value.iban,
+      telefono: value.telefono,
+      userID: this.userID
+    })
+  }
+
+  getCuenta() {
+    if (!this.userID) return;
+    return this.db.list(`cuentas`, ref => {
+        let q = ref.orderByChild("userID").equalTo(this.userID);
+        return q;
+    });
+  }
+}
+>>>>>>> f04088e07dff99ceef1ebf144552cca8b9519191

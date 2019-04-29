@@ -474,7 +474,6 @@ export class MenuService{
         });
     }
 
-
     removeArticuloFavorito(value) {
         this.mis_articulosRef.remove(value.key);
     }
