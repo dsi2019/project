@@ -63,10 +63,21 @@ export class SettingsPage {
       changes => {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
+<<<<<<< HEAD
+        }));
+      })
+    );
+    console.log("got cuenta");
+
+    // const myObserver = {
+    //   cuenta: x => x
+    // }
+=======
         }))
       }
     ));
   };
+>>>>>>> f04088e07dff99ceef1ebf144552cca8b9519191
 
     // this.miCuenta$ = this.cuentaService.getCuenta[0].pipe(
     //   tap(cuenta => this.form.patchValue(cuenta))

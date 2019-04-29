@@ -25,6 +25,42 @@ export class CuentaService {
       );
   }
 
+<<<<<<< HEAD
+    addCuenta(value:Cuenta) {
+        this.cuentasRef.push({
+          nombre: value.nombre,
+          email: value.email,
+          iban: value.iban,
+          telefono: value.telefono,
+          userID: value.userID
+      })
+
+    }
+
+    getCuenta() {
+        console.log(this.userID);
+        if(!this.userID) return;
+        return this.db.list('cuentas', ref => {
+            let q = ref.orderByChild("userID").equalTo(this.userID);
+            return q;
+            // var defer = $q.defer();
+            // let ref= x.orderByChild("userID").equalTo(this.userID);
+            // // return q;
+            // ref.once("value",function(copySnap){
+            //     if(!copySnap.exists()){
+            //       defer.reject(null);
+            //     }else{
+            //       var listObj = copySnap.val();
+            //       var list = Object.keys(listObj).map(function(copy){
+            //           return listObj[copy]});
+            //       defer.resolve(list[0]);
+            //     }
+            //   })
+            //   return defer.promise;
+        })
+    }
+  }
+=======
   addCuenta(value:Cuenta) {
     this.cuentasRef.push({
       nombre: value.nombre,
@@ -43,3 +79,4 @@ export class CuentaService {
     });
   }
 }
+>>>>>>> f04088e07dff99ceef1ebf144552cca8b9519191
