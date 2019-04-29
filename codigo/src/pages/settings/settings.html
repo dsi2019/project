@@ -8,32 +8,33 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list *ngFor="let cuenta of cuentas">
+  <h2 textalign="center">Tu Cuenta</h2>
+    <ion-list *ngFor="let cuenta of miCuenta$ | async">
       <ion-item>
         <ion-label>Nombre</ion-label>
         <ion-input type="text" name="nombre">
-          {{cuenta.nombre}}
+          <p>{{cuenta.nombre}}</p>
        </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Email</ion-label>
         <ion-input type="text" name="email">
-          {{cuenta.email}
-        }</ion-input>
+          <p>{{cuenta.email})</p>
+        </ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label>Teléfono</ion-label>
         <ion-input type="text" name="telefono">
-          {{cuenta.telefono}}
+          <p>{{cuenta.telefono}}</p>
         </ion-input>
       </ion-item>
 
       <ion-item>
           <ion-label>IBAN</ion-label>
           <ion-input type="text" name="iban">
-            {{cuenta.iban}}
+            <p>{{cuenta.iban}}</p>
           </ion-input>
         </ion-item>
     </ion-list>
