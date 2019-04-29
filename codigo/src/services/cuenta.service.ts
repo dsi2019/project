@@ -30,12 +30,13 @@ export class CuentaService {
           email: value.email,
           iban: value.iban,
           telefono: value.telefono,
-          userID: this.userID
+          userID: value.userID
       })
 
     }
 
     getCuenta() {
+        console.log(this.userID);
         if(!this.userID) return;
         return this.db.list('cuentas', ref => {
             let q = ref.orderByChild("userID").equalTo(this.userID);

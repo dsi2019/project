@@ -9,6 +9,8 @@ import { AuthService } from '../../services/auth.service';
 import {HomePage} from '../home/home';
 import {LoginPage} from '../login/login';
 import { CuentaService } from '../../services/cuenta.service';
+import { stringCompare } from '@firebase/database/dist/src/core/util/util';
+import firebase from 'firebase';
 
 @IonicPage()
 @Component({
@@ -18,6 +20,7 @@ import { CuentaService } from '../../services/cuenta.service';
 export class RegistrarPage {
   registrarError: string;
   form: FormGroup;
+  userID: string;
 
   constructor(
     public navCtrl: NavController,
@@ -43,12 +46,6 @@ export class RegistrarPage {
   }
 
   registrar_existoso(nombre: string, email: string){
-    console.log("registration success");
-    this.cuentaService.addCuenta({nombre: nombre,
-              email: email, 
-              telefono: "",
-              iban: ""
-    });
     let toast = this.toastCtrl.create({
       message: '¡Cuenta creada!',
       duration: 2000,
@@ -56,7 +53,13 @@ export class RegistrarPage {
     });
     toast.present(toast);
     this.navCtrl.setRoot(HomePage);
-    this.navCtrl.push(LoginPage);
+    this.userID = firebase.auth().currentUser.uid;
+    this.cuentaService.addCuenta({nombre: nombre,
+      email: email, 
+      telefono: "",
+      iban: "",
+      userID: this.userID
+});
   }
 
 registrar(){

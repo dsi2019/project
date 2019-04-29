@@ -66,10 +66,11 @@ export class SettingsPage {
         }));
       })
     );
+    console.log("got cuenta");
 
-    const myObserver = {
-      cuenta: x => x
-    }
+    // const myObserver = {
+    //   cuenta: x => x
+    // }
 
     // this.miCuenta$ = this.cuentaService.getCuenta[0].pipe(
     //   tap(cuenta => this.form.patchValue(cuenta))
