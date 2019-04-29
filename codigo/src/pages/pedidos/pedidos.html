@@ -6,17 +6,17 @@
       <ion-title>Mis Pedidos</ion-title>
     </ion-navbar>
   </ion-header>
-  
+
   <ion-content padding>
     <ion-title>Estado de tus pedidos</ion-title>
     <br>
     <ion-list>
       <ion-item *ngFor="let pedido of pedidosPending$| async">
         <ion-card>
-          <ion-card-content> 
+          <ion-card-content>
               <ion-card-content *ngIf= "pedido.status == 0">
                   <ion-list>
-                      <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item> 
+                      <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item>
                   </ion-list>
                   <ion-card-title>Estado:</ion-card-title>
                   <p>Preparando pedido</p>
@@ -29,17 +29,13 @@
                           </ion-thumbnail>
                           <ion-card-title>Item: </ion-card-title>
                           <p>{{articulo.nombre}}</p>
-                          
-                      </ion-item> 
+                      </ion-item>
                   </ion-list>
                   <ion-card-title>Estado:</ion-card-title>
                   <p>Listo para recoger</p>
-              </ion-card-content>  
+              </ion-card-content>
           </ion-card-content>
         </ion-card>
       </ion-item>
     </ion-list>
   </ion-content>
-  
-    
-  

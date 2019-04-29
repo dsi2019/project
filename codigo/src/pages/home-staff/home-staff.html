@@ -10,11 +10,11 @@
       <ion-list>
           <ion-item *ngFor="let pedido of pedidos$| async">
             <ion-card>
-                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>
-                <ion-card>    
+                <ion-card-header>CLIENTE ID: {{pedido?.nombre_cliente}}</ion-card-header>
+                <ion-card>
                   <ion-card-content>
                       <ion-list>
-                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    
+                          <ion-item *ngFor="let articulo of pedido.comida.articulos">
                               <ion-thumbnail item-right>
                                 <img [src]= "articulo?.foto"/>
                               </ion-thumbnail>
@@ -27,6 +27,4 @@
             </ion-card>
           </ion-item>
         </ion-list>
-
   </ion-content>
-  
