@@ -4,58 +4,6 @@ webpackJsonp([9],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeteriaService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var CafeteriaService = /** @class */ (function () {
-    function CafeteriaService() {
-        this.cafeterias = [
-            {
-                nombre: "Sabatini",
-                campus: "Leganes",
-                hora_de_abrir: { hours: 9, minutes: 0 },
-                hora_de_cerrar: { hours: 17, minutes: 30 },
-                foto_url: "../../assets/cafeterias/leganes_sabatini.jpg"
-            },
-            {
-                nombre: "Padre Soler",
-                campus: "Leganes",
-                hora_de_abrir: { hours: 9, minutes: 0 },
-                hora_de_cerrar: { hours: 17, minutes: 30 },
-                foto_url: "../../assets/cafeterias/leganes_padre_soler.jpg"
-            },
-            {
-                nombre: "Padre Soler",
-                campus: "Leganes",
-                hora_de_abrir: { hours: 9, minutes: 0 },
-                hora_de_cerrar: { hours: 17, minutes: 30 },
-                foto_url: "../../assets/cafeterias/leganes_padre_soler.jpg"
-            },
-        ];
-    }
-    CafeteriaService.prototype.getCafeterias = function () {
-        return this.cafeterias;
-    };
-    CafeteriaService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
-    ], CafeteriaService);
-    return CafeteriaService;
-}());
-
-//# sourceMappingURL=cafeteria.service.js.map
-
-/***/ }),
-
-/***/ 144:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__ = __webpack_require__(67);
@@ -519,13 +467,64 @@ var MenuService = /** @class */ (function () {
     };
     MenuService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
     ], MenuService);
     return MenuService;
-    var _a, _b;
 }());
 
 //# sourceMappingURL=menu.service.js.map
+
+/***/ }),
+
+/***/ 144:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CafeteriaService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var CafeteriaService = /** @class */ (function () {
+    function CafeteriaService() {
+        this.cafeterias = [
+            {
+                nombre: "Sabatini",
+                campus: "Leganes",
+                hora_de_abrir: { hours: 9, minutes: 0 },
+                hora_de_cerrar: { hours: 17, minutes: 30 },
+                foto_url: "../../assets/cafeterias/leganes_sabatini.jpg"
+            },
+            {
+                nombre: "Padre Soler",
+                campus: "Leganes",
+                hora_de_abrir: { hours: 9, minutes: 0 },
+                hora_de_cerrar: { hours: 17, minutes: 30 },
+                foto_url: "../../assets/cafeterias/leganes_padre_soler.jpg"
+            },
+            {
+                nombre: "Padre Soler",
+                campus: "Leganes",
+                hora_de_abrir: { hours: 9, minutes: 0 },
+                hora_de_cerrar: { hours: 17, minutes: 30 },
+                foto_url: "../../assets/cafeterias/leganes_padre_soler.jpg"
+            },
+        ];
+    }
+    CafeteriaService.prototype.getCafeterias = function () {
+        return this.cafeterias;
+    };
+    CafeteriaService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])()
+    ], CafeteriaService);
+    return CafeteriaService;
+}());
+
+//# sourceMappingURL=cafeteria.service.js.map
 
 /***/ }),
 
@@ -609,9 +608,10 @@ var CuentaService = /** @class */ (function () {
     };
     CuentaService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
     ], CuentaService);
     return CuentaService;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=cuenta.service.js.map
@@ -687,7 +687,7 @@ var HomeStaffPage = /** @class */ (function () {
     };
     HomeStaffPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab (click)="onLogOut()" style="zoom: 0.8"><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full type = "submit" (click)= "entregarPedido(pedido)"> Entregar Pedido</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home-staff/home-staff.html"*/,
+            selector: 'page-home-staff',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/'\n<ion-header>\n  <ion-navbar>\n    <ion-title item-left>Pedidos Pendientes</ion-title>\n    <button ion-fab (click)="onLogOut()" style="zoom: 0.8"><ion-icon item-right name="log-out"></ion-icon></button>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n      <ion-list>\n          <ion-item *ngFor="let pedido of pedidos$| async">\n            <ion-card>\n                <ion-card-header>CLIENTE: {{pedido?.nombre_cliente}}</ion-card-header>\n                <ion-card>    \n                  <ion-card-content>\n                      <ion-list>\n                          <ion-item *ngFor="let articulo of pedido.comida.articulos">    \n                              <ion-thumbnail item-right>\n                                <img [src]= "articulo?.foto"/>\n                              </ion-thumbnail>\n                              {{articulo.nombre}}\n                      </ion-item>\n                      </ion-list>\n                    </ion-card-content>\n                    </ion-card>\n                <button color="success" ion-button full type = "submit" (click)= "entregarPedido(pedido)"> Entregar Pedido</button>\n            </ion-card>\n          </ion-item>\n        </ion-list>\n\n  </ion-content>\n  \n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home-staff/home-staff.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__services_pedido_service__["a" /* PedidoService */]])
     ], HomeStaffPage);
@@ -779,7 +779,7 @@ var RegistrarPage = /** @class */ (function () {
     };
     RegistrarPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-registrar',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/registrar/registrar.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Registrar</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <br>\n    <ion-row justify-content-center align-items-center style="height: 40%">\n        <img src="../assets/icon/logo.png" height= "200">\n    </ion-row>\n    <ion-row justify-content-center align-items-center>\n        <h1>UnEat</h1>\n    </ion-row>\n\n    <ion-row justify-content-center align-tems-center>\n      <form (ngSubmit)="registrar()" [formGroup]="form">\n        <ion-list inset>\n          <ion-item>\n            <ion-label>Nombre</ion-label>\n            <ion-input type="text" name = "nombre" formControlName = "nombre" placeholder="Chris Caliente"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Correo</ion-label>\n            <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-label>Contraseña</ion-label>\n              <ion-input type="password" name = "contraseña" formControlName = "contraseña"  placeholder="......"></ion-input>\n          </ion-item>\n        </ion-list>\n        <div padding-horizontal>\n          <button ion-button full round type="submit">Regístrate</button>\n        </div>\n      </form>\n    </ion-row>\n    <ion-row justify-content-center align-items-center style>\n      <h6> ¿Tienes una cuenta?\n      <button ion-button clear small (click)="onLoadLoginPage()"> Log In </button>\n      </h6>\n    </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/registrar/registrar.html"*/,
+            selector: 'page-registrar',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/registrar/registrar.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Registrar</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n    <br>\n    <ion-row justify-content-center align-items-center style="height: 40%">\n        <img src="../assets/icon/logo.png" height= "200">\n    </ion-row>\n    <ion-row justify-content-center align-items-center>\n        <h1>UnEat</h1>\n    </ion-row>\n\n    <ion-row justify-content-center align-tems-center>\n      <form (ngSubmit)="registrar()" [formGroup]="form">\n        <ion-list inset>\n          <ion-item>\n            <ion-label>Nombre</ion-label>\n            <ion-input type="text" name = "nombre" formControlName = "nombre" placeholder="Chris Caliente"></ion-input>\n          </ion-item>\n          <ion-item>\n            <ion-label>Correo</ion-label>\n            <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>\n          </ion-item>\n          <ion-item>\n              <ion-label>Contraseña</ion-label>\n              <ion-input type="password" name = "contraseña" formControlName = "contraseña"  placeholder="......"></ion-input>\n          </ion-item>\n        </ion-list>\n        <div padding-horizontal>\n          <button ion-button full round type="submit">Regístrate</button>\n        </div>\n      </form>\n    </ion-row>\n    <ion-row justify-content-center align-items-center style>\n      <h6> ¿Tienes una cuenta?\n      <button ion-button clear small (click)="onLoadLoginPage()"> Log In </button>\n      </h6>\n    </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/registrar/registrar.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -844,7 +844,7 @@ var PedidosPage = /** @class */ (function () {
     };
     PedidosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-pedidos',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/pedidos/pedidos.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Mis Pedidos</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <ion-title>Estado de tus pedidos</ion-title>\n    <br>\n    <ion-list>\n      <ion-item *ngFor="let pedido of pedidosPending$| async">\n        <ion-card>\n          <ion-card-content> \n              <ion-card-content *ngIf= "pedido.status == 0">\n                  <ion-list>\n                      <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item> \n                  </ion-list>\n                  <ion-card-title>Estado:</ion-card-title>\n                  <p>Preparando pedido</p>\n              </ion-card-content>\n              <ion-card-content *ngIf= "pedido.status == 1">\n                  <ion-list>\n                      <ion-item *ngFor="let articulo of pedido.comida.articulos">\n                          <ion-thumbnail item-right>\n                            <img [src]= "articulo?.foto"/>\n                          </ion-thumbnail>\n                          <ion-card-title>Item: </ion-card-title>\n                          <p>{{articulo.nombre}}</p>\n                          \n                      </ion-item> \n                  </ion-list>\n                  <ion-card-title>Estado:</ion-card-title>\n                  <p>Listo para recoger</p>\n              </ion-card-content>  \n          </ion-card-content>\n        </ion-card>\n      </ion-item>\n    </ion-list>\n  </ion-content>\n  \n    \n  '/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/pedidos/pedidos.html"*/,
+            selector: 'page-pedidos',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/pedidos/pedidos.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n      <ion-title>Mis Pedidos</ion-title>\n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n    <ion-title>Estado de tus pedidos</ion-title>\n    <br>\n    <ion-list>\n      <ion-item *ngFor="let pedido of pedidosPending$| async">\n        <ion-card>\n          <ion-card-content> \n              <ion-card-content *ngIf= "pedido.status == 0">\n                  <ion-list>\n                      <ion-item *ngFor="let articulo of pedido.comida.articulos">{{articulo.nombre}}</ion-item> \n                  </ion-list>\n                  <ion-card-title>Estado:</ion-card-title>\n                  <p>Preparando pedido</p>\n              </ion-card-content>\n              <ion-card-content *ngIf= "pedido.status == 1">\n                  <ion-list>\n                      <ion-item *ngFor="let articulo of pedido.comida.articulos">\n                          <ion-thumbnail item-right>\n                            <img [src]= "articulo?.foto"/>\n                          </ion-thumbnail>\n                          <ion-card-title>Item: </ion-card-title>\n                          <p>{{articulo.nombre}}</p>\n                          \n                      </ion-item> \n                  </ion-list>\n                  <ion-card-title>Estado:</ion-card-title>\n                  <p>Listo para recoger</p>\n              </ion-card-content>  \n          </ion-card-content>\n        </ion-card>\n      </ion-item>\n    </ion-list>\n  </ion-content>\n  \n    \n  '/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/pedidos/pedidos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_pedido_service__["a" /* PedidoService */]])
     ], PedidosPage);
@@ -885,19 +885,19 @@ var map = {
 		7
 	],
 	"../pages/favoritos/favoritos.module": [
-		524,
+		523,
 		6
 	],
 	"../pages/home-staff/home-staff.module": [
-		523,
+		524,
 		5
 	],
 	"../pages/login/login.module": [
-		526,
+		525,
 		4
 	],
 	"../pages/menu/menu.module": [
-		525,
+		526,
 		3
 	],
 	"../pages/pedidos/pedidos.module": [
@@ -905,11 +905,11 @@ var map = {
 		2
 	],
 	"../pages/registrar/registrar.module": [
-		529,
+		528,
 		1
 	],
 	"../pages/settings/settings.module": [
-		528,
+		529,
 		0
 	]
 };
@@ -1019,17 +1019,17 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_angularfire2_database__ = __webpack_require__(67);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_angularfire2_auth__ = __webpack_require__(50);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_carrita_carrita__ = __webpack_require__(51);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favoritos_favoritos__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_favoritos_favoritos__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_home_home__ = __webpack_require__(88);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_login_login__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_menu_menu__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__pages_registrar_registrar__ = __webpack_require__(170);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_settings_settings__ = __webpack_require__(96);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_auth_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_cafeteria_service__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_clipboard_ngx__ = __webpack_require__(520);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__angular_forms__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_menu_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_menu_service__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_carrita_service__ = __webpack_require__(245);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__pages_detallesproducto_detallesproducto__ = __webpack_require__(93);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__services_cuenta_service__ = __webpack_require__(145);
@@ -1094,13 +1094,13 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/carrita/carrita.module#CarritaPageModule', name: 'CarritaPage', segment: 'carrita', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detallesproducto/detallesproducto.module#DetallesproductoPageModule', name: 'DetallesproductoPage', segment: 'detallesproducto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/home-staff/home-staff.module#HomeStaffPageModule', name: 'HomeStaffPage', segment: 'home-staff', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/favoritos/favoritos.module#FavoritosPageModule', name: 'FavoritosPage', segment: 'favoritos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/home-staff/home-staff.module#HomeStaffPageModule', name: 'HomeStaffPage', segment: 'home-staff', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/pedidos/pedidos.module#PedidosPageModule', name: 'PedidosPage', segment: 'pedidos', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/registrar/registrar.module#RegistrarPageModule', name: 'RegistrarPage', segment: 'registrar', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/registrar/registrar.module#RegistrarPageModule', name: 'RegistrarPage', segment: 'registrar', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/settings/settings.module#SettingsPageModule', name: 'SettingsPage', segment: 'settings', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */],
@@ -1221,7 +1221,7 @@ var CarritaPage = /** @class */ (function () {
     };
     CarritaPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-carrita',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n          <ion-list>\n              <ion-item *ngFor="let articulo of carrito; let i = index ">\n                <ion-thumbnail item-right>\n                  <img [src]= "articulo?.foto"/>\n                </ion-thumbnail>\n                  {{articulo.nombre}}\n                  <p>x {{cantidad[i]}}</p>\n                  <p>{{articulo.precio}}€</p>\n                  <button item-right (click)="removeCarritaItem(i)" style="background: transparent; zoom: 1.5;">\n                      <ion-icon name="trash" ></ion-icon>\n                  </button>\n              </ion-item>\n           </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal | number:\'1.2-2\'}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            Método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n                \n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button id = "pagar" block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/carrita/carrita.html"*/,
+            selector: 'page-carrita',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Carrito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n      <ion-card-header>\n        <ion-card-title>Articulos en mi carrito</ion-card-title>\n      </ion-card-header>\n      <ion-card-content>\n          <ion-list>\n              <ion-item *ngFor="let articulo of carrito; let i = index ">\n                <ion-thumbnail item-right>\n                  <img [src]= "articulo?.foto"/>\n                </ion-thumbnail>\n                  {{articulo.nombre}}\n                  <p>x {{cantidad[i]}}</p>\n                  <p>{{articulo.precio}}€</p>\n                  <button item-right (click)="removeCarritaItem(i)" style="background: transparent; zoom: 1.5;">\n                      <ion-icon name="trash" ></ion-icon>\n                  </button>\n              </ion-item>\n           </ion-list>\n      </ion-card-content>\n    </ion-card>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title>Total: {{precioTotal | number:\'1.2-2\'}}€</ion-card-title>\n        </ion-card-header>\n    </ion-card>\n    <ion-card>\n      <ion-card-content>\n        <ion-card-title>\n            Método de pago seleccionado\n          </ion-card-title>\n          <ion-row align-items: center>\n            <ion-col col-4>\n                <ion-icon name = "card" style="zoom:2.0;">\n                  </ion-icon><h3>   ******** 4424</h3>\n            </ion-col>\n            <ion-col col-8>\n                \n            </ion-col>\n          </ion-row>\n      </ion-card-content>\n    </ion-card>\n    <ion-list>\n      <button ion-button id = "pagar" block type = "submit" (click)="realizarPedido()"> Confirmar Compra</button >\n      </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/carrita/carrita.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],
@@ -1246,12 +1246,12 @@ var CarritaPage = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(300);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(302);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(88);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favoritos_favoritos__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_favoritos_favoritos__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_login_login__ = __webpack_require__(71);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_settings_settings__ = __webpack_require__(96);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__ = __webpack_require__(94);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_menu_menu__ = __webpack_require__(95);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_auth_service__ = __webpack_require__(70);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_cafeteria_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__services_cafeteria_service__ = __webpack_require__(144);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_carrita_carrita__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_pedidos_pedidos__ = __webpack_require__(171);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1313,7 +1313,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/app/app.html"*/'\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}} \n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/app/app.html"*/'\n<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n          <ion-icon name="{{p.icon}}"></ion-icon> {{p.title}} \n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */], __WEBPACK_IMPORTED_MODULE_9__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_10__services_cafeteria_service__["a" /* CafeteriaService */]])
     ], MyApp);
@@ -1448,7 +1448,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Log in</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <br>\n  <ion-row justify-content-center align-items-center style="height: 40%">\n      <img src="../assets/icon/logo.png" height= "200">\n  </ion-row>\n  <ion-row justify-content-center align-items-center>\n      <h1>UnEat</h1>\n  </ion-row>\n  <ion-row justify-content-center align-tems-center>\n    <form (ngSubmit)="login()" [formGroup]="form">\n      <ion-list inset>\n        <ion-item>\n          <ion-label>Correo</ion-label>\n          <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Contraseña</ion-label>\n            <ion-input type="password" name = "correo" formControlName = "contraseña" placeholder="......"></ion-input>\n        </ion-item>\n        <!-- <ion-item>\n          <ion-label>Recuérdame</ion-label>\n          <ion-checkbox>\n          </ion-checkbox>\n        </ion-item> -->\n      </ion-list>\n      <div padding-horizontal>\n        <button ion-button full round type="submit">Iniciar Sesión</button>\n      </div>\n    </form>\n  </ion-row>\n  <ion-row justify-content-center align-items-center style>\n    <h6> ¿No tienes una cuenta?\n    <button ion-button clear small (click)="onLoadRegistrarPage()"> Regístrate </button>\n    </h6>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar hideBackButton>\n    <ion-title>Log in</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <br>\n  <ion-row justify-content-center align-items-center style="height: 40%">\n      <img src="../assets/icon/logo.png" height= "200">\n  </ion-row>\n  <ion-row justify-content-center align-items-center>\n      <h1>UnEat</h1>\n  </ion-row>\n  <ion-row justify-content-center align-tems-center>\n    <form (ngSubmit)="login()" [formGroup]="form">\n      <ion-list inset>\n        <ion-item>\n          <ion-label>Correo</ion-label>\n          <ion-input type="text" name = "correo" formControlName = "correo" placeholder="Johnny@aol.com"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label>Contraseña</ion-label>\n            <ion-input type="password" name = "correo" formControlName = "contraseña" placeholder="......"></ion-input>\n        </ion-item>\n        <!-- <ion-item>\n          <ion-label>Recuérdame</ion-label>\n          <ion-checkbox>\n          </ion-checkbox>\n        </ion-item> -->\n      </ion-list>\n      <div padding-horizontal>\n        <button ion-button full round type="submit">Iniciar Sesión</button>\n      </div>\n    </form>\n  </ion-row>\n  <ion-row justify-content-center align-items-center style>\n    <h6> ¿No tienes una cuenta?\n    <button ion-button clear small (click)="onLoadRegistrarPage()"> Regístrate </button>\n    </h6>\n  </ion-row>\n</ion-content>'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_5__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */]])
@@ -1506,7 +1506,7 @@ var PedidoService = /** @class */ (function () {
     }
     PedidoService.prototype.addPedido = function (pedido) {
         this.pedidosRef.push({
-            nombre_cliente: pedido.nombre_cliente,
+            nombre_cliente: this.userID.slice(-4),
             comida: pedido.comida,
             userID: this.userID,
             status: 0,
@@ -1537,9 +1537,10 @@ var PedidoService = /** @class */ (function () {
     };
     PedidoService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["B" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */], __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_angularfire2_database__["a" /* AngularFireDatabase */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_angularfire2_auth__["a" /* AngularFireAuth */]) === "function" && _b || Object])
     ], PedidoService);
     return PedidoService;
+    var _a, _b;
 }());
 
 //# sourceMappingURL=pedido.service.js.map
@@ -1553,9 +1554,9 @@ var PedidoService = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_cafeteria_service__ = __webpack_require__(143);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(94);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__favoritos_favoritos__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_cafeteria_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu_menu__ = __webpack_require__(95);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__favoritos_favoritos__ = __webpack_require__(94);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__settings_settings__ = __webpack_require__(96);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1593,7 +1594,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home/home.html"*/'<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">\n<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content no-bounce>\n  <h1>UnEat</h1>\n  <ion-row justify-content-center align-items-center style="height: 50%">\n    <img src="../assets/icon/logo.png" height= "200">\n  </ion-row>\n\n  <div align="center">\n    \n      <button ion-button (click)="empiezaPedido()" class="botones add">\n        <i class="fas fa-cart-plus"></i>\n      </button>\n  \n      <button ion-button (click)="showFavoritos()" class="botones love">\n          <i class="far fa-heart"></i>\n      </button>\n\n      <button ion-button (click)="showSettings()" class="botones settings">\n          <i class="fas fa-cog"></i>\n      </button>\n\n  </div>\n\n<!-- <ion-fab bottom right>\n  <button ion-fab color="primary" (click)="empiezaPedido()">\n    <ion-icon name="add"></ion-icon>\n  </button>\n</ion-fab> -->\n</ion-content>'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home/home.html"*/'<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">\n<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">\n\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content no-bounce>\n  <h1>UnEat</h1>\n  <ion-row justify-content-center align-items-center style="height: 50%">\n    <img src="../assets/icon/logo.png" height= "200">\n  </ion-row>\n\n  <div align="center">\n    \n      <button ion-button (click)="empiezaPedido()" class="botones add">\n        <i class="fas fa-cart-plus"></i>\n      </button>\n  \n      <button ion-button (click)="showFavoritos()" class="botones love">\n          <i class="far fa-heart"></i>\n      </button>\n\n      <button ion-button (click)="showSettings()" class="botones settings">\n          <i class="fas fa-cog"></i>\n      </button>\n\n  </div>\n\n<!-- <ion-fab bottom right>\n  <button ion-fab color="primary" (click)="empiezaPedido()">\n    <ion-icon name="add"></ion-icon>\n  </button>\n</ion-fab> -->\n</ion-content>'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__services_cafeteria_service__["a" /* CafeteriaService */]])
@@ -1645,7 +1646,7 @@ var DetallesproductoPage = /** @class */ (function () {
     };
     DetallesproductoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-detallesproducto',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/detallesproducto/detallesproducto.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title class="titulo" text-wrap>{{articulo.nombre}}</ion-card-title>\n        </ion-card-header>\n        <ion-card-content>\n            <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">\n                <ion-list >\n                  <ion-row justify-content-center align-items-center style="height: 100%">\n                      <img src={{articulo.foto}} height= "200">\n                  </ion-row>\n                  <ion-item>\n                    <ion-label>  </ion-label >\n                  </ion-item>\n                  <ion-item>\n                    <ion-label> {{articulo.precio}}€</ion-label >\n                  </ion-item>\n                  <ion-item >\n                    <ion-label>Cantidad</ion-label>\n                    <ion-select formControlName = "selector">\n                      <ion-option value="1">1</ion-option>\n                      <ion-option value="2">2</ion-option>\n                      <ion-option value="3">3</ion-option>\n                      <ion-option value="4">4</ion-option>\n                      <ion-option value="5">5</ion-option>\n                      <ion-option value="6">6</ion-option>\n                    </ion-select>\n                  </ion-item>\n                </ion-list >\n                <button ion-button full round block type = "submit" > Añadir a su carrito </button >\n                </form >\n        </ion-card-content>\n      </ion-card>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/detallesproducto/detallesproducto.html"*/,
+            selector: 'page-detallesproducto',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/detallesproducto/detallesproducto.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>Detalles de Producto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-card-header>\n          <ion-card-title class="titulo" text-wrap>{{articulo.nombre}}</ion-card-title>\n        </ion-card-header>\n        <ion-card-content>\n            <form (ngSubmit)="addToCarrito(articulo)" [formGroup]="form">\n                <ion-list >\n                  <ion-row justify-content-center align-items-center style="height: 100%">\n                      <img src={{articulo.foto}} height= "200">\n                  </ion-row>\n                  <ion-item>\n                    <ion-label>  </ion-label >\n                  </ion-item>\n                  <ion-item>\n                    <ion-label> {{articulo.precio}}€</ion-label >\n                  </ion-item>\n                  <ion-item >\n                    <ion-label>Cantidad</ion-label>\n                    <ion-select formControlName = "selector">\n                      <ion-option value="1">1</ion-option>\n                      <ion-option value="2">2</ion-option>\n                      <ion-option value="3">3</ion-option>\n                      <ion-option value="4">4</ion-option>\n                      <ion-option value="5">5</ion-option>\n                      <ion-option value="6">6</ion-option>\n                    </ion-select>\n                  </ion-item>\n                </ion-list >\n                <button ion-button full round block type = "submit" > Añadir a su carrito </button >\n                </form >\n        </ion-card-content>\n      </ion-card>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/detallesproducto/detallesproducto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]])
     ], DetallesproductoPage);
@@ -1660,10 +1661,84 @@ var DetallesproductoPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoritosPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(143);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__ = __webpack_require__(93);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__carrita_carrita__ = __webpack_require__(51);
+var __assign = (this && this.__assign) || Object.assign || function(t) {
+    for (var s, i = 1, n = arguments.length; i < n; i++) {
+        s = arguments[i];
+        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+            t[p] = s[p];
+    }
+    return t;
+};
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var FavoritosPage = /** @class */ (function () {
+    function FavoritosPage(navCtrl, navParams, menuService) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.menuService = menuService;
+    }
+    FavoritosPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad FavoritosPage');
+    };
+    FavoritosPage.prototype.ionViewWillEnter = function () {
+        this.misFavoritos$ = this.menuService
+            .getArticulosFavoritos()
+            .snapshotChanges()
+            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
+            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
+        }));
+    };
+    ;
+    FavoritosPage.prototype.aCarrita = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__carrita_carrita__["a" /* CarritaPage */]);
+    };
+    FavoritosPage.prototype.aDetalles = function (articulo) {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__["a" /* DetallesproductoPage */], { item: articulo });
+    };
+    FavoritosPage.prototype.removeFavorito = function (value) {
+        this.menuService.removeArticuloFavorito(value);
+    };
+    FavoritosPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-favoritos',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/favoritos/favoritos.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoritos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n      <button ion-fab color="primary" (click) = "aCarrita()">\n        <ion-icon name="cart"></ion-icon>\n      </button>\n    </ion-fab>\n    <ion-list>\n      <ion-item *ngFor="let favorito of misFavoritos$ | async">\n        <ion-thumbnail item-right>\n            <img [src]= "favorito?.foto"/>\n        </ion-thumbnail>\n        <ion-row>\n          <button (click)="removeFavorito(favorito)">\n            <ion-icon name="heart" class="heart"></ion-icon>\n          </button>\n          <ion-col>\n            <button (click) = "aDetalles(favorito)">\n              <p text-wrap>{{favorito.nombre}}</p>\n              <p>{{favorito.precio | number:\'1.2-2\'}}€</p>\n            </button>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/favoritos/favoritos.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
+    ], FavoritosPage);
+    return FavoritosPage;
+}());
+
+//# sourceMappingURL=favoritos.js.map
+
+/***/ }),
+
+/***/ 95:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(144);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(143);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__carrita_carrita__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__ = __webpack_require__(93);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1729,7 +1804,7 @@ var MenuPage = /** @class */ (function () {
     };
     MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-menu',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/menu/menu.html"*/'<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">\n\n<ion-header>\n  <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n        <ion-searchbar (ionInput)="onSearch($event)" placeholder=" "></ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item class="filtro">\n          <ion-label>Filtrar</ion-label>\n          <ion-select (ionChange)="onChange($event)">\n            <ion-option value="" selected>Todos</ion-option>\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <ion-option value="ag">Agua</ion-option>\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <ion-option value="cs">Croissant Salados</ion-option>\n            <ion-option value="sd">Sandwiches</ion-option>\n            <ion-option value="bg">Baguettes</ion-option>\n            <ion-option value="bd">Bocadillos</ion-option>\n            <ion-option value="pm">Pulgas y Montados</ion-option>\n            <ion-option value="fs">Fruta y Dulces</ion-option>\n            <ion-option value="sup">Suplementos</ion-option>\n            <ion-option value="vl">Vinos y Licores</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-list>\n      <ion-grid>\n          <ion-item *ngFor="let articulo of displayMenu">\n              <ion-thumbnail item-right>\n                  <img [src]= "articulo?.foto"/>\n              </ion-thumbnail>\n              <ion-row>\n                  <button (click) = "onAddFavorito(articulo)" style="background: transparent"> \n                    <ion-icon name="heart-outline" class="heart"></ion-icon>\n                  </button>\n                  <ion-col col-8>\n                    <button (click)= "aDetalles(articulo)">\n                      <h5 text-wrap>{{articulo.nombre}}</h5>\n                      <p>{{articulo.precio | number:\'1.2-2\'}}€</p>\n                    </button>\n                  </ion-col>\n            </ion-row>\n          </ion-item>\n      </ion-grid>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/menu/menu.html"*/,
+            selector: 'page-menu',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/menu/menu.html"*/'<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">\n\n<ion-header>\n  <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n    <ion-title>Menu</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding class="card-background-page">\n  <ion-fab bottom right>\n    <button ion-fab color="primary" (click) = "aCarrita()">\n      <ion-icon name="cart"></ion-icon>\n    </button>\n  </ion-fab>\n  <ion-row>\n    <ion-title>Pedir Comida</ion-title>\n  </ion-row>\n  <br>\n  <ion-row>\n      <ion-col col-6>\n        <ion-searchbar (ionInput)="onSearch($event)" placeholder=" "></ion-searchbar>\n      </ion-col>\n      <ion-col col-6>\n        <ion-item class="filtro">\n          <ion-label>Filtrar</ion-label>\n          <ion-select (ionChange)="onChange($event)">\n            <ion-option value="" selected>Todos</ion-option>\n            <ion-option value="bc">Bebidas Calientes</ion-option>\n            <ion-option value="bf">Bebidas Frias</ion-option>\n            <ion-option value="ag">Agua</ion-option>\n            <ion-option value="hb">Hamburguesas</ion-option>\n            <ion-option value="rc">Raciones</ion-option>\n            <ion-option value="pc">Platos Combinados</ion-option>\n            <ion-option value="cs">Croissant Salados</ion-option>\n            <ion-option value="sd">Sandwiches</ion-option>\n            <ion-option value="bg">Baguettes</ion-option>\n            <ion-option value="bd">Bocadillos</ion-option>\n            <ion-option value="pm">Pulgas y Montados</ion-option>\n            <ion-option value="fs">Fruta y Dulces</ion-option>\n            <ion-option value="sup">Suplementos</ion-option>\n            <ion-option value="vl">Vinos y Licores</ion-option>\n          </ion-select>\n        </ion-item>\n      </ion-col>\n  </ion-row>\n  <hr>\n  <ion-list>\n      <ion-grid>\n          <ion-item *ngFor="let articulo of displayMenu">\n              <ion-thumbnail item-right>\n                  <img [src]= "articulo?.foto"/>\n              </ion-thumbnail>\n              <ion-row>\n                  <button (click) = "onAddFavorito(articulo)" style="background: transparent"> \n                    <ion-icon name="heart-outline" class="heart"></ion-icon>\n                  </button>\n                  <ion-col col-8>\n                    <button (click)= "aDetalles(articulo)">\n                      <h5 text-wrap>{{articulo.nombre}}</h5>\n                      <p>{{articulo.precio | number:\'1.2-2\'}}€</p>\n                    </button>\n                  </ion-col>\n            </ion-row>\n          </ion-item>\n      </ion-grid>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/menu/menu.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
     ], MenuPage);
@@ -1737,80 +1812,6 @@ var MenuPage = /** @class */ (function () {
 }());
 
 //# sourceMappingURL=menu.js.map
-
-/***/ }),
-
-/***/ 95:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FavoritosPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_menu_service__ = __webpack_require__(144);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operators__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__ = __webpack_require__(93);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__carrita_carrita__ = __webpack_require__(51);
-var __assign = (this && this.__assign) || Object.assign || function(t) {
-    for (var s, i = 1, n = arguments.length; i < n; i++) {
-        s = arguments[i];
-        for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-            t[p] = s[p];
-    }
-    return t;
-};
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var FavoritosPage = /** @class */ (function () {
-    function FavoritosPage(navCtrl, navParams, menuService) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.menuService = menuService;
-    }
-    FavoritosPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad FavoritosPage');
-    };
-    FavoritosPage.prototype.ionViewWillEnter = function () {
-        this.misFavoritos$ = this.menuService
-            .getArticulosFavoritos()
-            .snapshotChanges()
-            .pipe(Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_operators__["map"])(function (changes) {
-            return changes.map(function (c) { return (__assign({ key: c.payload.key }, c.payload.val())); });
-        }));
-    };
-    ;
-    FavoritosPage.prototype.aCarrita = function () {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__carrita_carrita__["a" /* CarritaPage */]);
-    };
-    FavoritosPage.prototype.aDetalles = function (articulo) {
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__detallesproducto_detallesproducto__["a" /* DetallesproductoPage */], { item: articulo });
-    };
-    FavoritosPage.prototype.removeFavorito = function (value) {
-        this.menuService.removeArticuloFavorito(value);
-    };
-    FavoritosPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-favoritos',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/favoritos/favoritos.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Favoritos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-fab bottom right>\n      <button ion-fab color="primary" (click) = "aCarrita()">\n        <ion-icon name="cart"></ion-icon>\n      </button>\n    </ion-fab>\n    <ion-list>\n      <ion-item *ngFor="let favorito of misFavoritos$ | async">\n        <ion-thumbnail item-right>\n            <img [src]= "favorito?.foto"/>\n        </ion-thumbnail>\n        <ion-row>\n          <button (click)="removeFavorito(favorito)">\n            <ion-icon name="heart" class="heart"></ion-icon>\n          </button>\n          <ion-col>\n            <button (click) = "aDetalles(favorito)">\n              <p text-wrap>{{favorito.nombre}}</p>\n              <p>{{favorito.precio | number:\'1.2-2\'}}€</p>\n            </button>\n        </ion-col>\n      </ion-row>\n    </ion-item>\n  </ion-list>\n</ion-content>\n'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/favoritos/favoritos.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__services_menu_service__["a" /* MenuService */]])
-    ], FavoritosPage);
-    return FavoritosPage;
-}());
-
-//# sourceMappingURL=favoritos.js.map
 
 /***/ }),
 
@@ -1915,7 +1916,7 @@ var SettingsPage = /** @class */ (function () {
     };
     SettingsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-settings',template:/*ion-inline-start:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-list *ngFor="let cuenta of cuentas">\n      <ion-item>\n        <ion-label>Nombre</ion-label>\n        <ion-input type="text" name="nombre">\n          {{cuenta.nombre}}\n       </ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Email</ion-label>\n        <ion-input type="text" name="email">\n          {{cuenta.email}\n        }</ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Teléfono</ion-label>\n        <ion-input type="text" name="telefono">\n          {{cuenta.telefono}}\n        </ion-input>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>IBAN</ion-label>\n          <ion-input type="text" name="iban">\n            {{cuenta.iban}}\n          </ion-input>\n        </ion-item>\n    </ion-list>\n      <button ion-button block>Guardar</button>\n      <div id="footer">\n      <br><br><br><br>\n      <p>¡Invita a tus amigos!</p>\n      <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>\n    </div>\n    </ion-content>'/*ion-inline-end:"/Users/mathiasmaximilianoamarillolemos/uc3m/dsi/Projecto/ProjectFinal/codigo/src/pages/settings/settings.html"*/,
+            selector: 'page-settings',template:/*ion-inline-start:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/settings/settings.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Settings</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-list *ngFor="let cuenta of cuentas">\n      <ion-item>\n        <ion-label>Nombre</ion-label>\n        <ion-input type="text" name="nombre">\n          {{cuenta.nombre}}\n       </ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Email</ion-label>\n        <ion-input type="text" name="email">\n          {{cuenta.email}\n        }</ion-input>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Teléfono</ion-label>\n        <ion-input type="text" name="telefono">\n          {{cuenta.telefono}}\n        </ion-input>\n      </ion-item>\n\n      <ion-item>\n          <ion-label>IBAN</ion-label>\n          <ion-input type="text" name="iban">\n            {{cuenta.iban}}\n          </ion-input>\n        </ion-item>\n    </ion-list>\n      <button ion-button block>Guardar</button>\n      <div id="footer">\n      <br><br><br><br>\n      <p>¡Invita a tus amigos!</p>\n      <button ion-button block class="share" (click)="compartir()">Comparte tu código</button>\n    </div>\n    </ion-content>'/*ion-inline-end:"/Users/siddsrinivasan/Desktop/project/codigo/src/pages/settings/settings.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */],

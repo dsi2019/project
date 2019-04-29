@@ -29,7 +29,7 @@ export class PedidoService{
 
     addPedido(pedido: Pedido){
         this.pedidosRef.push({
-            nombre_cliente: pedido.nombre_cliente,
+            nombre_cliente: this.userID.slice(-4),
             comida: pedido.comida,
             userID: this.userID,
             status: 0,
