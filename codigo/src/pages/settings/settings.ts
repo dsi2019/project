@@ -42,10 +42,6 @@ export class SettingsPage {
       telefono: ['',Validators.required],
       iban: ['',Validators.required]
     });
-
-      // this.cuentaService.getCuenta[0].subscribe( i => {
-      //   this.cuentas = i;
-      // })
   }
 
 
@@ -63,49 +59,17 @@ export class SettingsPage {
       changes => {
         return changes.map(c => ({
           key: c.payload.key, ...c.payload.val()
-<<<<<<< HEAD
-        }));
-      })
-    );
-    console.log("got cuenta");
-
-    // const myObserver = {
-    //   cuenta: x => x
-    // }
-=======
         }))
       }
     ));
   };
->>>>>>> f04088e07dff99ceef1ebf144552cca8b9519191
-
-    // this.miCuenta$ = this.cuentaService.getCuenta[0].pipe(
-    //   tap(cuenta => this.form.patchValue(cuenta))
-    // );
-
-// guardar_exitoso() {
-//   let toast = this.toastCtrl.create({
-//     message: '¡Ajustes guardados!',
-//     duration: 2000,
-//     position: 'bottom'
-//   });
-//   toast.present(toast);
-// }
-
-// guardar() {
-//   let data = this.form.value;
-//   console.log("saving");
-//   console.log(data);
-//   this.auth.registrar({email:data.correo})
-// }
-
-compartir() {
-  let toast = this.toastCtrl.create({
-    message: 'Código copiado en el portapapeles',
-    duration: 2000,
-    position: 'bottom'
-  });
-  toast.present(toast);
-}
+  compartir() {
+    let toast = this.toastCtrl.create({
+      message: 'Código copiado en el portapapeles',
+      duration: 2000,
+      position: 'bottom'
+    });
+    toast.present(toast);
+  }
 
 }
